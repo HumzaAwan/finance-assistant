@@ -4,7 +4,7 @@
     {
       "parameters": {
         "httpMethod": "POST",
-        "path": "webhook/finance-chat",
+        "path": "finance-chat",
         "responseMode": "responseNode",
         "options": {}
       },
@@ -18,7 +18,7 @@
     {
       "parameters": {
         "mode": "runOnceForAllItems",
-        "jsCode": "const item = $input.first().json;\nconst body = item.body !== undefined && item.body !== null ? item.body : item;\nconst message = String(body.message !== undefined && body.message !== null ? body.message : \"\");\nconst session_id = body.session_id !== undefined && body.session_id !== null ? body.session_id : null;\nconst user_id = body.user_id !== undefined && body.user_id !== null ? body.user_id : null;\nconst received_at = new Date().toISOString();\nconst lowered = message.toLowerCase();\nconst keywords = [\"advice\", \"tip\", \"how to\", \"strategy\", \"save\", \"budget\", \"invest\"];\nconst isAdvice = keywords.some(function (k) { return lowered.indexOf(k) !== -1; });\nreturn [{ json: { message: message, session_id: session_id, user_id: user_id, received_at: received_at, isAdvice: isAdvice } }];"
+        "jsCode": "const item = $input.first().json;\nconst body = item.body !== undefined && item.body !== null ? item.body : item;\nconst message = String(body.message !== undefined && body.message !== null ? body.message : \"\");\nconst session_id = body.session_id != null && String(body.session_id).trim() !== \"\" ? String(body.session_id) : (\"n8n-\" + Date.now());\nconst user_id = body.user_id != null && String(body.user_id).trim() !== \"\" ? String(body.user_id) : \"user_001\";\nconst received_at = new Date().toISOString();\nconst lowered = message.toLowerCase();\nconst keywords = [\"advice\", \"tip\", \"how to\", \"strategy\", \"save\", \"budget\", \"invest\"];\nconst isAdvice = keywords.some(function (k) { return lowered.indexOf(k) !== -1; });\nreturn [{ json: { message: message, session_id: session_id, user_id: user_id, received_at: received_at, isAdvice: isAdvice } }];"
       },
       "id": "2f8a4c1e-9d33-4b7f-8e2a-5c6d7e8f9012",
       "name": "Extract Classify Payload",

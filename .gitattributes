@@ -1,0 +1,3 @@
+# Normalize line endings for consistent diffs across OSes
+.gitattributes text eol=lf
+*.json text eol=lf
