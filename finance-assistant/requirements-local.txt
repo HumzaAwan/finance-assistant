@@ -1,0 +1,29 @@
+# Python 3.11–3.13 (Windows-safe: no MSVC required for NumPy Streamlit chroma-hnswlib).
+#
+# python -m venv .venv
+# Windows: .venv\Scripts\activate
+# pip install --upgrade pip
+# pip install -r requirements-local.txt
+
+numpy>=2.1.4,<3
+chromadb>=1.5.9,<2
+
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+streamlit>=1.41.1
+pydantic>=2.10.0
+
+sqlalchemy>=2.0.30
+faker>=24.0.0,<28.0
+
+# numpy 2.x compatible (langchain 0.2.x required numpy<2 and broke pip on Py3.13)
+langchain>=1.2.0,<2
+langchain-community>=0.4.0,<1
+langchain-ollama>=1.1.0,<2
+langchain-text-splitters>=1.1.0,<2
+langgraph>=1.1.0,<2
+
+redis>=5.0.4,<6
+fakeredis>=2.23.3,<3
+python-dotenv>=1.0.1
+httpx>=0.27

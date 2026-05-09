@@ -1,0 +1,197 @@
+{
+  "name": "Finance Chat Webhook Routing",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "webhook/finance-chat",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "7c3e8912-6b54-41d2-a8f1-3e9c2d1b4a60",
+      "name": "Finance Chat Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "b4e5f6a7-8c9d-40e1-b2c3-d4e5f6a7b8c9"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const item = $input.first().json;\nconst body = item.body !== undefined && item.body !== null ? item.body : item;\nconst message = String(body.message !== undefined && body.message !== null ? body.message : \"\");\nconst session_id = body.session_id !== undefined && body.session_id !== null ? body.session_id : null;\nconst user_id = body.user_id !== undefined && body.user_id !== null ? body.user_id : null;\nconst received_at = new Date().toISOString();\nconst lowered = message.toLowerCase();\nconst keywords = [\"advice\", \"tip\", \"how to\", \"strategy\", \"save\", \"budget\", \"invest\"];\nconst isAdvice = keywords.some(function (k) { return lowered.indexOf(k) !== -1; });\nreturn [{ json: { message: message, session_id: session_id, user_id: user_id, received_at: received_at, isAdvice: isAdvice } }];"
+      },
+      "id": "2f8a4c1e-9d33-4b7f-8e2a-5c6d7e8f9012",
+      "name": "Extract Classify Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c8d9e0f1-a2b3-4c5d-6e7f-8091a2b3c4d5",
+              "leftValue": "={{ $json.isAdvice }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "9a1b2c3d-4e5f-6789-abcd-ef0123456789",
+      "name": "Route By Advice Flag",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [720, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8000/chat",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message: $('Extract Classify Payload').item.json.message, session_id: $('Extract Classify Payload').item.json.session_id, user_id: $('Extract Classify Payload').item.json.user_id, route_hint: \"advice\" }) }}",
+        "options": {}
+      },
+      "id": "1d2e3f40-5162-4374-8596-a7b8c9d0e1f2",
+      "name": "POST Agent Advice",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1000, 180]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:8000/chat",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message: $('Extract Classify Payload').item.json.message, session_id: $('Extract Classify Payload').item.json.session_id, user_id: $('Extract Classify Payload').item.json.user_id, route_hint: \"data\" }) }}",
+        "options": {}
+      },
+      "id": "3e4f5061-6273-5485-96a7-b8c9d0e1f2a3",
+      "name": "POST Agent Data",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1000, 420]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const ctx = $('Extract Classify Payload').first().json;\nconst received_at = ctx.received_at;\nconst route = ctx.isAdvice ? \"advice\" : \"data\";\nconst row = $input.first().json;\nlet raw = row.body !== undefined && row.body !== null ? row.body : row;\nif (raw === undefined || raw === null) {\n  raw = row;\n}\nlet agent_response = raw;\nif (typeof raw === \"string\") {\n  try {\n    agent_response = JSON.parse(raw);\n  } catch (e) {\n    agent_response = raw;\n  }\n}\nreturn [{ json: { received_at: received_at, route: route, agent_response: agent_response } }];"
+      },
+      "id": "4f506172-7384-6596-a7b8-c9d0e1f2a3b4",
+      "name": "Format Client Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1280, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "50617283-8495-76a7-b8c9-d0e1f2a3b4c5",
+      "name": "Respond Finance Chat",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1520, 300]
+    }
+  ],
+  "connections": {
+    "Finance Chat Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Classify Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Classify Payload": {
+      "main": [
+        [
+          {
+            "node": "Route By Advice Flag",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route By Advice Flag": {
+      "main": [
+        [
+          {
+            "node": "POST Agent Advice",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "POST Agent Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "POST Agent Advice": {
+      "main": [
+        [
+          {
+            "node": "Format Client Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "POST Agent Data": {
+      "main": [
+        [
+          {
+            "node": "Format Client Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Client Response": {
+      "main": [
+        [
+          {
+            "node": "Respond Finance Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": null,
+  "tags": [],
+  "versionId": ""
+}

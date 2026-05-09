@@ -1,0 +1,17 @@
+.env
+__pycache__/
+*.py[cod]
+*.sqlite3
+.Python
+venv/
+.venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+finance.db
+local_data/
+
+# Mock API: generated DB only (JSON fixture is committed)
+services/mock-api/data/finance.db
+services/mock-api/data/*.sqlite3

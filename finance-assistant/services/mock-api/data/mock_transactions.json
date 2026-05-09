@@ -1,0 +1,1352 @@
+[
+  {
+    "id": "7aa3bdaa-a4dd-4007-b8cb-1b9fd7b6b93b",
+    "user_id": "user_001",
+    "amount": -86.75,
+    "category": "food",
+    "description": "Garden we save court home",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-02-08T22:09:00+00:00"
+  },
+  {
+    "id": "09230c55-1743-4758-a109-392da4c7b17e",
+    "user_id": "user_001",
+    "amount": -7.43,
+    "category": "transport",
+    "description": "Fuel top-up",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-02-08T23:50:00+00:00"
+  },
+  {
+    "id": "8d28d015-0060-42e6-974d-3b1fbefe3e10",
+    "user_id": "user_001",
+    "amount": -66.78,
+    "category": "utilities",
+    "description": "Utility bundle",
+    "merchant": "PowerCo",
+    "timestamp": "2026-02-09T15:43:00+00:00"
+  },
+  {
+    "id": "3cbaa995-14cd-4591-9f2e-2a16434de040",
+    "user_id": "user_001",
+    "amount": -89.1,
+    "category": "food",
+    "description": "Push dinner",
+    "merchant": "City Diner",
+    "timestamp": "2026-02-09T15:54:00+00:00"
+  },
+  {
+    "id": "4da7ff2e-aa7a-4d9b-9536-365949bdcfab",
+    "user_id": "user_001",
+    "amount": -38.12,
+    "category": "food",
+    "description": "Red guess everyone",
+    "merchant": "City Diner",
+    "timestamp": "2026-02-10T20:55:00+00:00"
+  },
+  {
+    "id": "08a8ffdd-5b6f-4bcc-a97b-53e8acae5c53",
+    "user_id": "user_001",
+    "amount": -18.91,
+    "category": "food",
+    "description": "Interest east raise",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-02-11T17:28:00+00:00"
+  },
+  {
+    "id": "8c4452e8-b631-48d7-b2c3-340e7b2ba51a",
+    "user_id": "user_001",
+    "amount": -46.3,
+    "category": "food",
+    "description": "Write skin memory",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-02-11T22:33:00+00:00"
+  },
+  {
+    "id": "8a86b445-c38e-4252-b328-764415c2e907",
+    "user_id": "user_001",
+    "amount": -51.15,
+    "category": "food",
+    "description": "Physical toward yard son",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-02-13T00:13:00+00:00"
+  },
+  {
+    "id": "07015b3a-3557-4803-9305-84f73dcabbb1",
+    "user_id": "user_001",
+    "amount": 2996.1,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-02-13T08:07:00+00:00"
+  },
+  {
+    "id": "657739b1-adac-4b3e-9f15-4c4e51e38d22",
+    "user_id": "user_001",
+    "amount": -184.58,
+    "category": "utilities",
+    "description": "Gas bill",
+    "merchant": "PowerCo",
+    "timestamp": "2026-02-13T15:55:00+00:00"
+  },
+  {
+    "id": "14c511a0-b355-421d-9bff-699338d30e6d",
+    "user_id": "user_001",
+    "amount": -43.2,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-02-15T02:25:00+00:00"
+  },
+  {
+    "id": "d4ff0647-5af5-4a3c-85b6-58ab2989f09e",
+    "user_id": "user_001",
+    "amount": -173.82,
+    "category": "utilities",
+    "description": "Phone & internet",
+    "merchant": "PowerCo",
+    "timestamp": "2026-02-15T07:16:00+00:00"
+  },
+  {
+    "id": "dc2820be-07a2-4b34-b8b6-b72d2f0bc7a6",
+    "user_id": "user_001",
+    "amount": -42.45,
+    "category": "food",
+    "description": "Form themselves you strong art",
+    "merchant": "City Diner",
+    "timestamp": "2026-02-15T09:24:00+00:00"
+  },
+  {
+    "id": "7752028c-b5da-46e1-822e-cb636461ff36",
+    "user_id": "user_001",
+    "amount": -40.21,
+    "category": "health",
+    "description": "Pharmacy refill",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-02-15T14:49:00+00:00"
+  },
+  {
+    "id": "958f031f-b32b-40ae-b21f-96d19da8fbc5",
+    "user_id": "user_001",
+    "amount": -47.51,
+    "category": "food",
+    "description": "Claim team research",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-02-17T10:39:00+00:00"
+  },
+  {
+    "id": "0419a25f-ae38-4e20-a6e2-77b8ebec5d6a",
+    "user_id": "user_001",
+    "amount": -36.18,
+    "category": "food",
+    "description": "Data remain firm reduce billion",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-02-17T17:35:00+00:00"
+  },
+  {
+    "id": "2c995028-356b-4c95-80ae-504065e740cc",
+    "user_id": "user_001",
+    "amount": -88.18,
+    "category": "utilities",
+    "description": "Phone & internet",
+    "merchant": "PowerCo",
+    "timestamp": "2026-02-17T21:27:00+00:00"
+  },
+  {
+    "id": "3cb77d79-f0e3-4f1f-8776-28a5798c8e5f",
+    "user_id": "user_001",
+    "amount": -25.31,
+    "category": "transport",
+    "description": "Rideshare fare",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-02-18T08:56:00+00:00"
+  },
+  {
+    "id": "a8cc19a4-2d56-42ce-9ce0-69ec6a6249c7",
+    "user_id": "user_001",
+    "amount": -38.97,
+    "category": "transport",
+    "description": "Fuel top-up",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-02-18T09:29:00+00:00"
+  },
+  {
+    "id": "3dee22f8-9f57-4526-97d2-6eb9cae4a7cb",
+    "user_id": "user_001",
+    "amount": -199.79,
+    "category": "utilities",
+    "description": "Phone & internet",
+    "merchant": "TeleLink",
+    "timestamp": "2026-02-18T15:58:00+00:00"
+  },
+  {
+    "id": "7380424b-45f2-40f1-a7bd-438bb1e45bd6",
+    "user_id": "user_001",
+    "amount": -126.41,
+    "category": "health",
+    "description": "Pharmacy refill",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-02-19T08:38:00+00:00"
+  },
+  {
+    "id": "2ac1a2eb-8bd7-4573-aee6-a5486d5f85d8",
+    "user_id": "user_001",
+    "amount": -42.45,
+    "category": "food",
+    "description": "He name live feeling window",
+    "merchant": "City Diner",
+    "timestamp": "2026-02-19T11:22:00+00:00"
+  },
+  {
+    "id": "aef8c646-a1ec-459d-85fe-f3af5d943d2e",
+    "user_id": "user_001",
+    "amount": -131.69,
+    "category": "health",
+    "description": "Pharmacy refill",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-02-19T14:04:00+00:00"
+  },
+  {
+    "id": "6c8b16d9-2e9f-42e7-a8dc-8bfac7958365",
+    "user_id": "user_001",
+    "amount": -148.74,
+    "category": "health",
+    "description": "Clinic copay",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-02-21T16:11:00+00:00"
+  },
+  {
+    "id": "2efe65d5-4c37-4244-9c45-3e1cd4d1d690",
+    "user_id": "user_001",
+    "amount": -64.58,
+    "category": "food",
+    "description": "Population impact",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-02-22T02:56:00+00:00"
+  },
+  {
+    "id": "76758bc1-41ab-4e91-9752-a9dac5e36fb1",
+    "user_id": "user_001",
+    "amount": -98.1,
+    "category": "health",
+    "description": "Pharmacy refill",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-02-22T05:08:00+00:00"
+  },
+  {
+    "id": "d0e49a2b-66b0-406a-9af1-f009d79f3692",
+    "user_id": "user_001",
+    "amount": -101.01,
+    "category": "shopping",
+    "description": "Clothing buys",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-02-22T08:57:00+00:00"
+  },
+  {
+    "id": "e4521076-36bf-4b97-8d6f-d1ab77a8de99",
+    "user_id": "user_001",
+    "amount": -106.84,
+    "category": "entertainment",
+    "description": "Concert seating",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-02-23T16:02:00+00:00"
+  },
+  {
+    "id": "9ea3b4e4-7c61-4bb0-9f5a-e9e44c951eb7",
+    "user_id": "user_001",
+    "amount": -37.1,
+    "category": "transport",
+    "description": "Fuel top-up",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-02-23T22:39:00+00:00"
+  },
+  {
+    "id": "e6a3282b-5536-4535-92ee-b2462b28127b",
+    "user_id": "user_001",
+    "amount": -22.27,
+    "category": "food",
+    "description": "Natural tough program want safe",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-02-24T10:15:00+00:00"
+  },
+  {
+    "id": "3bbd2bb2-72a2-4254-a4b9-a7848e3f4bee",
+    "user_id": "user_001",
+    "amount": -128.85,
+    "category": "shopping",
+    "description": "Clothing buys",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-02-24T11:51:00+00:00"
+  },
+  {
+    "id": "6663afb7-6066-4d61-a0c0-5ac3b0876cd6",
+    "user_id": "user_001",
+    "amount": -58.33,
+    "category": "entertainment",
+    "description": "Movie night",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-02-25T06:51:00+00:00"
+  },
+  {
+    "id": "51c2e829-063f-42d7-9b41-c1a7064e3ece",
+    "user_id": "user_001",
+    "amount": -162.41,
+    "category": "utilities",
+    "description": "Phone & internet",
+    "merchant": "PowerCo",
+    "timestamp": "2026-02-25T08:19:00+00:00"
+  },
+  {
+    "id": "b903f864-f130-4f61-b216-d6e578fb26ab",
+    "user_id": "user_001",
+    "amount": -52.79,
+    "category": "shopping",
+    "description": "Clothing buys",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-02-27T05:25:00+00:00"
+  },
+  {
+    "id": "fc89da96-bdb5-4c2e-b3fd-0bcefd61932f",
+    "user_id": "user_001",
+    "amount": -184.93,
+    "category": "shopping",
+    "description": "Clothing buys",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-02-27T07:37:00+00:00"
+  },
+  {
+    "id": "474e98dd-12bc-4a0c-b4ca-15de12eb5dd6",
+    "user_id": "user_001",
+    "amount": -42.48,
+    "category": "entertainment",
+    "description": "Movie night",
+    "merchant": "CineHaus",
+    "timestamp": "2026-02-28T00:57:00+00:00"
+  },
+  {
+    "id": "79dfdbce-039a-449d-9120-d11ad4b539aa",
+    "user_id": "user_001",
+    "amount": -65.78,
+    "category": "utilities",
+    "description": "Utility bundle",
+    "merchant": "PowerCo",
+    "timestamp": "2026-02-28T11:46:00+00:00"
+  },
+  {
+    "id": "0af75e07-58a6-4bd1-83b1-3c42bc70e172",
+    "user_id": "user_001",
+    "amount": -59.22,
+    "category": "entertainment",
+    "description": "Concert seating",
+    "merchant": "CineHaus",
+    "timestamp": "2026-02-28T16:58:00+00:00"
+  },
+  {
+    "id": "9fbfe9a9-a083-4efd-82f3-cf4367d591d6",
+    "user_id": "user_001",
+    "amount": 2986.16,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-02-28T20:12:00+00:00"
+  },
+  {
+    "id": "f683eaf1-8e1e-4eb9-bae7-b2d125bddec0",
+    "user_id": "user_001",
+    "amount": -33.36,
+    "category": "transport",
+    "description": "Rideshare fare",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-03-01T23:19:00+00:00"
+  },
+  {
+    "id": "91ab6d4d-034a-4af1-bf48-c20b98c25ce8",
+    "user_id": "user_001",
+    "amount": -108.54,
+    "category": "utilities",
+    "description": "Utility bundle",
+    "merchant": "PowerCo",
+    "timestamp": "2026-03-03T06:31:00+00:00"
+  },
+  {
+    "id": "61e75a6a-2d6b-42c0-95d6-3086963cb719",
+    "user_id": "user_001",
+    "amount": -10.59,
+    "category": "food",
+    "description": "Only finally while",
+    "merchant": "City Diner",
+    "timestamp": "2026-03-04T10:17:00+00:00"
+  },
+  {
+    "id": "a855477e-6194-40e0-88d1-67f00199ece6",
+    "user_id": "user_001",
+    "amount": -164.65,
+    "category": "utilities",
+    "description": "Utility bundle",
+    "merchant": "TeleLink",
+    "timestamp": "2026-03-04T11:02:00+00:00"
+  },
+  {
+    "id": "f2f07e3f-370f-4fdc-8305-5cee6fc7411c",
+    "user_id": "user_001",
+    "amount": -38.52,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-03-04T14:10:00+00:00"
+  },
+  {
+    "id": "a053a93b-b957-4eb4-a477-d59662510f0c",
+    "user_id": "user_001",
+    "amount": -261.13,
+    "category": "shopping",
+    "description": "Home goods",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-03-04T21:17:00+00:00"
+  },
+  {
+    "id": "82ebb14f-0b5f-48af-bce7-6338cf3b5099",
+    "user_id": "user_001",
+    "amount": -64.93,
+    "category": "health",
+    "description": "Clinic copay",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-03-05T02:57:00+00:00"
+  },
+  {
+    "id": "19316673-16a0-465b-b27f-ec0b9a3b3cbe",
+    "user_id": "user_001",
+    "amount": -50.05,
+    "category": "food",
+    "description": "Professor human",
+    "merchant": "City Diner",
+    "timestamp": "2026-03-05T06:01:00+00:00"
+  },
+  {
+    "id": "e6cf29d8-7a50-41d6-a66a-6f2d56890d64",
+    "user_id": "user_001",
+    "amount": -21.52,
+    "category": "entertainment",
+    "description": "Movie night",
+    "merchant": "CineHaus",
+    "timestamp": "2026-03-06T22:46:00+00:00"
+  },
+  {
+    "id": "d7f3dfd2-c06e-471c-b92a-3bc4a922ceba",
+    "user_id": "user_001",
+    "amount": -90.14,
+    "category": "health",
+    "description": "Clinic copay",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-03-07T16:13:00+00:00"
+  },
+  {
+    "id": "f57edc65-e5e9-4fc3-a06e-c92a0d135266",
+    "user_id": "user_001",
+    "amount": -164.36,
+    "category": "utilities",
+    "description": "Phone & internet",
+    "merchant": "TeleLink",
+    "timestamp": "2026-03-07T16:46:00+00:00"
+  },
+  {
+    "id": "52c09e3a-c8a0-4002-8722-a4579a7fdbc1",
+    "user_id": "user_001",
+    "amount": -51.04,
+    "category": "health",
+    "description": "Pharmacy refill",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-03-07T17:05:00+00:00"
+  },
+  {
+    "id": "e8f14964-c010-4791-ab16-dc79c9504a47",
+    "user_id": "user_001",
+    "amount": -58.77,
+    "category": "entertainment",
+    "description": "Streaming bundle",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-03-07T19:04:00+00:00"
+  },
+  {
+    "id": "5175ac54-2e9f-4a24-a4b0-994bb74a5447",
+    "user_id": "user_001",
+    "amount": -201.96,
+    "category": "shopping",
+    "description": "Clothing buys",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-03-07T22:07:00+00:00"
+  },
+  {
+    "id": "4159efab-6aa5-4d33-b392-d328e2f13afd",
+    "user_id": "user_001",
+    "amount": -18.67,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-03-08T07:18:00+00:00"
+  },
+  {
+    "id": "006a422d-c134-4edb-b873-f0ab0854c975",
+    "user_id": "user_001",
+    "amount": -7.97,
+    "category": "transport",
+    "description": "Fuel top-up",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-03-09T02:01:00+00:00"
+  },
+  {
+    "id": "ae334690-c2cd-4dec-bb8b-ff1d34ccd469",
+    "user_id": "user_001",
+    "amount": -63.64,
+    "category": "utilities",
+    "description": "Phone & internet",
+    "merchant": "TeleLink",
+    "timestamp": "2026-03-10T02:28:00+00:00"
+  },
+  {
+    "id": "57a1332c-3b91-4812-b77a-5605c4e6cba6",
+    "user_id": "user_001",
+    "amount": -43.74,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-03-10T05:25:00+00:00"
+  },
+  {
+    "id": "f1d77431-42b7-40ad-bdc2-01151b163334",
+    "user_id": "user_001",
+    "amount": -31.1,
+    "category": "entertainment",
+    "description": "Streaming bundle",
+    "merchant": "CineHaus",
+    "timestamp": "2026-03-10T09:18:00+00:00"
+  },
+  {
+    "id": "7d963824-8cd8-4190-812f-a32f19c341a2",
+    "user_id": "user_001",
+    "amount": -15.56,
+    "category": "food",
+    "description": "Civil design",
+    "merchant": "City Diner",
+    "timestamp": "2026-03-10T10:24:00+00:00"
+  },
+  {
+    "id": "03ac5137-7efe-43d0-a87e-004aa61cdc1b",
+    "user_id": "user_001",
+    "amount": -47.26,
+    "category": "health",
+    "description": "Pharmacy refill",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-03-10T23:51:00+00:00"
+  },
+  {
+    "id": "fe7ff243-875c-4619-91a7-2d5556c57286",
+    "user_id": "user_001",
+    "amount": -46.63,
+    "category": "food",
+    "description": "Body could speak blood wife",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-03-14T05:33:00+00:00"
+  },
+  {
+    "id": "63058c2d-e95d-40f3-90e2-474ecc15305c",
+    "user_id": "user_001",
+    "amount": -23.62,
+    "category": "food",
+    "description": "Might appear",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-03-14T21:51:00+00:00"
+  },
+  {
+    "id": "fd1352b4-f454-4990-a34b-d82835f7052e",
+    "user_id": "user_001",
+    "amount": -41.48,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-03-15T06:18:00+00:00"
+  },
+  {
+    "id": "5bcc4684-33de-4bda-ab72-832ba7e892f9",
+    "user_id": "user_001",
+    "amount": 3006.97,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "HR Pay Services",
+    "timestamp": "2026-03-15T08:17:00+00:00"
+  },
+  {
+    "id": "a69e197e-791f-450c-bf24-f7197008ee05",
+    "user_id": "user_001",
+    "amount": -32.34,
+    "category": "transport",
+    "description": "Rideshare fare",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-03-15T15:53:00+00:00"
+  },
+  {
+    "id": "50049a79-5dbf-4b31-bc6f-54bde36d389f",
+    "user_id": "user_001",
+    "amount": -35.79,
+    "category": "transport",
+    "description": "Rideshare fare",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-03-16T11:09:00+00:00"
+  },
+  {
+    "id": "9c1c96fc-ee90-45f5-8771-453ac65ab05d",
+    "user_id": "user_001",
+    "amount": -92.5,
+    "category": "entertainment",
+    "description": "Concert seating",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-03-16T15:46:00+00:00"
+  },
+  {
+    "id": "efe713c2-7f41-42ca-9df2-41c385dcb627",
+    "user_id": "user_001",
+    "amount": -23.03,
+    "category": "transport",
+    "description": "Rideshare fare",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-03-18T17:03:00+00:00"
+  },
+  {
+    "id": "283e7a1a-43c0-41ee-a08a-fb001d9cc3c6",
+    "user_id": "user_001",
+    "amount": -184.03,
+    "category": "shopping",
+    "description": "Home goods",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-03-19T04:47:00+00:00"
+  },
+  {
+    "id": "6c67e44a-af21-49c5-aab0-a76a71c6c5f0",
+    "user_id": "user_001",
+    "amount": -46.79,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-03-22T19:41:00+00:00"
+  },
+  {
+    "id": "9655c285-a595-44c8-ac7b-29052e531cbc",
+    "user_id": "user_001",
+    "amount": -46.86,
+    "category": "entertainment",
+    "description": "Movie night",
+    "merchant": "CineHaus",
+    "timestamp": "2026-03-23T10:17:00+00:00"
+  },
+  {
+    "id": "8313eabe-178e-4a67-bfe8-15ddfd945df4",
+    "user_id": "user_001",
+    "amount": -71.73,
+    "category": "food",
+    "description": "Well term",
+    "merchant": "City Diner",
+    "timestamp": "2026-03-23T18:34:00+00:00"
+  },
+  {
+    "id": "399fd353-ac93-40c1-bef2-4616f4b42d10",
+    "user_id": "user_001",
+    "amount": -60.94,
+    "category": "shopping",
+    "description": "Clothing buys",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-03-24T10:52:00+00:00"
+  },
+  {
+    "id": "f8e061d5-94b9-4ed4-a820-00c8db20cf6d",
+    "user_id": "user_001",
+    "amount": -68.47,
+    "category": "entertainment",
+    "description": "Streaming bundle",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-03-24T14:43:00+00:00"
+  },
+  {
+    "id": "088740a7-acd5-474c-b606-084108c3b480",
+    "user_id": "user_001",
+    "amount": -67.53,
+    "category": "entertainment",
+    "description": "Streaming bundle",
+    "merchant": "CineHaus",
+    "timestamp": "2026-03-24T21:47:00+00:00"
+  },
+  {
+    "id": "fba2c3da-695b-4666-90ad-c0cf59b1f30d",
+    "user_id": "user_001",
+    "amount": -34.7,
+    "category": "entertainment",
+    "description": "Concert seating",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-03-25T07:41:00+00:00"
+  },
+  {
+    "id": "7536287f-9dc0-46c9-b6aa-4e915585af63",
+    "user_id": "user_001",
+    "amount": -27.31,
+    "category": "food",
+    "description": "Environment raise together",
+    "merchant": "City Diner",
+    "timestamp": "2026-03-25T12:36:00+00:00"
+  },
+  {
+    "id": "5d55a6e0-ad41-4ace-a6ec-fe64ffa38836",
+    "user_id": "user_001",
+    "amount": -30.73,
+    "category": "food",
+    "description": "Action interview for",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-03-26T07:57:00+00:00"
+  },
+  {
+    "id": "69148531-4d63-42da-b5c0-be7187d72ae7",
+    "user_id": "user_001",
+    "amount": -33.12,
+    "category": "entertainment",
+    "description": "Streaming bundle",
+    "merchant": "CineHaus",
+    "timestamp": "2026-03-26T15:14:00+00:00"
+  },
+  {
+    "id": "8296efc9-80c2-46ae-87a9-cb3f5c5bb580",
+    "user_id": "user_001",
+    "amount": -49.34,
+    "category": "food",
+    "description": "Have after cultural conference thank",
+    "merchant": "City Diner",
+    "timestamp": "2026-03-27T13:23:00+00:00"
+  },
+  {
+    "id": "d9ed7a3a-3c25-4122-891b-6b06da0f5171",
+    "user_id": "user_001",
+    "amount": -6.87,
+    "category": "transport",
+    "description": "Rideshare fare",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-03-27T21:26:00+00:00"
+  },
+  {
+    "id": "fa695ad8-a724-4260-a9bd-8f9de5e95102",
+    "user_id": "user_001",
+    "amount": -42.93,
+    "category": "food",
+    "description": "Range later best development",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-03-27T23:58:00+00:00"
+  },
+  {
+    "id": "f42bd121-f39b-4767-ad59-8d8bba2fb745",
+    "user_id": "user_001",
+    "amount": -48.5,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-03-28T20:07:00+00:00"
+  },
+  {
+    "id": "d89089f5-c275-402b-942b-a95639747528",
+    "user_id": "user_001",
+    "amount": -35.69,
+    "category": "entertainment",
+    "description": "Movie night",
+    "merchant": "CineHaus",
+    "timestamp": "2026-03-29T23:32:00+00:00"
+  },
+  {
+    "id": "3fe88169-d7f7-4b2a-b21a-749f2f93db9b",
+    "user_id": "user_001",
+    "amount": -137.56,
+    "category": "utilities",
+    "description": "Utility bundle",
+    "merchant": "TeleLink",
+    "timestamp": "2026-03-31T05:14:00+00:00"
+  },
+  {
+    "id": "00c46c16-ec7f-4436-a243-94aa6e7f48a2",
+    "user_id": "user_001",
+    "amount": -18.83,
+    "category": "food",
+    "description": "Either better provide its",
+    "merchant": "City Diner",
+    "timestamp": "2026-03-31T18:31:00+00:00"
+  },
+  {
+    "id": "43bcf1ad-5aa7-4b39-9c03-494fd23eaca5",
+    "user_id": "user_001",
+    "amount": -239.29,
+    "category": "shopping",
+    "description": "Home goods",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-04-01T00:40:00+00:00"
+  },
+  {
+    "id": "4dcee50f-da4a-41f3-90fc-92bb02aa497a",
+    "user_id": "user_001",
+    "amount": -14.27,
+    "category": "transport",
+    "description": "Rideshare fare",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-04-01T12:37:00+00:00"
+  },
+  {
+    "id": "98b34974-345f-4a7a-8231-c17ec20007fb",
+    "user_id": "user_001",
+    "amount": 3010.07,
+    "category": "income",
+    "description": "Salary credit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-04-01T16:06:00+00:00"
+  },
+  {
+    "id": "51e71fef-e6a2-4098-83d8-23927cc74709",
+    "user_id": "user_001",
+    "amount": -33.15,
+    "category": "food",
+    "description": "Away sell",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-02T18:06:00+00:00"
+  },
+  {
+    "id": "6475474e-bcde-4218-bcb2-c3f8412f638d",
+    "user_id": "user_001",
+    "amount": -46.87,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-04-02T23:39:00+00:00"
+  },
+  {
+    "id": "46312461-17c4-40ee-8467-2789bc2ba0b3",
+    "user_id": "user_001",
+    "amount": -71.86,
+    "category": "entertainment",
+    "description": "Movie night",
+    "merchant": "CineHaus",
+    "timestamp": "2026-04-03T03:42:00+00:00"
+  },
+  {
+    "id": "6e73278e-ca8e-49be-b662-28ec8a7d67b9",
+    "user_id": "user_001",
+    "amount": -42.07,
+    "category": "food",
+    "description": "Yourself tend",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-03T11:34:00+00:00"
+  },
+  {
+    "id": "14771b2a-d7de-45b7-8966-a96936a5a24c",
+    "user_id": "user_001",
+    "amount": -226.49,
+    "category": "shopping",
+    "description": "Home goods",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-04-05T04:08:00+00:00"
+  },
+  {
+    "id": "1afea3ca-8d6f-48ac-995f-689c2fd5361a",
+    "user_id": "user_001",
+    "amount": -42.3,
+    "category": "shopping",
+    "description": "Clothing buys",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-04-05T05:24:00+00:00"
+  },
+  {
+    "id": "31f5fc10-6123-4a65-aa33-b44ca9ae9c7d",
+    "user_id": "user_001",
+    "amount": -87.64,
+    "category": "food",
+    "description": "Seven anything day",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-05T11:30:00+00:00"
+  },
+  {
+    "id": "8db35523-3c6d-46a0-aaeb-154fc59b9339",
+    "user_id": "user_001",
+    "amount": -111.69,
+    "category": "shopping",
+    "description": "Clothing buys",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-04-05T11:47:00+00:00"
+  },
+  {
+    "id": "37ac4408-f8de-44ff-84c9-f7836877d966",
+    "user_id": "user_001",
+    "amount": -68.53,
+    "category": "utilities",
+    "description": "Utility bundle",
+    "merchant": "TeleLink",
+    "timestamp": "2026-04-05T19:14:00+00:00"
+  },
+  {
+    "id": "502db1cd-9fc2-40e0-8049-86dbfc724c43",
+    "user_id": "user_001",
+    "amount": -22.74,
+    "category": "food",
+    "description": "Build somebody condition wear",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-05T19:18:00+00:00"
+  },
+  {
+    "id": "cb06c64c-2b46-49fb-907b-27ebb3fcce38",
+    "user_id": "user_001",
+    "amount": -70.65,
+    "category": "entertainment",
+    "description": "Movie night",
+    "merchant": "CineHaus",
+    "timestamp": "2026-04-05T20:25:00+00:00"
+  },
+  {
+    "id": "b7eb1c4c-3ccc-4974-9129-8d35abaae8ef",
+    "user_id": "user_001",
+    "amount": -64.62,
+    "category": "food",
+    "description": "Realize reflect until son",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-06T01:05:00+00:00"
+  },
+  {
+    "id": "b87c2134-998f-4d19-bd30-97417eb8ce4a",
+    "user_id": "user_001",
+    "amount": -75.69,
+    "category": "entertainment",
+    "description": "Streaming bundle",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-04-07T06:56:00+00:00"
+  },
+  {
+    "id": "ae7f9aa9-380c-4759-8848-211077e70d99",
+    "user_id": "user_001",
+    "amount": -186.04,
+    "category": "utilities",
+    "description": "Utility bundle",
+    "merchant": "TeleLink",
+    "timestamp": "2026-04-08T05:14:00+00:00"
+  },
+  {
+    "id": "c1b05e8f-f556-4908-9f1c-cbb890985017",
+    "user_id": "user_001",
+    "amount": -99.64,
+    "category": "utilities",
+    "description": "Utility bundle",
+    "merchant": "TeleLink",
+    "timestamp": "2026-04-08T14:42:00+00:00"
+  },
+  {
+    "id": "27783f66-a305-48a5-877c-379dcd40038a",
+    "user_id": "user_001",
+    "amount": -27.41,
+    "category": "food",
+    "description": "Quality few professional",
+    "merchant": "City Diner",
+    "timestamp": "2026-04-09T20:53:00+00:00"
+  },
+  {
+    "id": "36b37775-eb5a-4b05-9a07-1859d2ab9a5c",
+    "user_id": "user_001",
+    "amount": -26.38,
+    "category": "food",
+    "description": "Better dream toward bank mean",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-10T01:22:00+00:00"
+  },
+  {
+    "id": "f1eb25e4-9429-48f7-b233-44ec7286bae6",
+    "user_id": "user_001",
+    "amount": -64.48,
+    "category": "entertainment",
+    "description": "Concert seating",
+    "merchant": "CineHaus",
+    "timestamp": "2026-04-11T02:30:00+00:00"
+  },
+  {
+    "id": "f1ff61d7-c562-4313-91bb-21695054e8c7",
+    "user_id": "user_001",
+    "amount": -65.28,
+    "category": "food",
+    "description": "Build bit around them",
+    "merchant": "City Diner",
+    "timestamp": "2026-04-13T04:06:00+00:00"
+  },
+  {
+    "id": "5035179b-0d31-46c5-873f-00e6cf5f47c5",
+    "user_id": "user_001",
+    "amount": -43.59,
+    "category": "shopping",
+    "description": "Home goods",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-04-13T17:38:00+00:00"
+  },
+  {
+    "id": "ba18ba26-2aa0-4b7c-92e1-116bd37437e7",
+    "user_id": "user_001",
+    "amount": -80.53,
+    "category": "food",
+    "description": "Foreign building individual",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-13T20:15:00+00:00"
+  },
+  {
+    "id": "6ea246b8-3615-4c78-848e-c31fddbecbde",
+    "user_id": "user_001",
+    "amount": -12.85,
+    "category": "food",
+    "description": "Why as major",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-14T04:10:00+00:00"
+  },
+  {
+    "id": "5d3ea271-9997-47fa-85d8-d79556973541",
+    "user_id": "user_001",
+    "amount": -75.18,
+    "category": "utilities",
+    "description": "Gas bill",
+    "merchant": "PowerCo",
+    "timestamp": "2026-04-16T15:41:00+00:00"
+  },
+  {
+    "id": "4e3aad46-57f6-47e2-8192-35badce93c9b",
+    "user_id": "user_001",
+    "amount": -29.73,
+    "category": "transport",
+    "description": "Fuel top-up",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-04-17T04:33:00+00:00"
+  },
+  {
+    "id": "8c273388-163d-42c5-88f0-0fbc51928b8c",
+    "user_id": "user_001",
+    "amount": -29.63,
+    "category": "transport",
+    "description": "Rideshare fare",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-04-17T05:17:00+00:00"
+  },
+  {
+    "id": "7094465f-2ed8-4d06-98fa-251cae66fde6",
+    "user_id": "user_001",
+    "amount": -29.43,
+    "category": "food",
+    "description": "Commercial eye light per",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-17T15:06:00+00:00"
+  },
+  {
+    "id": "723a2920-8e77-466e-9daa-6ef0cfcfef1b",
+    "user_id": "user_001",
+    "amount": -160.6,
+    "category": "shopping",
+    "description": "Home goods",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-04-17T19:16:00+00:00"
+  },
+  {
+    "id": "8f74e868-a8bc-4076-9a5a-2572389be4b4",
+    "user_id": "user_001",
+    "amount": -204.94,
+    "category": "shopping",
+    "description": "Clothing buys",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-04-18T11:32:00+00:00"
+  },
+  {
+    "id": "48f8b252-1eae-448c-92a9-935771bdac4d",
+    "user_id": "user_001",
+    "amount": -158.06,
+    "category": "utilities",
+    "description": "Utility bundle",
+    "merchant": "PowerCo",
+    "timestamp": "2026-04-19T06:12:00+00:00"
+  },
+  {
+    "id": "aa820197-c875-4e9b-984c-e2d0b70c7677",
+    "user_id": "user_001",
+    "amount": -18.74,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-04-19T11:19:00+00:00"
+  },
+  {
+    "id": "f388262b-6fe0-4d81-a001-f6c16cf1dd79",
+    "user_id": "user_001",
+    "amount": -64.72,
+    "category": "entertainment",
+    "description": "Streaming bundle",
+    "merchant": "CineHaus",
+    "timestamp": "2026-04-19T16:49:00+00:00"
+  },
+  {
+    "id": "1f4520d7-8bd6-417e-ad78-db410461c7fb",
+    "user_id": "user_001",
+    "amount": 2986.63,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-04-19T22:46:00+00:00"
+  },
+  {
+    "id": "4bd9f338-7f58-475b-8ab9-39485fba4b14",
+    "user_id": "user_001",
+    "amount": -27.87,
+    "category": "food",
+    "description": "Do require task thus",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-20T08:47:00+00:00"
+  },
+  {
+    "id": "02f0e3da-4913-44f0-a3e9-ca184e1449a3",
+    "user_id": "user_001",
+    "amount": -61.75,
+    "category": "health",
+    "description": "Clinic copay",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-04-20T15:03:00+00:00"
+  },
+  {
+    "id": "2cf1ebd7-42d2-420c-b9b5-148d25d7ac29",
+    "user_id": "user_001",
+    "amount": -21.6,
+    "category": "transport",
+    "description": "Fuel top-up",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-04-21T03:02:00+00:00"
+  },
+  {
+    "id": "35f36c60-ee14-459b-85a0-563a9a50d3e3",
+    "user_id": "user_001",
+    "amount": -31.8,
+    "category": "food",
+    "description": "Doctor enter people hear",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-22T03:02:00+00:00"
+  },
+  {
+    "id": "7cb6bb30-d2fb-4d37-8624-e50937709ab4",
+    "user_id": "user_001",
+    "amount": -19.57,
+    "category": "food",
+    "description": "Ok however",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-22T06:20:00+00:00"
+  },
+  {
+    "id": "0a87a133-ac68-440a-b283-b0e53c8fa4f0",
+    "user_id": "user_001",
+    "amount": -22.9,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-04-22T07:51:00+00:00"
+  },
+  {
+    "id": "d8a4bef2-ea3a-462a-a6bd-a46d93422b18",
+    "user_id": "user_001",
+    "amount": -28.07,
+    "category": "health",
+    "description": "Clinic copay",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-04-22T13:00:00+00:00"
+  },
+  {
+    "id": "611ba5c8-dac6-4acd-bd13-b934c940bbd2",
+    "user_id": "user_001",
+    "amount": -23.24,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-04-22T17:45:00+00:00"
+  },
+  {
+    "id": "6f6bc61b-e04b-4e20-ad55-fd71f5baf4be",
+    "user_id": "user_001",
+    "amount": -32.62,
+    "category": "food",
+    "description": "Exactly police together newspaper number",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-23T23:59:00+00:00"
+  },
+  {
+    "id": "0f703cd2-817e-4e7b-abbe-de6531aa3e50",
+    "user_id": "user_001",
+    "amount": -178.29,
+    "category": "utilities",
+    "description": "Gas bill",
+    "merchant": "City Utilities",
+    "timestamp": "2026-04-24T00:10:00+00:00"
+  },
+  {
+    "id": "a22f697e-66a0-4ec9-8692-db87afefe4a7",
+    "user_id": "user_001",
+    "amount": -12.98,
+    "category": "food",
+    "description": "Role me remain memory",
+    "merchant": "City Diner",
+    "timestamp": "2026-04-24T20:36:00+00:00"
+  },
+  {
+    "id": "651f2c49-7a6d-44e0-8ec4-bbfa779af1c8",
+    "user_id": "user_001",
+    "amount": -35.27,
+    "category": "transport",
+    "description": "Fuel top-up",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-04-26T22:04:00+00:00"
+  },
+  {
+    "id": "00899c9e-fcad-4a91-a24f-9e8094f9b6a5",
+    "user_id": "user_001",
+    "amount": -16.83,
+    "category": "food",
+    "description": "Trade exist brother",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-28T05:40:00+00:00"
+  },
+  {
+    "id": "5432034a-80f9-423e-bf27-a9813c6e0cf2",
+    "user_id": "user_001",
+    "amount": -57.66,
+    "category": "health",
+    "description": "Pharmacy refill",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-04-28T17:45:00+00:00"
+  },
+  {
+    "id": "7ab70125-ed4d-43c1-bfb0-09ad6bdf9034",
+    "user_id": "user_001",
+    "amount": -12.87,
+    "category": "food",
+    "description": "Forward reduce month skin act",
+    "merchant": "City Diner",
+    "timestamp": "2026-04-29T16:39:00+00:00"
+  },
+  {
+    "id": "2157cea1-4cbc-483b-bdb0-f403c8464301",
+    "user_id": "user_001",
+    "amount": -33.08,
+    "category": "transport",
+    "description": "Rideshare fare",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-04-30T09:15:00+00:00"
+  },
+  {
+    "id": "fe40838b-e5a4-44a7-9fd2-8216429323c2",
+    "user_id": "user_001",
+    "amount": -21.94,
+    "category": "food",
+    "description": "Forget son in",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-30T17:38:00+00:00"
+  },
+  {
+    "id": "59d5620b-cb49-429a-8709-583c790a82e6",
+    "user_id": "user_001",
+    "amount": -7.25,
+    "category": "transport",
+    "description": "Rideshare fare",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-05-01T15:30:00+00:00"
+  },
+  {
+    "id": "6e071883-99e3-43ae-a9b8-0c3b9cecb664",
+    "user_id": "user_001",
+    "amount": -22.36,
+    "category": "food",
+    "description": "Government whom term hand",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-05-01T18:09:00+00:00"
+  },
+  {
+    "id": "aac54d80-c546-4398-a63e-d6879f54e2e4",
+    "user_id": "user_001",
+    "amount": -61.53,
+    "category": "entertainment",
+    "description": "Movie night",
+    "merchant": "CineHaus",
+    "timestamp": "2026-05-02T03:02:00+00:00"
+  },
+  {
+    "id": "a7c8ed0d-45d4-492d-9654-7fc8ed21122f",
+    "user_id": "user_001",
+    "amount": -178.98,
+    "category": "health",
+    "description": "Clinic copay",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-05-02T03:18:00+00:00"
+  },
+  {
+    "id": "ef828c76-fcb4-48ea-814d-da947bdcb9f9",
+    "user_id": "user_001",
+    "amount": -26.54,
+    "category": "food",
+    "description": "Must question go total yourself",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-05-03T03:44:00+00:00"
+  },
+  {
+    "id": "80d73954-413d-4242-acb5-04347ecab127",
+    "user_id": "user_001",
+    "amount": -43.7,
+    "category": "transport",
+    "description": "Transit pass",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-05-03T14:55:00+00:00"
+  },
+  {
+    "id": "46f310f5-1505-4ea0-a9da-f4862351e9f5",
+    "user_id": "user_001",
+    "amount": -192.42,
+    "category": "utilities",
+    "description": "Phone & internet",
+    "merchant": "PowerCo",
+    "timestamp": "2026-05-04T19:46:00+00:00"
+  },
+  {
+    "id": "539b0932-7025-4aa5-90d2-86f696790c7c",
+    "user_id": "user_001",
+    "amount": -40.08,
+    "category": "entertainment",
+    "description": "Movie night",
+    "merchant": "CineHaus",
+    "timestamp": "2026-05-06T09:35:00+00:00"
+  },
+  {
+    "id": "8950cec5-6da3-4b69-9697-1652d3a1f531",
+    "user_id": "user_001",
+    "amount": -82.93,
+    "category": "health",
+    "description": "Clinic copay",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-05-06T19:45:00+00:00"
+  },
+  {
+    "id": "6c10b155-1978-42e0-b253-8f2da5c82700",
+    "user_id": "user_001",
+    "amount": -121.95,
+    "category": "utilities",
+    "description": "Phone & internet",
+    "merchant": "PowerCo",
+    "timestamp": "2026-05-07T08:48:00+00:00"
+  },
+  {
+    "id": "7c2865bd-532e-449b-8e6e-846d015b830a",
+    "user_id": "user_001",
+    "amount": -247.63,
+    "category": "shopping",
+    "description": "Clothing buys",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-05-07T18:23:00+00:00"
+  },
+  {
+    "id": "6f540e8d-081a-49bf-b587-f9e33b28296e",
+    "user_id": "user_001",
+    "amount": 3004.46,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-05-08T00:30:00+00:00"
+  }
+]
