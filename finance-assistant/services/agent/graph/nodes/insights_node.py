@@ -166,6 +166,32 @@ def aggregate_insights(transactions: list[dict]) -> dict | None:
     }
 
 
+def _budget_comparison(by_category: dict[str, float], budgets: list[dict]) -> dict:
+    """Compare actual monthly-equivalent spending against budget targets.
+
+    Returns a dict keyed by category with actual vs. limit vs. pct_used.
+    """
+    if not budgets:
+        return {}
+
+    budget_map = {b["category"]: float(b["monthly_limit"]) for b in budgets}
+    comparison: dict[str, dict] = {}
+
+    for cat, actual in sorted(by_category.items()):
+        limit = budget_map.get(cat)
+        if limit is None:
+            continue
+        pct = round(actual / limit * 100, 1) if limit > 0 else None
+        comparison[cat] = {
+            "actual": round(actual, 2),
+            "monthly_limit": limit,
+            "pct_used": pct,
+            "status": "over" if (pct or 0) > 100 else "warning" if (pct or 0) > 80 else "ok",
+        }
+
+    return comparison
+
+
 def insights_node(state: AgentState):
     bundle = state.get("transaction_data") or {}
     txs = list(bundle.get("transactions") or [])
@@ -173,11 +199,19 @@ def insights_node(state: AgentState):
     insights_payload = aggregate_insights(txs)
 
     if not insights_payload:
-
         _log.info({"event": "insights_empty_dataset"})
-
         return {"insights": None}
 
-    _log.info({"event": "insights_ready", **{"top_category": insights_payload.get("top_category")}})
+    # Attach budget comparison when budget data was fetched by transactions_node.
+    budgets = bundle.get("budgets") or []
+    if budgets:
+        comparison = _budget_comparison(insights_payload.get("by_category", {}), budgets)
+        if comparison:
+            insights_payload["budget_comparison"] = comparison
+            over_budget = [c for c, v in comparison.items() if v["status"] == "over"]
+            if over_budget:
+                insights_payload["over_budget_categories"] = over_budget
+
+    _log.info({"event": "insights_ready", "top_category": insights_payload.get("top_category"), "budget_cats": len(budgets)})
 
     return {"insights": insights_payload}

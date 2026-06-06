@@ -1,211 +1,382 @@
 # AI-Powered Personal Finance Assistant — Project Overview
 
-This document summarizes what the demo does, how the pieces fit together, and what each major technology is responsible for.
+> Full audit and improvement history: `BACKEND_AUDIT_ROADMAP.md`
 
 ---
 
-## 1. Project summary
+## 1. High-level architecture
 
-The **Finance Assistant** is a **locally runnable** proof of concept that combines:
+```mermaid
+graph TB
+    subgraph UI["Frontend  :8501"]
+        CHAT["💬 Chat tab\nStarter prompts · session memory\nPOST /chat or /chat/stream"]
+        DASH["📊 Dashboard tab\nHealth · metrics · accounts\nbudget vs actual · intent chart"]
+    end
 
-- A **chat-style UI** (Streamlit),
-- A **backend agent** exposed as REST (FastAPI + **LangGraph**),
-- **Mock banking data** (FastAPI + SQLite / JSON seeds),
-- A local **large language model** and **embedding model** via **Ollama** (**LangChain** bindings),
-- **Retrieval-Augmented Generation (RAG)** over a small Markdown knowledge base (**Chroma**),
-- Short-term **conversation memory** (**Redis** or in-process fakeredis).
+    subgraph Agent["Agent API  :8000"]
+        direction TB
+        API["FastAPI\n/chat · /chat/stream\n/health · /metrics"]
+        GRAPH["LangGraph\nstateful multi-node graph"]
+        REDIS["FakeRedis / Redis\nsession memory per session_id"]
+        RETRIEVER["Hybrid RAG Retriever\nBM25 + Chroma + RRF"]
+        CHROMA[("Chroma\nlocal_data/chroma/\n11 documents · 800-char chunks")]
+        OLLAMA["Ollama  :11434\nllama3.2 (chat)\nnomic-embed-text (embed)"]
+        PROM1["Prometheus /metrics\nrequests · latency · RAG hits"]
 
-**Important:** Production banking is **not** connected. Transactions come from seeded **mock data** (`user_001`) so you can test flows without real accounts.
+        API --> GRAPH
+        GRAPH --> REDIS
+        GRAPH --> RETRIEVER
+        RETRIEVER --> CHROMA
+        RETRIEVER --> OLLAMA
+        GRAPH --> OLLAMA
+    end
 
-Primary entry point: `python run_local.py` from the `finance-assistant/` directory (optionally `--skip-ingest`, `--no-ui`).
+    subgraph Mock["Mock Banking API  :8001"]
+        direction TB
+        ROUTES["FastAPI routes\n/transactions · /accounts\n/budgets · /metrics"]
+        DB[("SQLite\n2 users · 600 transactions\n4 accounts · 12 budget targets")]
+        PROM2["Prometheus middleware\nper-endpoint counters + latency"]
 
----
+        ROUTES --> DB
+    end
 
-## 2. What the system does (end-to-end)
-
-1. The user types a question in **Streamlit** (or calls the **Agent API** / optional **n8n** webhook).
-2. The **Agent** runs a **LangGraph** workflow: classify intent → fetch or retrieve context → compute structured insights → generate a natural-language reply.
-3. For **money-in-the-ledger** questions, the agent calls the **mock banking API** (`/transactions`), then aggregates totals, categories, and (where relevant) calendar week comparisons.
-4. For **educational budgeting / finance** questions routed as advice, it may retrieve **chunks** from **Chroma** (RAG) and pass them into the reply.
-5. Replies honor **insights JSON** when present (so aggregates are grounded in fetched rows), with defensive handling when APIs fail or return no rows.
-
----
-
-## 3. Repository layout (main areas)
-
-| Path | Role |
-|------|------|
-| `run_local.py` | Orchestrator: `.env`, optional Chroma ingest, starts mock-api, agent, Streamlit; Windows port hygiene. |
-| `services/agent/` | LangGraph pipeline, FastAPI `/chat`, RAG ingestion/retrieval, Redis memory, Ollama via LangChain. |
-| `services/mock-api/` | FastAPI “bank”: SQLite + seeded transactions, filtering, summaries. |
-| `services/frontend/` | Streamlit app: chat UI, sessions, POST to agent. |
-| `services/n8n/workflows/` | Optional workflow: webhook routes to `/chat` with `route_hint`. |
-| `local_data/` | Default persisted Chroma database (embedded). Created at runtime when using persist mode. |
-
----
-
-## 4. Components in detail
-
-### 4.1 Streamlit (`services/frontend/app.py`)
-
-- **Purpose:** User-facing chat.
-- **Behavior:** Sends `POST /chat` with `message`, `session_id`, and `user_id` (editable in the sidebar; usually `user_001` for mocks).
-- **Configuration:** Loads `.env` from `finance-assistant/`; resolves `AGENT_API_URL` so Docker hostname `agent` becomes `127.0.0.1:8000` when running locally.
-- **Relationship:** Depends on the Agent API being up.
-
-### 4.2 Agent API — FastAPI (`services/agent/agent_app.py`)
-
-- **Purpose:** Single HTTP surface that runs the LangGraph graph.
-- **Key routes:**  
-  - `POST /chat` — main turn; merges Redis history into state, invokes graph, stores turn in memory.  
-  - History endpoints for snapshots / clears.  
-  - `/health`.
-- **`local_env`:** Rewrites Compose-style hostnames in env (`mock-api`, `ollama`, `redis`) to `127.0.0.1` for bare-metal runs.
-- **`run_server.py`:** In-process `uvicorn` on port **8000** (avoids Windows import path issues).
-
-### 4.3 LangGraph (`services/agent/graph/`)
-
-**LangGraph** models the agent as a **state machine** (graph of nodes) over a shared `AgentState` (messages, user/session ids, intent, transaction payload, insights, RAG snippets, final text).
-
-**Flow (simplified):**
-
-```
-intent_router
-    ├─ transaction_query / insight_request → transactions_node → insights_node → response_node → END
-    ├─ financial_advice → rag_node → response_node → END
-    └─ general → response_node → END
+    UI -->|"POST /chat\nPOST /chat/stream"| API
+    UI -->|"GET /accounts\nGET /budgets\nGET /metrics\nGET /summary"| Mock
+    GRAPH -->|"GET /transactions\nGET /budgets"| Mock
 ```
 
-| Node | Responsibility |
-|------|----------------|
-| **`intent_router`** | Uses **ChatOllama** (LangChain) to label intent; heuristic fallbacks/heuristic upgrades avoid always landing on `general` when ledger language is obvious. |
-| **`transactions_node`** | Calls **`BANKING_API_URL`/transactions** with JSON filters extracted by LLM + phrase fallbacks (e.g. week ranges, widening on empty hits, default lookback window for insight/txn intents). |
-| **`insights_node`** | Pure Python aggregation on fetched transactions: totals, by category, averages, calendar week splits (`calendar_week_comparison`), etc. |
-| **`rag_node`** | Embedding query → Chroma similarity search → top-k snippets attached to state. |
-| **`response_node`** | Final **ChatOllama** synthesis using intent, truncated transaction preview (for illustration only), **INSIGHT JSON**, RAG lines, Redis transcript; safeguards when API/errors/empty dataset. |
+---
 
-**Why LangChain + LangGraph together?** LangChain supplies **promptable LLM/embeddings wrappers** consistent with ecosystem tooling; LangGraph supplies **routing, state, and multi-step pipelines** clearer than one flat chain for this demo.
+## 2. LangGraph agent — full workflow
 
-### 4.4 LangChain (within the agent)
+```mermaid
+flowchart TD
+    START([User message arrives\nPOST /chat or /chat/stream]) --> SNAP
 
-**Used for:**
+    SNAP["agent_app.py\nload memory_snapshot from Redis\nbuild AgentState\nGRAPH.invoke or GRAPH.ainvoke"]
 
-- **`ChatOllama`** — chat model (default `llama3.2`) for intent, parameter extraction, and final answer.
-- **`OllamaEmbeddings`** — embedding model (default `nomic-embed-text`) for RAG query and ingest.
-- **Message types** — `HumanMessage` / `AIMessage` in graph state and history replay.
+    SNAP --> IR
 
-**Not the whole app:** Business rules (aggregation, HTTP to mock bank, Chroma I/O) are ordinary Python.
+    subgraph Graph["LangGraph Graph"]
+        IR["intent_router\n──────────────────\nChatOllama classification\nheuristic fallback if LLM down\nledger-language boost\nsafe_invoke_or_none + tenacity retry"]
 
-### 4.5 Ollama
+        IR -->|"transaction_query\ninsight_request\nfinancial_advice"| TN
 
-- **Role:** Local inference server for **LLM** and **embeddings** (no cloud API key required for the default path).
-- **Config:** `.env` → `OLLAMA_BASE_URL`, `OLLAMA_MODEL`, `OLLAMA_EMBED_MODEL`.
-- **Operational note:** If Ollama is down, the graph uses **controlled fallbacks** (heuristics, structured summaries without chat polish) depending on node; unreliable answers without data are discouraged in prompts.
+        TN["transactions_node\n──────────────────\nChatOllama extracts:\nstart_date · end_date · category · limit\nGET /transactions on mock API\nGET /budgets for advice+insight intents\nwiden query on empty results"]
 
-### 4.6 Mock banking API (`services/mock-api/`)
+        TN --> IN
 
-- **Purpose:** Simulate a bank ledger for development.
-- **Stack:** FastAPI + SQLAlchemy + SQLite under `services/mock-api/data/`, seeded from `mock_transactions.json` (single demo user **`user_001`**).
-- **Endpoints:** Listing transactions with filters (`user_id`, `start_date`, `end_date`, `category`, `limit`), transaction detail, optional summary helpers.
-- **`run_server.py`:** In-process uvicorn on **8001**.
-- **`BANKING_API_URL`:** Typically `http://127.0.0.1:8001`; must match wherever the mock service listens.
+        IN["insights_node\n──────────────────\ntotals · by_category\navg daily · biggest transaction\ncalendar week comparison\nbudget_comparison: pct_used\nover_budget_categories list"]
 
-### 4.7 Chroma (RAG vector store)
+        IN -->|"financial_advice"| RN
+        IN -->|"transaction_query\ninsight_request"| RES
 
-- **Purpose:** Stores **chunks** of Markdown docs (`services/agent/rag/documents/*.md`), retrieved by semantic similarity.
-- **Modes (via `.env`):**  
-  - **Default:** `CHROMA_MODE=persist` — embedded **SQLite-backed** persistence under **`local_data/chroma/`** (no separate Chroma server).  
-  - **Optional:** `CHROMA_MODE=http` — client talks to a remote Chroma host/port.
-- **Ingest:** `rag/ingest.py` — loads `.md`, splits text, embeds with Ollama, writes collection `CHROMA_COLLECTION` (e.g. `finance_knowledge`). Invoked from `run_local.py` unless `--skip-ingest`.
-- **Retrieval:** `rag/retriever.py` — query embedding + `collection.query` → snippets for `rag_node`.
-- **When RAG runs:** Only when intent is **`financial_advice`** (graph routes to `rag_node`). Transaction/insight paths do not require RAG for numeric answers.
+        RN["rag_node\n──────────────────\nmap intent + keywords → topic whitelist\ncall RAGRetriever.retrieve\nBM25 + vector + RRF\ntop-4 chunks with score ≥ 0.20"]
 
-### 4.8 Redis / memory (`services/agent/memory/redis_memory.py`)
+        RN --> RES
 
-- **Purpose:** Per-`session_id` chat history (last turns) so the agent can see recent context on the next message.
-- **Default demo:** `REDIS_USE_FAKEREDIS=true` — **in-process** fake Redis; no daemon install.
-- **Production-style:** `REDIS_USE_FAKEREDIS=false` + `REDIS_URL` pointing at real Redis.
-- **Usage:** Read at start of `/chat`, written after each completed reply.
+        IR -->|"general"| RES
 
-### 4.9 RAG corpus (static knowledge)
+        RES["response_node\n──────────────────\nassemble system prompt\nhuman payload:\n  • insights JSON\n  • transaction preview ≤35 rows\n  • RAG chunk lines\n  • memory_snapshot last-5 turns\n\nIF streaming_mode=True:\n  → return streaming_context dict\n  → skip LLM call\n\nIF streaming_mode=False:\n  → safe_invoke_or_none ChatOllama\n  → fallback: _offline_summary"]
+    end
 
-- **Location:** `services/agent/rag/documents/` (e.g. budgeting, saving, financial literacy topics).
-- **Role:** Grounding for **educational** answers, not for user-specific balances (those always come from mock API + insights).
+    RES -->|"streaming_mode=False"| WRITE["Write user+assistant turns\nto Redis\nReturn JSON response"]
 
-### 4.10 Optional n8n (`services/n8n/workflows/finance_workflow.json`)
+    RES -->|"streaming_mode=True\n/chat/stream endpoint"| STREAM["llm.astream prompt_context\nyield data:{token:...} SSE events\nWrite Redis after final token\nyield data:[DONE]"]
 
-- **Not started by `run_local.py`.**
-- **Pattern:** External clients hit an n8n **Webhook**; workflow classifies a simple “advice vs data” flag and **POSTs** to `http://127.0.0.1:8000/chat` with optional `route_hint`.
-- **No LLM inside this sample workflow** — n8n is orchestration only; the **Finance agent** still performs intelligence.
-
-### 4.11 Configuration (`.env` / `.env.example`)
-
-Typical variables include: Ollama URLs/models, Chroma mode/paths/collection, Redis URL + fakeredis flag, `BANKING_API_URL`, `AGENT_API_URL`, `DEFAULT_USER_ID`, `LOG_LEVEL`, optional n8n auth placeholders. See `.env.example` for the template.
+    WRITE --> END1([Response to client])
+    STREAM --> END2([SSE stream to client])
+```
 
 ---
 
-## 5. Data flow diagram (logical)
+## 3. RAG pipeline — ingest and retrieval
 
 ```mermaid
 flowchart LR
-  subgraph clients [Clients]
-    ST[Streamlit 8501]
-    N8N[Optional n8n]
-  end
-  subgraph agent [Agent 8000]
-    LG[LangGraph]
-    LC[LangChain Ollama]
-    REDIS[(Redis / fakeredis)]
-    CH[chroma persist]
-  end
-  MOCK[Mock bank API 8001]
-  OLL[Ollama 11434]
-  ST --> LG
-  N8N --> LG
-  LG --> LC
-  LG --> MOCK
-  LG --> CH
-  LG --> REDIS
-  LC --> OLL
+    subgraph Ingest["Ingest  ·  rag/ingest.py  ·  run once"]
+        direction TB
+        D1["emergency_fund_sizing.md"]
+        D2["50_30_20_rule.md"]
+        D3["debt_payoff_strategies.md"]
+        D4["investment_basics.md"]
+        D5["credit_score_factors.md"]
+        D6["tax_saving_accounts.md"]
+        D7["spending_benchmarks.md"]
+        D8["subscription_audit.md"]
+        D9["+ 3 pre-existing docs"]
+
+        PASS1["Pass 1\nMarkdownHeaderTextSplitter\n## → section metadata\n### → subsection metadata"]
+        PASS2["Pass 2\nRecursiveCharacterTextSplitter\nchunk_size=800\noverlap=160 (20%)"]
+        EMBED["OllamaEmbeddings\nnomic-embed-text\nbatch=48 chunks"]
+        STORE[("Chroma collection\nfinance_knowledge\nid · embedding · text · metadata\nsource · topic · section")]
+
+        D1 & D2 & D3 & D4 --> PASS1
+        D5 & D6 & D7 & D8 & D9 --> PASS1
+        PASS1 --> PASS2 --> EMBED --> STORE
+    end
+
+    subgraph Startup["Startup  ·  RAGRetriever.__init__"]
+        FETCH["collection.get all docs"]
+        BM25["BM25Okapi index\ntokenized corpus\nin memory"]
+        FETCH --> BM25
+        STORE -.-> FETCH
+    end
+
+    subgraph Query["Query  ·  RAGRetriever.retrieve"]
+        direction TB
+        QIN["query string"]
+        FILT["Topic filter\nintent + keyword → whitelist\nwhere topic IN list"]
+
+        VEC["Dense search\nembed_query → Chroma.query\nn_candidates = top_k × 3\nranked list A with distances"]
+        KW["Sparse search\nBM25Okapi.get_scores\ntopicfiltered\nranked list B"]
+
+        RRF["Reciprocal Rank Fusion\nk = 60\nscore d = Σ 1 / 60 + rank d + 1\nmerged ranked list"]
+
+        MISS["Fetch BM25-only IDs\nfrom Chroma individually"]
+        THR["Score threshold ≥ 0.20\nreturn top-4 chunks\ncontent · source · topic · score"]
+
+        QIN --> FILT
+        FILT --> VEC & KW
+        VEC & KW --> RRF
+        RRF --> MISS --> THR
+    end
 ```
 
 ---
 
-## 6. Technology cheat sheet
+## 4. Mock Banking API — data model
 
-| Piece | Type | What it does here |
-|--------|------|---------------------|
-| **Python** | Language | Implement services, agent, mocks, ingest. |
-| **FastAPI** | Web framework | Agent + mock banking HTTP APIs. |
-| **LangGraph** | Agent orchestration | Intent → tools/data steps → reply. |
-| **LangChain** | LLM/embedding wrappers | ChatOllama, OllamaEmbeddings. |
-| **Ollama** | Local inference | LLM + embedder binaries. |
-| **Chroma** | Vector DB | Persisted RAG store (default embedded). |
-| **Redis / fakeredis** | Memory store | Short chat history per session. |
-| **Streamlit** | UI | Interactive chat frontend. |
-| **httpx** | HTTP client | Agent → mock bank from `transactions_node`. |
-| **SQLAlchemy / SQLite** | Persistence | Mock bank transaction storage. |
-| **dotenv** | Config | `.env` loading across services. |
-| **n8n** (optional) | Automation | Routes webhooks into `/chat`. |
+```mermaid
+erDiagram
+    TransactionRecord {
+        string id PK
+        string user_id
+        float  amount
+        string category
+        string description
+        string merchant
+        datetime timestamp
+    }
+
+    AccountRecord {
+        string id PK
+        string user_id
+        string name
+        string account_type
+        float  balance
+        string currency
+        datetime last_updated
+    }
+
+    BudgetRecord {
+        string id PK
+        string user_id
+        string category
+        float  monthly_limit
+        datetime updated_at
+    }
+
+    TransactionRecord }|--|| User : "belongs to"
+    AccountRecord     }|--|| User : "belongs to"
+    BudgetRecord      }|--|| User : "belongs to"
+```
+
+**Seed data:** 2 users (`user_001`, `user_002`) · 300 transactions each · 180-day window · 50+ merchants · 7 categories · 2 accounts per user · 6 budget targets per user
 
 ---
 
-## 7. Operational tips
+## 5. API endpoints
 
-1. Start with **`python run_local.py`**; confirm **mock 8001** and **agent 8000** both listen (avoid port conflicts).
-2. Use **`DEFAULT_USER_ID` / sidebar User ID** matching seeded data (**`user_001`** unless you extend seeds).
-3. Ensure **Ollama** has **`llama3.2`** and **`nomic-embed-text`** pulled if ingest/RAG/embeddings matter.
-4. After changing RAG Markdown, run ingest (full `run_local` without `--skip-ingest`, or your ingest command).
-5. For architecture at a glance, see also `README.md` in this folder.
+### Agent API  `http://127.0.0.1:8000`
+
+```mermaid
+graph LR
+    subgraph AgentEndpoints["Agent API  :8000"]
+        C1["POST /chat\nrate limit 30/min\nPydantic validation\nPrometheus counter+timer"]
+        C2["POST /chat/stream\nrate limit 20/min\nSSE — data:{token:...}\ndata:[DONE]"]
+        C3["GET /chat/history/{session_id}"]
+        C4["DELETE /chat/history/{session_id}"]
+        C5["GET /health\nstatus + ollama reachability"]
+        C6["GET /metrics\nPrometheus text format"]
+    end
+```
+
+### Mock Banking API  `http://127.0.0.1:8001`
+
+```mermaid
+graph LR
+    subgraph MockEndpoints["Mock Banking API  :8001"]
+        M1["GET /transactions\nuser_id · start_date · end_date\ncategory · limit 1-250"]
+        M2["GET /transactions/summary\nperiod=weekly|monthly|all\naggregated metrics"]
+        M3["GET /transactions/{id}"]
+        M4["GET /accounts\nuser_id filter"]
+        M5["GET /accounts/{id}"]
+        M6["GET /accounts/{id}/balance\nbalance · currency · last_updated"]
+        M7["GET /budgets/{user_id}\nall category limits"]
+        M8["PUT /budgets/{user_id}\nupsert targets — body: list of BudgetCategory"]
+        M9["GET /health"]
+        M10["GET /metrics\nPrometheus — per endpoint"]
+    end
+```
 
 ---
 
-## 8. Out of scope / limitations (by design)
+## 6. Streamlit dashboard
 
-- No real PSD2/Open Banking, no authenticated production bank connectors.
-- Mock dataset size and shape are finite; aggregates are **only as good as the fetched slice**.
-- Local LLMs can still misphrase; prompting and JSON-first insights are meant to reduce numeric hallucinations, not eliminate all model quirks.
+```mermaid
+flowchart TD
+    subgraph Tabs["Streamlit  :8501"]
+        CHAT_TAB["💬 Chat tab\n─────────────\nStarter prompt buttons\nChat message history\nIntent badge on responses\nPOST /chat (180s timeout)"]
+
+        DASH_TAB["📊 Dashboard tab\n─────────────\n🔄 Refresh button  (cache TTL 10s)"]
+
+        H["Service Health\n● Agent API status\n● Mock API status\n● Ollama reachability"]
+        M["Chat Metrics\nTotal requests\nRAG hit rate\nAvg latency · p95 latency"]
+        IC["Intent Distribution\nBar chart by intent label\nfrom Prometheus counter"]
+        EP["Mock API Endpoint Usage\nBar chart per route\nfrom Prometheus middleware"]
+        AC["Account Balances\nMetric cards per account\nfrom GET /accounts"]
+        BV["Budget vs Actual\nSide-by-side bar chart\n🟢 OK  🟡 >80%  🔴 Over 100%\nDataframe with status column"]
+        RAW["🔬 Raw Prometheus\nCollapsible expander\nText from /metrics both services"]
+
+        DASH_TAB --> H & M & IC & EP & AC & BV & RAW
+    end
+```
 
 ---
 
-*This overview reflects the codebase layout and behavior as of the current repository; filenames and behaviors may evolve—when in doubt, follow `README.md` and inspect `services/agent/graph/agent_graph.py` for the authoritative graph.*
+## 7. Resilience and reliability
+
+```mermaid
+flowchart TD
+    LLM_FAIL["LLM call fails\nor times out"]
+    RETRY["tenacity retry\n3 attempts\n2-8s exponential backoff\nsafe_invoke_or_none"]
+    HEUR["Heuristic intent\nfallback"]
+    OFFLINE["_offline_summary\nrule-based response"]
+
+    NULL_DATE["LLM returns\nstart_date='null'"]
+    FILTER["Drop null-like strings\nin transactions_node\n+ mock API route guard"]
+
+    EMPTY_TX["Empty transaction\nresult set"]
+    WIDEN["Widen query:\ndrop date + category filters\nretry with limit=180"]
+
+    RAG_LOW["RAG chunk\nscore < 0.20"]
+    DROP["Chunk dropped\nbefore LLM prompt"]
+
+    OLLAMA_DOWN["Ollama unreachable\nat startup"]
+    WARN["check_ollama_health\nlogs warning\nservice still starts"]
+
+    LLM_FAIL --> RETRY
+    RETRY -->|"all retries failed"| HEUR & OFFLINE
+    NULL_DATE --> FILTER
+    EMPTY_TX --> WIDEN
+    RAG_LOW --> DROP
+    OLLAMA_DOWN --> WARN
+```
+
+---
+
+## 8. Prometheus observability
+
+### Agent API metrics
+
+| Metric | Type | Label | What it measures |
+|---|---|---|---|
+| `agent_chat_requests_total` | Counter | `intent` | Requests per classified intent |
+| `agent_chat_duration_seconds` | Histogram | — | End-to-end latency (p50, p95, p99) |
+| `agent_rag_hits_total` | Counter | — | RAG queries returning ≥1 chunk |
+
+### Mock API metrics (HTTP middleware)
+
+| Metric | Type | Label | What it measures |
+|---|---|---|---|
+| `mock_api_requests_total` | Counter | `endpoint` | Hits per route prefix |
+| `mock_api_duration_seconds` | Histogram | `endpoint` | Latency per route |
+
+View: `http://localhost:8000/metrics` · `http://localhost:8001/metrics`
+
+Optional Grafana queries:
+```promql
+rate(agent_chat_requests_total[5m])
+histogram_quantile(0.95, agent_chat_duration_seconds_bucket)
+agent_rag_hits_total / ignoring(intent) agent_chat_requests_total
+```
+
+---
+
+## 9. Configuration reference
+
+| Variable | Default | Description |
+|---|---|---|
+| `OLLAMA_BASE_URL` | `http://127.0.0.1:11434` | Ollama server |
+| `OLLAMA_MODEL` | `llama3.2` | Chat LLM |
+| `OLLAMA_EMBED_MODEL` | `nomic-embed-text` | Embedding model |
+| `OLLAMA_TIMEOUT_SECONDS` | `120` | Per-request LLM timeout |
+| `BANKING_API_URL` | `http://127.0.0.1:8001` | Mock banking API |
+| `AGENT_API_URL` | `http://127.0.0.1:8000` | Agent API (used by Streamlit) |
+| `CHROMA_MODE` | `persist` | `persist` (embedded) or `http` |
+| `CHROMA_COLLECTION` | `finance_knowledge` | Chroma collection name |
+| `REDIS_USE_FAKEREDIS` | `true` | In-process fake Redis |
+| `REDIS_URL` | `redis://127.0.0.1:6379` | Real Redis (if fakeredis=false) |
+| `DEFAULT_USER_ID` | `user_001` | Default user for seeded data |
+| `LOG_LEVEL` | `INFO` | Logging level |
+
+---
+
+## 10. Technology stack
+
+| Technology | Role |
+|---|---|
+| **Python 3.11–3.13** | All services |
+| **FastAPI + uvicorn** | Agent API (8000) + Mock Banking API (8001) |
+| **LangGraph** | Multi-node stateful agent graph with conditional routing |
+| **LangChain** | `ChatOllama`, `OllamaEmbeddings`, `MarkdownHeaderTextSplitter` |
+| **Ollama** | Local LLM (`llama3.2`) + embeddings (`nomic-embed-text`) |
+| **Chroma** | Persistent vector store (embedded SQLite) |
+| **rank-bm25** | `BM25Okapi` sparse index for hybrid retrieval |
+| **tenacity** | Retry with exponential backoff on all LLM calls |
+| **slowapi** | Rate limiting (30/min chat, 20/min stream) |
+| **prometheus-client** | `/metrics` endpoints + HTTP middleware on both services |
+| **Redis / FakeRedis** | Session-scoped conversation memory |
+| **SQLAlchemy + SQLite** | Mock bank persistence (transactions, accounts, budgets) |
+| **Faker** | Deterministic synthetic transaction data |
+| **Streamlit** | Chat UI + live observability dashboard |
+| **httpx** | HTTP client (agent → mock API) |
+| **pandas** | Dashboard data processing |
+| **pydantic v2** | Request/response validation schemas |
+| **python-dotenv** | `.env` config loading |
+
+---
+
+## 11. Running the project
+
+```bash
+cd "finance-assistant/"
+
+python -m venv .venv
+source .venv/Scripts/activate      # Git Bash on Windows
+
+pip install --upgrade pip
+pip install -r requirements-local.txt
+
+python run_local.py                # Full start (seed + ingest + all services)
+python run_local.py --skip-ingest  # Fast restart (skip RAG re-embed)
+python run_local.py --free-ports   # Windows: kill stale port occupants first
+```
+
+| URL | Service |
+|---|---|
+| http://127.0.0.1:8501 | Streamlit — Chat + Dashboard |
+| http://127.0.0.1:8000/docs | Agent API Swagger |
+| http://127.0.0.1:8001/docs | Mock Banking API Swagger |
+| http://127.0.0.1:8000/metrics | Agent Prometheus |
+| http://127.0.0.1:8001/metrics | Mock API Prometheus |
+
+---
+
+## 12. Out of scope (by design)
+
+- No real bank connectors (PSD2 / Open Banking)
+- No production auth (API keys, OAuth)
+- Mock data is finite — aggregates reflect only the seeded slice
+- Local LLMs can still hallucinate; the insights-first prompt design minimises but does not eliminate numeric errors

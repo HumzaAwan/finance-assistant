@@ -5,6 +5,7 @@ from langchain_core.messages import HumanMessage
 
 from deps import get_runtime
 from graph.state import AgentState
+from utils.llm_utils import safe_invoke_or_none
 
 _log = logging.getLogger("agent.graph.nodes.intent_router")
 
@@ -155,15 +156,11 @@ def intent_router(state: AgentState):
         _log.warning({"event": "intent_missing_message", "intent": "general"})
         return {"intent": "general"}
 
-    try:
-        classifier = llm.invoke(
-            [
-                ("system", SYSTEM_PROMPT),
-                ("human", raw_text.strip()),
-            ]
-        )
+    classifier = safe_invoke_or_none(llm, [("system", SYSTEM_PROMPT), ("human", raw_text.strip())])
+    if classifier is not None:
         label_source = classifier.content
-    except Exception as exc:
+    else:
+        exc = RuntimeError("LLM unavailable after retries")
         guessed = _intent_from_heuristics(raw_text)
         normalized = guessed if guessed in LABELS else "general"
         if normalized == "general" and _mentions_user_ledger(raw_text):

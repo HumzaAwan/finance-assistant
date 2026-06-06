@@ -39,6 +39,29 @@ class TransactionRecord(Base):
     timestamp: Mapped[datetime] = mapped_column(DateTime, index=True, nullable=False)
 
 
+class AccountRecord(Base):
+    __tablename__ = "accounts"
+
+    id: Mapped[str] = mapped_column(String, primary_key=True)
+    user_id: Mapped[str] = mapped_column(String, index=True, nullable=False)
+    name: Mapped[str] = mapped_column(String, nullable=False)
+    account_type: Mapped[str] = mapped_column(String, nullable=False)
+    balance: Mapped[float] = mapped_column(Float, nullable=False, default=0.0)
+    currency: Mapped[str] = mapped_column(String, nullable=False, default="USD")
+    last_updated: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+
+
+class BudgetRecord(Base):
+    """Per-user, per-category monthly spending target."""
+    __tablename__ = "budgets"
+
+    id: Mapped[str] = mapped_column(String, primary_key=True)
+    user_id: Mapped[str] = mapped_column(String, index=True, nullable=False)
+    category: Mapped[str] = mapped_column(String, nullable=False)
+    monthly_limit: Mapped[float] = mapped_column(Float, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+
+
 _log = logging.getLogger("mock_api.database.db")
 
 
@@ -48,7 +71,7 @@ def get_engine():
         _engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
         Base.metadata.create_all(bind=_engine)
         SessionLocal = sessionmaker(bind=_engine, autoflush=False, autocommit=False)
-        _log.info({"event": "db_engine_initialized", **{"path": str(_db_file)}})
+        _log.info({"event": "db_engine_initialized", "path": str(_db_file)})
     return _engine
 
 

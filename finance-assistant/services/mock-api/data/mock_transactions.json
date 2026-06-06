@@ -1,5 +1,932 @@
 [
   {
+    "id": "86b98dc3-471d-4e34-a9e7-f769aa83e66e",
+    "user_id": "user_001",
+    "amount": -110.66,
+    "category": "entertainment",
+    "description": "Be way",
+    "merchant": "Spotify",
+    "timestamp": "2025-12-08T09:52:00+00:00"
+  },
+  {
+    "id": "381a7f64-c4c9-4e95-b88e-c287d238ccc2",
+    "user_id": "user_001",
+    "amount": -47.49,
+    "category": "health",
+    "description": "Need catch allow water",
+    "merchant": "PharmaQuick",
+    "timestamp": "2025-12-08T10:26:00+00:00"
+  },
+  {
+    "id": "690baba5-c145-4790-8361-fb809eb81d2c",
+    "user_id": "user_001",
+    "amount": -45.25,
+    "category": "food",
+    "description": "Magazine often change cut",
+    "merchant": "Burger Barn",
+    "timestamp": "2025-12-08T11:42:00+00:00"
+  },
+  {
+    "id": "e40dc05e-726d-4111-9833-a57cec0a33cb",
+    "user_id": "user_001",
+    "amount": -141.05,
+    "category": "health",
+    "description": "Spend exist top name anyone",
+    "merchant": "FitLife Gym",
+    "timestamp": "2025-12-08T12:13:00+00:00"
+  },
+  {
+    "id": "7efdb57b-decc-4fda-8d7e-a656928b13b2",
+    "user_id": "user_001",
+    "amount": -18.01,
+    "category": "entertainment",
+    "description": "Shake well occur",
+    "merchant": "StreamVerse",
+    "timestamp": "2025-12-09T04:25:00+00:00"
+  },
+  {
+    "id": "98f789c2-14e2-40eb-93c3-176806753e4b",
+    "user_id": "user_001",
+    "amount": -127.6,
+    "category": "health",
+    "description": "Tell us draw",
+    "merchant": "MindEase Therapy",
+    "timestamp": "2025-12-09T06:17:00+00:00"
+  },
+  {
+    "id": "2790bbf9-efd1-4ac3-9628-645c8e7f83f9",
+    "user_id": "user_001",
+    "amount": -78.0,
+    "category": "entertainment",
+    "description": "Need herself moment local",
+    "merchant": "StreamVerse",
+    "timestamp": "2025-12-10T15:56:00+00:00"
+  },
+  {
+    "id": "733e0d80-1101-4372-877e-9691712c1546",
+    "user_id": "user_001",
+    "amount": -15.49,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "StreamVerse",
+    "timestamp": "2025-12-10T22:29:00+00:00"
+  },
+  {
+    "id": "36f4741f-f99d-4302-be38-a6e061c825b5",
+    "user_id": "user_001",
+    "amount": -259.15,
+    "category": "shopping",
+    "description": "Room explain keep adult",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2025-12-11T04:52:00+00:00"
+  },
+  {
+    "id": "1c47060d-4a65-449a-9e76-287cfa726784",
+    "user_id": "user_001",
+    "amount": -49.25,
+    "category": "food",
+    "description": "Report significant growth be",
+    "merchant": "Morning Brew",
+    "timestamp": "2025-12-11T20:43:00+00:00"
+  },
+  {
+    "id": "53e89e40-fb23-4d6e-a4e8-75de6aa599eb",
+    "user_id": "user_001",
+    "amount": 3008.37,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "Freelance Platform",
+    "timestamp": "2025-12-13T09:47:00+00:00"
+  },
+  {
+    "id": "1164bf31-de24-488e-a5e0-4847b6c8a56f",
+    "user_id": "user_001",
+    "amount": -25.0,
+    "category": "food",
+    "description": "Someone throw be fear different",
+    "merchant": "Market Fresh",
+    "timestamp": "2025-12-13T22:19:00+00:00"
+  },
+  {
+    "id": "ccbf88da-4a29-4d32-9a01-85cad19a517c",
+    "user_id": "user_001",
+    "amount": -103.85,
+    "category": "food",
+    "description": "Particularly stock often central hour",
+    "merchant": "Sushi Spot",
+    "timestamp": "2025-12-14T05:37:00+00:00"
+  },
+  {
+    "id": "66cc2d18-7913-4477-9862-64493d852d12",
+    "user_id": "user_001",
+    "amount": -29.52,
+    "category": "food",
+    "description": "From sense issue focus",
+    "merchant": "Corner Bakery",
+    "timestamp": "2025-12-16T12:13:00+00:00"
+  },
+  {
+    "id": "dc904b83-f574-4003-8ef1-8d20de005d58",
+    "user_id": "user_001",
+    "amount": -27.17,
+    "category": "transport",
+    "description": "Picture manager example race front",
+    "merchant": "Uber",
+    "timestamp": "2025-12-16T23:47:00+00:00"
+  },
+  {
+    "id": "116c817c-6363-46fb-a46a-085842945f3b",
+    "user_id": "user_001",
+    "amount": -85.54,
+    "category": "food",
+    "description": "Next allow",
+    "merchant": "Morning Brew",
+    "timestamp": "2025-12-18T16:01:00+00:00"
+  },
+  {
+    "id": "3c9cc080-8bcd-4721-a281-529e34a64f5c",
+    "user_id": "user_001",
+    "amount": -24.96,
+    "category": "food",
+    "description": "Manage land land cover",
+    "merchant": "Burger Barn",
+    "timestamp": "2025-12-20T12:13:00+00:00"
+  },
+  {
+    "id": "408471af-4abd-4e10-a4c9-cd6377d3add6",
+    "user_id": "user_001",
+    "amount": -153.42,
+    "category": "entertainment",
+    "description": "Bit visit spend report",
+    "merchant": "Eventbrite",
+    "timestamp": "2025-12-20T21:18:00+00:00"
+  },
+  {
+    "id": "9a33b6b6-0f17-42f6-b6d1-055ae32afe9b",
+    "user_id": "user_001",
+    "amount": -152.82,
+    "category": "entertainment",
+    "description": "Fill blood",
+    "merchant": "CineHaus",
+    "timestamp": "2025-12-21T04:20:00+00:00"
+  },
+  {
+    "id": "7aa7a3f2-9ec9-4d46-b0c7-975b4aa1b34c",
+    "user_id": "user_001",
+    "amount": -25.56,
+    "category": "food",
+    "description": "Little oil apply",
+    "merchant": "Taco Bell",
+    "timestamp": "2025-12-21T07:09:00+00:00"
+  },
+  {
+    "id": "3730f580-a44b-4886-888c-a87a5e0575b8",
+    "user_id": "user_001",
+    "amount": -104.04,
+    "category": "utilities",
+    "description": "Now sure yard",
+    "merchant": "GasMart",
+    "timestamp": "2025-12-21T11:11:00+00:00"
+  },
+  {
+    "id": "bf81d024-28f5-49a9-8a11-7f10efa19545",
+    "user_id": "user_001",
+    "amount": -87.52,
+    "category": "food",
+    "description": "Economy thousand perhaps wear almost",
+    "merchant": "City Diner",
+    "timestamp": "2025-12-22T00:55:00+00:00"
+  },
+  {
+    "id": "e7f921b2-406c-4302-8aab-0e64d33adb4a",
+    "user_id": "user_001",
+    "amount": -25.24,
+    "category": "food",
+    "description": "Mrs oil visit grow",
+    "merchant": "Burger Barn",
+    "timestamp": "2025-12-22T18:24:00+00:00"
+  },
+  {
+    "id": "bcdbbc72-bce8-4148-b35d-a4c1139bdf3c",
+    "user_id": "user_001",
+    "amount": -89.39,
+    "category": "food",
+    "description": "Charge certain use item large",
+    "merchant": "Corner Bakery",
+    "timestamp": "2025-12-23T14:46:00+00:00"
+  },
+  {
+    "id": "d3d6b6cf-dc4a-4674-8472-a149b173e222",
+    "user_id": "user_001",
+    "amount": -33.85,
+    "category": "transport",
+    "description": "Bar mother",
+    "merchant": "Metro Mobility",
+    "timestamp": "2025-12-24T14:40:00+00:00"
+  },
+  {
+    "id": "dea749fa-52e0-467b-8257-29e052b91af3",
+    "user_id": "user_001",
+    "amount": -126.65,
+    "category": "entertainment",
+    "description": "Democratic push",
+    "merchant": "StreamVerse",
+    "timestamp": "2025-12-25T06:28:00+00:00"
+  },
+  {
+    "id": "863e0128-8c43-4164-b574-86739101316f",
+    "user_id": "user_001",
+    "amount": -12.89,
+    "category": "transport",
+    "description": "Yard quality customer sense yard",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2025-12-25T09:25:00+00:00"
+  },
+  {
+    "id": "bb58f09a-a9eb-459f-88d5-72947147b6e0",
+    "user_id": "user_001",
+    "amount": -12.51,
+    "category": "entertainment",
+    "description": "Represent eight listen",
+    "merchant": "MusicHive",
+    "timestamp": "2025-12-25T17:21:00+00:00"
+  },
+  {
+    "id": "dd7d729e-df34-4c8d-a3a0-2855be820e47",
+    "user_id": "user_001",
+    "amount": -96.72,
+    "category": "health",
+    "description": "Create west sell national",
+    "merchant": "DentalCare Plus",
+    "timestamp": "2025-12-26T00:18:00+00:00"
+  },
+  {
+    "id": "59b95ba4-b298-42d0-a16e-34525ab443c5",
+    "user_id": "user_001",
+    "amount": -22.16,
+    "category": "food",
+    "description": "Other family safe",
+    "merchant": "City Diner",
+    "timestamp": "2025-12-26T03:47:00+00:00"
+  },
+  {
+    "id": "4398f4a5-b81a-4b18-8569-89e0dbf022dc",
+    "user_id": "user_001",
+    "amount": -31.75,
+    "category": "food",
+    "description": "Including state degree hour southern",
+    "merchant": "Morning Brew",
+    "timestamp": "2025-12-26T19:56:00+00:00"
+  },
+  {
+    "id": "2db64885-0a54-4bff-a6ef-d3ad8c399092",
+    "user_id": "user_001",
+    "amount": -63.52,
+    "category": "food",
+    "description": "Wind specific up resource",
+    "merchant": "Burger Barn",
+    "timestamp": "2025-12-27T05:32:00+00:00"
+  },
+  {
+    "id": "5406067e-c74d-404c-aad2-307162e26a61",
+    "user_id": "user_001",
+    "amount": -118.26,
+    "category": "entertainment",
+    "description": "Power husband space",
+    "merchant": "StreamVerse",
+    "timestamp": "2025-12-27T20:34:00+00:00"
+  },
+  {
+    "id": "42b71427-5e58-4bfe-964d-46a810f6b8af",
+    "user_id": "user_001",
+    "amount": 2984.69,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "Freelance Platform",
+    "timestamp": "2025-12-28T05:26:00+00:00"
+  },
+  {
+    "id": "be7dacfb-557b-458c-b94e-0f4e735f0cef",
+    "user_id": "user_001",
+    "amount": -55.5,
+    "category": "food",
+    "description": "Yeah character politics",
+    "merchant": "City Diner",
+    "timestamp": "2025-12-28T06:40:00+00:00"
+  },
+  {
+    "id": "8d504006-c8a9-456e-ad6e-e0315ff5afd6",
+    "user_id": "user_001",
+    "amount": -231.37,
+    "category": "shopping",
+    "description": "Instead meeting",
+    "merchant": "ElectroMart",
+    "timestamp": "2025-12-28T14:26:00+00:00"
+  },
+  {
+    "id": "2b378c82-ce4c-4210-a8cd-061c38f94bef",
+    "user_id": "user_001",
+    "amount": -205.82,
+    "category": "health",
+    "description": "My party prove technology bit",
+    "merchant": "DentalCare Plus",
+    "timestamp": "2025-12-29T17:06:00+00:00"
+  },
+  {
+    "id": "cd97d53d-fb7a-4dc1-8135-5d018af7cf5e",
+    "user_id": "user_001",
+    "amount": -54.0,
+    "category": "food",
+    "description": "Top executive simple language",
+    "merchant": "Corner Bakery",
+    "timestamp": "2025-12-31T14:52:00+00:00"
+  },
+  {
+    "id": "08bfb2d0-628c-47f7-816c-3f276494da7c",
+    "user_id": "user_001",
+    "amount": -235.3,
+    "category": "shopping",
+    "description": "Away cell one",
+    "merchant": "Urban Supply",
+    "timestamp": "2025-12-31T15:01:00+00:00"
+  },
+  {
+    "id": "dc5e1e3f-47a0-46df-a1a0-537c9aef0f29",
+    "user_id": "user_001",
+    "amount": -70.58,
+    "category": "food",
+    "description": "Until too",
+    "merchant": "City Diner",
+    "timestamp": "2025-12-31T16:36:00+00:00"
+  },
+  {
+    "id": "4ac0f647-736b-44c0-b649-fd1190b7b71a",
+    "user_id": "user_001",
+    "amount": -62.44,
+    "category": "food",
+    "description": "Go whether boy simple itself",
+    "merchant": "Green Bowl",
+    "timestamp": "2025-12-31T22:42:00+00:00"
+  },
+  {
+    "id": "2ba7b188-9c8d-4812-b904-ea389b769836",
+    "user_id": "user_001",
+    "amount": -38.26,
+    "category": "transport",
+    "description": "Watch key pick way treat",
+    "merchant": "Parking Authority",
+    "timestamp": "2026-01-01T11:52:00+00:00"
+  },
+  {
+    "id": "0dcf46f2-3035-4ba4-bcb1-610d37fdd36f",
+    "user_id": "user_001",
+    "amount": -84.66,
+    "category": "food",
+    "description": "Owner lawyer clear away news",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-01-02T15:10:00+00:00"
+  },
+  {
+    "id": "1a843ccb-f198-432e-9a67-27b0315dd842",
+    "user_id": "user_001",
+    "amount": -22.95,
+    "category": "transport",
+    "description": "Peace compare on",
+    "merchant": "CityBike",
+    "timestamp": "2026-01-04T09:15:00+00:00"
+  },
+  {
+    "id": "2e594a66-40e6-4f19-8abf-70a3c43f90c4",
+    "user_id": "user_001",
+    "amount": -105.53,
+    "category": "food",
+    "description": "Benefit get through project",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-01-04T16:21:00+00:00"
+  },
+  {
+    "id": "ce25482a-3c72-443d-95c6-e261cfe486f3",
+    "user_id": "user_001",
+    "amount": -216.58,
+    "category": "shopping",
+    "description": "Live church window",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2026-01-05T03:48:00+00:00"
+  },
+  {
+    "id": "2dd282f3-7ecc-4100-b2fc-e1d8c01cef1b",
+    "user_id": "user_001",
+    "amount": -54.08,
+    "category": "food",
+    "description": "Yard medical according sport too",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-01-06T03:51:00+00:00"
+  },
+  {
+    "id": "6747e504-2c7a-4c61-b836-13e7b1e40d0d",
+    "user_id": "user_001",
+    "amount": -13.05,
+    "category": "food",
+    "description": "Policy evidence number",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-01-06T06:15:00+00:00"
+  },
+  {
+    "id": "4d9d0320-09b3-471b-804f-f8663880aaf5",
+    "user_id": "user_001",
+    "amount": -19.16,
+    "category": "transport",
+    "description": "About impact arrive material",
+    "merchant": "ExpressBus",
+    "timestamp": "2026-01-06T12:05:00+00:00"
+  },
+  {
+    "id": "0dbcb639-1d7a-4275-b336-bdb1b37233bc",
+    "user_id": "user_001",
+    "amount": -176.74,
+    "category": "health",
+    "description": "Six similar discuss successful dark",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-01-06T15:46:00+00:00"
+  },
+  {
+    "id": "fb6f0f3f-8a39-4791-8749-50cae76479e5",
+    "user_id": "user_001",
+    "amount": -22.22,
+    "category": "food",
+    "description": "Power production rate",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-01-06T19:27:00+00:00"
+  },
+  {
+    "id": "e218d59c-c8da-47e2-9cf7-3367f20c5db5",
+    "user_id": "user_001",
+    "amount": -123.67,
+    "category": "entertainment",
+    "description": "Range role cause community rise",
+    "merchant": "GameZone",
+    "timestamp": "2026-01-09T04:49:00+00:00"
+  },
+  {
+    "id": "262fdde5-4912-4332-a014-d6b67986ac5c",
+    "user_id": "user_001",
+    "amount": -15.49,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-01-09T07:16:00+00:00"
+  },
+  {
+    "id": "5fffb7b2-81ac-4274-9459-af0b196ff84a",
+    "user_id": "user_001",
+    "amount": -14.47,
+    "category": "food",
+    "description": "Film wonder ready beautiful",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-01-09T10:11:00+00:00"
+  },
+  {
+    "id": "f010137c-8b66-4e26-bb23-6832011253ba",
+    "user_id": "user_001",
+    "amount": -89.19,
+    "category": "entertainment",
+    "description": "Charge baby bad themselves",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-01-10T23:49:00+00:00"
+  },
+  {
+    "id": "b288d023-226f-4ee6-af85-fb3f66ca7a09",
+    "user_id": "user_001",
+    "amount": -40.91,
+    "category": "food",
+    "description": "Should almost strong eight",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-01-11T16:27:00+00:00"
+  },
+  {
+    "id": "ad985c6e-37ce-49fc-b92d-80d760fbf8aa",
+    "user_id": "user_001",
+    "amount": 3010.6,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "Freelance Platform",
+    "timestamp": "2026-01-12T14:36:00+00:00"
+  },
+  {
+    "id": "e1bf3654-931d-4ea4-a27d-5ccc19cd05b3",
+    "user_id": "user_001",
+    "amount": -75.0,
+    "category": "food",
+    "description": "Be near in",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-01-13T03:30:00+00:00"
+  },
+  {
+    "id": "769640ed-b2b5-4388-b251-b8977fea3a25",
+    "user_id": "user_001",
+    "amount": -291.89,
+    "category": "shopping",
+    "description": "Condition hair",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-01-13T14:23:00+00:00"
+  },
+  {
+    "id": "e371c106-4dd0-4afc-8ba1-d3312ecbdd81",
+    "user_id": "user_001",
+    "amount": -200.33,
+    "category": "health",
+    "description": "Security conference marriage majority",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-01-15T05:17:00+00:00"
+  },
+  {
+    "id": "c5d23eee-b353-4c05-8fad-70a5d91ed72b",
+    "user_id": "user_001",
+    "amount": -52.78,
+    "category": "food",
+    "description": "Human inside",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-01-16T15:55:00+00:00"
+  },
+  {
+    "id": "2b88797d-eea9-43b2-bf53-9faa35e0c02a",
+    "user_id": "user_001",
+    "amount": -88.01,
+    "category": "food",
+    "description": "Idea move face",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-01-16T23:38:00+00:00"
+  },
+  {
+    "id": "de9a2291-cd33-4af7-b532-2d1b2ddeaa40",
+    "user_id": "user_001",
+    "amount": -48.13,
+    "category": "shopping",
+    "description": "Floor room middle argue customer",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-01-17T00:25:00+00:00"
+  },
+  {
+    "id": "a787750e-3f4e-4e8a-b7ad-de588f148d87",
+    "user_id": "user_001",
+    "amount": -133.73,
+    "category": "utilities",
+    "description": "Sell to pick",
+    "merchant": "PowerCo",
+    "timestamp": "2026-01-17T11:16:00+00:00"
+  },
+  {
+    "id": "d6e97ac8-c177-4bec-987c-0ab6ed153a94",
+    "user_id": "user_001",
+    "amount": -113.61,
+    "category": "food",
+    "description": "Box brother radio assume",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-01-18T01:28:00+00:00"
+  },
+  {
+    "id": "9c361d32-abc6-4994-98ea-a051f503f615",
+    "user_id": "user_001",
+    "amount": -36.69,
+    "category": "shopping",
+    "description": "Will may various difficult",
+    "merchant": "PetEmporium",
+    "timestamp": "2026-01-18T06:57:00+00:00"
+  },
+  {
+    "id": "f55e0271-9355-45bc-a482-c8f76bd7d763",
+    "user_id": "user_001",
+    "amount": -13.05,
+    "category": "food",
+    "description": "Follow what fish his",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-01-18T11:39:00+00:00"
+  },
+  {
+    "id": "710174d1-0f5e-4235-886b-a7a7feaa2591",
+    "user_id": "user_001",
+    "amount": -115.3,
+    "category": "utilities",
+    "description": "Travel enough organization",
+    "merchant": "PowerCo",
+    "timestamp": "2026-01-18T16:37:00+00:00"
+  },
+  {
+    "id": "61a96150-3db1-4dfb-b2f2-30662ab9b196",
+    "user_id": "user_001",
+    "amount": -279.06,
+    "category": "shopping",
+    "description": "Remain wide public my",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-01-18T19:59:00+00:00"
+  },
+  {
+    "id": "c916aca5-2c47-4573-bc58-fc09e2bb9529",
+    "user_id": "user_001",
+    "amount": -284.93,
+    "category": "shopping",
+    "description": "Vote thank",
+    "merchant": "BookBazaar",
+    "timestamp": "2026-01-19T09:38:00+00:00"
+  },
+  {
+    "id": "a4f89532-eb3c-4204-b83a-6ae3acaa3e5b",
+    "user_id": "user_001",
+    "amount": -42.01,
+    "category": "food",
+    "description": "Doctor concern begin purpose",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-01-19T13:37:00+00:00"
+  },
+  {
+    "id": "4107b859-6b08-443c-b1b2-859f04fb44ab",
+    "user_id": "user_001",
+    "amount": -162.69,
+    "category": "utilities",
+    "description": "Until her indicate",
+    "merchant": "PowerCo",
+    "timestamp": "2026-01-19T20:42:00+00:00"
+  },
+  {
+    "id": "0a033425-a26e-4b43-a6e1-9b81d77ace58",
+    "user_id": "user_001",
+    "amount": -81.41,
+    "category": "food",
+    "description": "Type top five identify",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-01-20T07:32:00+00:00"
+  },
+  {
+    "id": "fae24e36-67d0-45f1-85c2-c1b74440d6cf",
+    "user_id": "user_001",
+    "amount": -52.27,
+    "category": "food",
+    "description": "Create tend maintain theory",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-01-20T23:18:00+00:00"
+  },
+  {
+    "id": "61b25e7d-f4b1-4292-b898-0a7e9b86e00d",
+    "user_id": "user_001",
+    "amount": -40.18,
+    "category": "transport",
+    "description": "Mean stand street",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2026-01-21T04:55:00+00:00"
+  },
+  {
+    "id": "58767051-19a3-4146-8d4d-ea04e2750675",
+    "user_id": "user_001",
+    "amount": -101.68,
+    "category": "shopping",
+    "description": "Example home media",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-01-22T21:17:00+00:00"
+  },
+  {
+    "id": "202e86a0-cc30-4cd7-9ee2-9d1dbf0200cb",
+    "user_id": "user_001",
+    "amount": -48.72,
+    "category": "transport",
+    "description": "Close total",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-01-23T11:18:00+00:00"
+  },
+  {
+    "id": "9c93951f-db09-43f3-9251-f710b19617d6",
+    "user_id": "user_001",
+    "amount": -75.42,
+    "category": "food",
+    "description": "Wait dream one respond",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-01-23T16:41:00+00:00"
+  },
+  {
+    "id": "da130be9-290e-44d3-8eaf-ea33644f3028",
+    "user_id": "user_001",
+    "amount": -112.37,
+    "category": "food",
+    "description": "Sure when thought",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-01-24T03:18:00+00:00"
+  },
+  {
+    "id": "bfb8e8e8-e495-431e-8e5c-48cd6c665b93",
+    "user_id": "user_001",
+    "amount": -61.21,
+    "category": "food",
+    "description": "Democratic story agreement language",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-01-25T04:37:00+00:00"
+  },
+  {
+    "id": "114c1441-21f2-4fc7-9474-02dbcc36517f",
+    "user_id": "user_001",
+    "amount": -43.9,
+    "category": "entertainment",
+    "description": "Chance turn become",
+    "merchant": "Spotify",
+    "timestamp": "2026-01-26T07:28:00+00:00"
+  },
+  {
+    "id": "5381e064-f193-4ccd-921b-5307d1521a85",
+    "user_id": "user_001",
+    "amount": -53.94,
+    "category": "food",
+    "description": "Side institution if change",
+    "merchant": "City Diner",
+    "timestamp": "2026-01-26T11:07:00+00:00"
+  },
+  {
+    "id": "f2b9dc3f-c923-4348-9572-388837c3fd8b",
+    "user_id": "user_001",
+    "amount": 2971.91,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-01-27T08:34:00+00:00"
+  },
+  {
+    "id": "6f8b940d-2228-4855-800d-7b5626717e66",
+    "user_id": "user_001",
+    "amount": -125.3,
+    "category": "health",
+    "description": "Serious yourself tend",
+    "merchant": "DentalCare Plus",
+    "timestamp": "2026-01-29T03:00:00+00:00"
+  },
+  {
+    "id": "8426622a-b7cf-4d04-a8bf-6d6d6ef75e1d",
+    "user_id": "user_001",
+    "amount": -39.4,
+    "category": "entertainment",
+    "description": "Push song peace with",
+    "merchant": "MusicHive",
+    "timestamp": "2026-01-29T22:56:00+00:00"
+  },
+  {
+    "id": "76f2e87c-6dcd-4ac9-a165-f233c2bcc13c",
+    "user_id": "user_001",
+    "amount": -21.54,
+    "category": "transport",
+    "description": "Small talk away",
+    "merchant": "ExpressBus",
+    "timestamp": "2026-01-31T02:31:00+00:00"
+  },
+  {
+    "id": "d8b7eb45-50dc-40b9-9afc-ecde9311c5ba",
+    "user_id": "user_001",
+    "amount": -100.43,
+    "category": "food",
+    "description": "Amount little health summer",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-01-31T17:09:00+00:00"
+  },
+  {
+    "id": "fce963d7-8002-449b-a90a-6510a0016636",
+    "user_id": "user_001",
+    "amount": -121.14,
+    "category": "food",
+    "description": "Rather enjoy",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-01-31T18:33:00+00:00"
+  },
+  {
+    "id": "b584795d-2946-45d1-b169-c9510c0f0ae7",
+    "user_id": "user_001",
+    "amount": -114.96,
+    "category": "shopping",
+    "description": "Little house name her discuss",
+    "merchant": "Thrift Haven",
+    "timestamp": "2026-01-31T20:02:00+00:00"
+  },
+  {
+    "id": "e585dac6-31df-4bac-8c9f-674eb596331c",
+    "user_id": "user_001",
+    "amount": -27.53,
+    "category": "food",
+    "description": "Issue concern hear",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-02-01T09:32:00+00:00"
+  },
+  {
+    "id": "29b4571e-c498-4808-b23a-dcb724729503",
+    "user_id": "user_001",
+    "amount": -107.46,
+    "category": "health",
+    "description": "Effort letter simple",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-02-02T07:25:00+00:00"
+  },
+  {
+    "id": "5e5b53d9-af8e-4bdc-a569-e1a3b0f2259b",
+    "user_id": "user_001",
+    "amount": -45.74,
+    "category": "food",
+    "description": "Property whole",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-02-02T17:58:00+00:00"
+  },
+  {
+    "id": "f1b2c7a6-0ec2-47fd-b947-2ff4affabd6c",
+    "user_id": "user_001",
+    "amount": -73.0,
+    "category": "food",
+    "description": "Pick admit",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-02-03T01:17:00+00:00"
+  },
+  {
+    "id": "7368f677-b503-4f68-bad5-453675a4181b",
+    "user_id": "user_001",
+    "amount": -10.87,
+    "category": "transport",
+    "description": "Fast word",
+    "merchant": "Lyft",
+    "timestamp": "2026-02-03T05:18:00+00:00"
+  },
+  {
+    "id": "6d8eb9c1-ff06-4a67-9108-7f2c64e6f12d",
+    "user_id": "user_001",
+    "amount": -96.22,
+    "category": "health",
+    "description": "Win get sort join",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-02-04T01:52:00+00:00"
+  },
+  {
+    "id": "dc7e9f52-c9bd-4742-b369-9ab22475d02f",
+    "user_id": "user_001",
+    "amount": -25.84,
+    "category": "food",
+    "description": "Minute already baby decide dog",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-02-04T08:02:00+00:00"
+  },
+  {
+    "id": "757b16cc-3d2a-40ed-bd18-cbf06fe95a45",
+    "user_id": "user_001",
+    "amount": -47.19,
+    "category": "food",
+    "description": "Hear oil interest",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-02-04T14:42:00+00:00"
+  },
+  {
+    "id": "4e3788b5-907d-4889-8bb0-7c7b2a470ed1",
+    "user_id": "user_001",
+    "amount": -61.61,
+    "category": "health",
+    "description": "Successful open with show",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-02-04T20:48:00+00:00"
+  },
+  {
+    "id": "4aac32ba-ba6a-41ca-b92f-ac63f585d3c9",
+    "user_id": "user_001",
+    "amount": -71.07,
+    "category": "food",
+    "description": "Travel concern surface stage",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-02-05T15:26:00+00:00"
+  },
+  {
+    "id": "79417d84-4991-4642-ba2c-088774770860",
+    "user_id": "user_001",
+    "amount": -26.18,
+    "category": "food",
+    "description": "Room traditional toward animal",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-02-06T03:45:00+00:00"
+  },
+  {
+    "id": "1c6e3d6a-903e-4d1c-8b2a-595537adf15e",
+    "user_id": "user_001",
+    "amount": -45.2,
+    "category": "entertainment",
+    "description": "Become future",
+    "merchant": "BookNook",
+    "timestamp": "2026-02-06T22:41:00+00:00"
+  },
+  {
+    "id": "5e90e0ff-f5f6-4851-a517-ef22ed381e7e",
+    "user_id": "user_001",
+    "amount": -142.41,
+    "category": "entertainment",
+    "description": "Shake result order",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-02-08T17:17:00+00:00"
+  },
+  {
+    "id": "0d0afa3e-c5af-4dd4-90f0-e6e25789d2c0",
+    "user_id": "user_001",
+    "amount": -39.09,
+    "category": "transport",
+    "description": "East girl defense movie billion",
+    "merchant": "Lyft",
+    "timestamp": "2026-02-08T18:56:00+00:00"
+  },
+  {
     "id": "7aa3bdaa-a4dd-4007-b8cb-1b9fd7b6b93b",
     "user_id": "user_001",
     "amount": -86.75,
@@ -16,6 +943,33 @@
     "description": "Fuel top-up",
     "merchant": "QuickFuel",
     "timestamp": "2026-02-08T23:50:00+00:00"
+  },
+  {
+    "id": "6a9d6d47-b194-4588-88a0-722876de4e47",
+    "user_id": "user_001",
+    "amount": -9.99,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "Netflix",
+    "timestamp": "2026-02-08T23:57:00+00:00"
+  },
+  {
+    "id": "f1caeaf5-b097-4e00-84fa-a6dd9aab9a67",
+    "user_id": "user_001",
+    "amount": -113.59,
+    "category": "utilities",
+    "description": "Whose say against lot",
+    "merchant": "GasMart",
+    "timestamp": "2026-02-09T04:49:00+00:00"
+  },
+  {
+    "id": "2a17c28a-aa86-41f3-b364-e2ba9e599f09",
+    "user_id": "user_001",
+    "amount": -46.79,
+    "category": "food",
+    "description": "Do them method turn",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-02-09T08:21:00+00:00"
   },
   {
     "id": "8d28d015-0060-42e6-974d-3b1fbefe3e10",
@@ -36,6 +990,15 @@
     "timestamp": "2026-02-09T15:54:00+00:00"
   },
   {
+    "id": "7bc8f5e1-2b4d-4262-8013-ac6a9fede5af",
+    "user_id": "user_001",
+    "amount": -143.67,
+    "category": "utilities",
+    "description": "Knowledge low chance",
+    "merchant": "AquaCity",
+    "timestamp": "2026-02-09T20:59:00+00:00"
+  },
+  {
     "id": "4da7ff2e-aa7a-4d9b-9536-365949bdcfab",
     "user_id": "user_001",
     "amount": -38.12,
@@ -43,6 +1006,33 @@
     "description": "Red guess everyone",
     "merchant": "City Diner",
     "timestamp": "2026-02-10T20:55:00+00:00"
+  },
+  {
+    "id": "5fc36689-73b2-4906-9dab-00e65b286f88",
+    "user_id": "user_001",
+    "amount": -11.2,
+    "category": "entertainment",
+    "description": "Attorney garden wind give join",
+    "merchant": "Netflix",
+    "timestamp": "2026-02-11T01:42:00+00:00"
+  },
+  {
+    "id": "74691373-1fd9-488c-bd16-6c7e8b0b16b0",
+    "user_id": "user_001",
+    "amount": 3000.32,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "Freelance Platform",
+    "timestamp": "2026-02-11T07:18:00+00:00"
+  },
+  {
+    "id": "21cab776-3fbd-477c-ac33-7d517528877a",
+    "user_id": "user_001",
+    "amount": -10.63,
+    "category": "food",
+    "description": "Which just suddenly as",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-02-11T11:25:00+00:00"
   },
   {
     "id": "08a8ffdd-5b6f-4bcc-a97b-53e8acae5c53",
@@ -72,6 +1062,15 @@
     "timestamp": "2026-02-13T00:13:00+00:00"
   },
   {
+    "id": "49490159-ff97-4560-bda3-b839adc45221",
+    "user_id": "user_001",
+    "amount": -230.45,
+    "category": "shopping",
+    "description": "Record personal such number",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2026-02-13T04:51:00+00:00"
+  },
+  {
     "id": "07015b3a-3557-4803-9305-84f73dcabbb1",
     "user_id": "user_001",
     "amount": 2996.1,
@@ -88,6 +1087,33 @@
     "description": "Gas bill",
     "merchant": "PowerCo",
     "timestamp": "2026-02-13T15:55:00+00:00"
+  },
+  {
+    "id": "e00a782e-2b33-4923-84e7-7c824e8def43",
+    "user_id": "user_001",
+    "amount": -144.25,
+    "category": "shopping",
+    "description": "As others me development",
+    "merchant": "ElectroMart",
+    "timestamp": "2026-02-13T19:05:00+00:00"
+  },
+  {
+    "id": "c0a8b0cd-abbc-461e-a445-780298cb3128",
+    "user_id": "user_001",
+    "amount": -29.67,
+    "category": "food",
+    "description": "Writer choice government",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-02-13T23:04:00+00:00"
+  },
+  {
+    "id": "d3306000-6000-4272-b770-276e64b9a3b4",
+    "user_id": "user_001",
+    "amount": -44.87,
+    "category": "food",
+    "description": "Hot either quite",
+    "merchant": "City Diner",
+    "timestamp": "2026-02-14T22:24:00+00:00"
   },
   {
     "id": "14c511a0-b355-421d-9bff-699338d30e6d",
@@ -117,6 +1143,15 @@
     "timestamp": "2026-02-15T09:24:00+00:00"
   },
   {
+    "id": "cb816d70-5f8d-47f9-a052-4365119d1096",
+    "user_id": "user_001",
+    "amount": -158.21,
+    "category": "utilities",
+    "description": "Tend allow push eight",
+    "merchant": "City Utilities",
+    "timestamp": "2026-02-15T11:14:00+00:00"
+  },
+  {
     "id": "7752028c-b5da-46e1-822e-cb636461ff36",
     "user_id": "user_001",
     "amount": -40.21,
@@ -124,6 +1159,51 @@
     "description": "Pharmacy refill",
     "merchant": "WellNest Clinic",
     "timestamp": "2026-02-15T14:49:00+00:00"
+  },
+  {
+    "id": "e06a5d97-b98c-4e94-b0b8-a6d2ad239355",
+    "user_id": "user_001",
+    "amount": -195.09,
+    "category": "health",
+    "description": "Decide majority ask conference recent",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-02-16T00:37:00+00:00"
+  },
+  {
+    "id": "1f9bc9d4-f87b-4c3d-b3d0-32bb8ad8dafb",
+    "user_id": "user_001",
+    "amount": -153.5,
+    "category": "utilities",
+    "description": "Year free often same",
+    "merchant": "BrightFiber Internet",
+    "timestamp": "2026-02-16T01:29:00+00:00"
+  },
+  {
+    "id": "115e5d10-fd37-4cc1-9947-ca9a11db3340",
+    "user_id": "user_001",
+    "amount": -74.59,
+    "category": "food",
+    "description": "Computer alone life",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-02-16T15:39:00+00:00"
+  },
+  {
+    "id": "702a7c91-cfbf-47db-aeb8-d3f7aed5bb2f",
+    "user_id": "user_001",
+    "amount": -76.25,
+    "category": "entertainment",
+    "description": "Professor through world",
+    "merchant": "SportsArena",
+    "timestamp": "2026-02-16T21:58:00+00:00"
+  },
+  {
+    "id": "e75ccc6f-2423-4268-abf4-e826452305ce",
+    "user_id": "user_001",
+    "amount": -105.36,
+    "category": "shopping",
+    "description": "Claim paper bag",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-02-17T03:10:00+00:00"
   },
   {
     "id": "958f031f-b32b-40ae-b21f-96d19da8fbc5",
@@ -135,6 +1215,24 @@
     "timestamp": "2026-02-17T10:39:00+00:00"
   },
   {
+    "id": "6f46c662-5696-436c-a65d-2ec421c90f6d",
+    "user_id": "user_001",
+    "amount": -16.72,
+    "category": "food",
+    "description": "President security state your dinner",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-02-17T16:14:00+00:00"
+  },
+  {
+    "id": "f0138beb-fff4-46a5-81a4-4392bb5223f5",
+    "user_id": "user_001",
+    "amount": -48.11,
+    "category": "food",
+    "description": "Training relationship",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-02-17T16:41:00+00:00"
+  },
+  {
     "id": "0419a25f-ae38-4e20-a6e2-77b8ebec5d6a",
     "user_id": "user_001",
     "amount": -36.18,
@@ -142,6 +1240,15 @@
     "description": "Data remain firm reduce billion",
     "merchant": "Market Fresh",
     "timestamp": "2026-02-17T17:35:00+00:00"
+  },
+  {
+    "id": "621b0de9-ccd2-42c1-a46b-7279f28021c0",
+    "user_id": "user_001",
+    "amount": -43.88,
+    "category": "entertainment",
+    "description": "Front add real last animal",
+    "merchant": "CineHaus",
+    "timestamp": "2026-02-17T21:14:00+00:00"
   },
   {
     "id": "2c995028-356b-4c95-80ae-504065e740cc",
@@ -189,6 +1296,15 @@
     "timestamp": "2026-02-19T08:38:00+00:00"
   },
   {
+    "id": "66f76fb0-a6e3-4db0-8052-ff748c43d769",
+    "user_id": "user_001",
+    "amount": -36.22,
+    "category": "food",
+    "description": "Boy positive real",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-02-19T09:27:00+00:00"
+  },
+  {
     "id": "2ac1a2eb-8bd7-4573-aee6-a5486d5f85d8",
     "user_id": "user_001",
     "amount": -42.45,
@@ -205,6 +1321,42 @@
     "description": "Pharmacy refill",
     "merchant": "PharmaQuick",
     "timestamp": "2026-02-19T14:04:00+00:00"
+  },
+  {
+    "id": "2a3bd73b-9d65-4e34-9b0e-8f023124dfd9",
+    "user_id": "user_001",
+    "amount": -97.93,
+    "category": "entertainment",
+    "description": "Growth make back",
+    "merchant": "Netflix",
+    "timestamp": "2026-02-19T14:55:00+00:00"
+  },
+  {
+    "id": "e6e30b9f-c7a1-452d-8086-8fe15583e8ae",
+    "user_id": "user_001",
+    "amount": -53.31,
+    "category": "transport",
+    "description": "Win east who professor",
+    "merchant": "Lyft",
+    "timestamp": "2026-02-20T04:02:00+00:00"
+  },
+  {
+    "id": "fc9b0839-614b-4d31-84b8-f0b48085f466",
+    "user_id": "user_001",
+    "amount": -20.11,
+    "category": "transport",
+    "description": "Himself case executive",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2026-02-21T08:29:00+00:00"
+  },
+  {
+    "id": "f71d6b75-6d71-4a82-998a-b2742791ea2b",
+    "user_id": "user_001",
+    "amount": -41.03,
+    "category": "entertainment",
+    "description": "Along debate sense house store",
+    "merchant": "GameZone",
+    "timestamp": "2026-02-21T11:34:00+00:00"
   },
   {
     "id": "6c8b16d9-2e9f-42e7-a8dc-8bfac7958365",
@@ -243,6 +1395,15 @@
     "timestamp": "2026-02-22T08:57:00+00:00"
   },
   {
+    "id": "2830b14d-ebe0-4d67-afef-459c4f60efbc",
+    "user_id": "user_001",
+    "amount": -112.45,
+    "category": "shopping",
+    "description": "Social guess behavior human hundred",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-02-22T20:57:00+00:00"
+  },
+  {
     "id": "e4521076-36bf-4b97-8d6f-d1ab77a8de99",
     "user_id": "user_001",
     "amount": -106.84,
@@ -252,6 +1413,15 @@
     "timestamp": "2026-02-23T16:02:00+00:00"
   },
   {
+    "id": "170b108e-b1e5-4771-8679-bd9af8d43e88",
+    "user_id": "user_001",
+    "amount": -14.71,
+    "category": "entertainment",
+    "description": "Thousand short light everybody recent",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-02-23T17:38:00+00:00"
+  },
+  {
     "id": "9ea3b4e4-7c61-4bb0-9f5a-e9e44c951eb7",
     "user_id": "user_001",
     "amount": -37.1,
@@ -259,6 +1429,24 @@
     "description": "Fuel top-up",
     "merchant": "QuickFuel",
     "timestamp": "2026-02-23T22:39:00+00:00"
+  },
+  {
+    "id": "4b9ed544-4ae9-4fa1-8ba0-c918b644b4cd",
+    "user_id": "user_001",
+    "amount": -247.92,
+    "category": "shopping",
+    "description": "Try believe many",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-02-23T22:40:00+00:00"
+  },
+  {
+    "id": "e91e0416-f12c-4013-b76c-265226b8a3da",
+    "user_id": "user_001",
+    "amount": -82.0,
+    "category": "food",
+    "description": "Manager top power material ground",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-02-24T08:47:00+00:00"
   },
   {
     "id": "e6a3282b-5536-4535-92ee-b2462b28127b",
@@ -279,6 +1467,15 @@
     "timestamp": "2026-02-24T11:51:00+00:00"
   },
   {
+    "id": "1cf34fc2-4d4c-4b29-a462-71889141330d",
+    "user_id": "user_001",
+    "amount": -122.04,
+    "category": "utilities",
+    "description": "Because cup control",
+    "merchant": "GasMart",
+    "timestamp": "2026-02-24T23:07:00+00:00"
+  },
+  {
     "id": "6663afb7-6066-4d61-a0c0-5ac3b0876cd6",
     "user_id": "user_001",
     "amount": -58.33,
@@ -295,6 +1492,24 @@
     "description": "Phone & internet",
     "merchant": "PowerCo",
     "timestamp": "2026-02-25T08:19:00+00:00"
+  },
+  {
+    "id": "686978e2-f7fb-46d4-a9c0-7a96fd84f489",
+    "user_id": "user_001",
+    "amount": -48.0,
+    "category": "health",
+    "description": "Manage executive success care wonder",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-02-25T08:24:00+00:00"
+  },
+  {
+    "id": "924ae7b8-9b7e-4eb9-857b-07a1cb79afab",
+    "user_id": "user_001",
+    "amount": 3012.96,
+    "category": "income",
+    "description": "Salary credit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-02-26T16:28:00+00:00"
   },
   {
     "id": "b903f864-f130-4f61-b216-d6e578fb26ab",
@@ -324,6 +1539,15 @@
     "timestamp": "2026-02-28T00:57:00+00:00"
   },
   {
+    "id": "1188242c-04a0-4a24-88a9-5873c5b4f29a",
+    "user_id": "user_001",
+    "amount": -94.48,
+    "category": "shopping",
+    "description": "Tv power tell whom radio",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-02-28T08:01:00+00:00"
+  },
+  {
     "id": "79dfdbce-039a-449d-9120-d11ad4b539aa",
     "user_id": "user_001",
     "amount": -65.78,
@@ -351,6 +1575,24 @@
     "timestamp": "2026-02-28T20:12:00+00:00"
   },
   {
+    "id": "8ebaa365-01fb-4d78-aec9-792473ba5fec",
+    "user_id": "user_001",
+    "amount": -20.85,
+    "category": "food",
+    "description": "Open wonder quite PM",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-02-28T21:27:00+00:00"
+  },
+  {
+    "id": "09abea42-52f3-4267-ba1f-2b29b2c93bc5",
+    "user_id": "user_001",
+    "amount": -54.53,
+    "category": "food",
+    "description": "Study whose",
+    "merchant": "City Diner",
+    "timestamp": "2026-03-01T02:12:00+00:00"
+  },
+  {
     "id": "f683eaf1-8e1e-4eb9-bae7-b2d125bddec0",
     "user_id": "user_001",
     "amount": -33.36,
@@ -360,6 +1602,24 @@
     "timestamp": "2026-03-01T23:19:00+00:00"
   },
   {
+    "id": "3ab343f9-63ca-4a29-81f1-381cd0262456",
+    "user_id": "user_001",
+    "amount": -92.2,
+    "category": "health",
+    "description": "Rise lay act growth computer",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-03-03T00:42:00+00:00"
+  },
+  {
+    "id": "adf943e6-f28d-4cdf-8d57-fd9ec19cb915",
+    "user_id": "user_001",
+    "amount": -162.72,
+    "category": "health",
+    "description": "Much action improve glass public",
+    "merchant": "VisionCenter",
+    "timestamp": "2026-03-03T05:08:00+00:00"
+  },
+  {
     "id": "91ab6d4d-034a-4af1-bf48-c20b98c25ce8",
     "user_id": "user_001",
     "amount": -108.54,
@@ -367,6 +1627,42 @@
     "description": "Utility bundle",
     "merchant": "PowerCo",
     "timestamp": "2026-03-03T06:31:00+00:00"
+  },
+  {
+    "id": "44ef5255-ea41-4d43-b946-3fffc29522af",
+    "user_id": "user_001",
+    "amount": -61.92,
+    "category": "food",
+    "description": "President take course color",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-03-03T07:36:00+00:00"
+  },
+  {
+    "id": "0c34b8f0-cbd7-46af-aaba-c69d28be537d",
+    "user_id": "user_001",
+    "amount": -113.07,
+    "category": "entertainment",
+    "description": "Through occur business",
+    "merchant": "SportsArena",
+    "timestamp": "2026-03-03T11:14:00+00:00"
+  },
+  {
+    "id": "52158023-315c-4dd0-98ec-f87bf3907e3d",
+    "user_id": "user_001",
+    "amount": -86.06,
+    "category": "utilities",
+    "description": "Available real support",
+    "merchant": "City Utilities",
+    "timestamp": "2026-03-04T01:49:00+00:00"
+  },
+  {
+    "id": "698f3949-519f-4424-8c0c-149ea76ac3d1",
+    "user_id": "user_001",
+    "amount": -8.76,
+    "category": "transport",
+    "description": "Majority first",
+    "merchant": "Uber",
+    "timestamp": "2026-03-04T05:48:00+00:00"
   },
   {
     "id": "61e75a6a-2d6b-42c0-95d6-3086963cb719",
@@ -423,6 +1719,33 @@
     "timestamp": "2026-03-05T06:01:00+00:00"
   },
   {
+    "id": "dacfe5ec-a081-4c21-9632-6d34ccd27ac2",
+    "user_id": "user_001",
+    "amount": -132.43,
+    "category": "utilities",
+    "description": "Than should list behavior",
+    "merchant": "AquaCity",
+    "timestamp": "2026-03-06T13:09:00+00:00"
+  },
+  {
+    "id": "bf57db22-db06-4203-9568-8cfe6e2990b4",
+    "user_id": "user_001",
+    "amount": -178.6,
+    "category": "shopping",
+    "description": "Because benefit fast",
+    "merchant": "PetEmporium",
+    "timestamp": "2026-03-06T16:11:00+00:00"
+  },
+  {
+    "id": "c30a91ec-ec66-46b0-b6c8-a32bac5a4c93",
+    "user_id": "user_001",
+    "amount": -88.89,
+    "category": "food",
+    "description": "Cost officer performance they job",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-03-06T22:02:00+00:00"
+  },
+  {
     "id": "e6cf29d8-7a50-41d6-a66a-6f2d56890d64",
     "user_id": "user_001",
     "amount": -21.52,
@@ -468,6 +1791,15 @@
     "timestamp": "2026-03-07T19:04:00+00:00"
   },
   {
+    "id": "1582593d-a220-441a-ac94-04465ef3d03e",
+    "user_id": "user_001",
+    "amount": -43.13,
+    "category": "transport",
+    "description": "Could late focus turn",
+    "merchant": "Uber",
+    "timestamp": "2026-03-07T20:08:00+00:00"
+  },
+  {
     "id": "5175ac54-2e9f-4a24-a4b0-994bb74a5447",
     "user_id": "user_001",
     "amount": -201.96,
@@ -495,6 +1827,15 @@
     "timestamp": "2026-03-09T02:01:00+00:00"
   },
   {
+    "id": "b13bf391-eef5-4285-9ecc-3c38956033ad",
+    "user_id": "user_001",
+    "amount": -90.37,
+    "category": "entertainment",
+    "description": "Usually explain thank night",
+    "merchant": "SportsArena",
+    "timestamp": "2026-03-09T07:12:00+00:00"
+  },
+  {
     "id": "ae334690-c2cd-4dec-bb8b-ff1d34ccd469",
     "user_id": "user_001",
     "amount": -63.64,
@@ -502,6 +1843,24 @@
     "description": "Phone & internet",
     "merchant": "TeleLink",
     "timestamp": "2026-03-10T02:28:00+00:00"
+  },
+  {
+    "id": "3ec9e278-fda9-4467-b4d2-f07b11fff567",
+    "user_id": "user_001",
+    "amount": -129.18,
+    "category": "shopping",
+    "description": "Soon according nearly affect",
+    "merchant": "PetEmporium",
+    "timestamp": "2026-03-10T03:41:00+00:00"
+  },
+  {
+    "id": "59996df8-2f43-49df-9d7c-d16dbebe0b61",
+    "user_id": "user_001",
+    "amount": -13.99,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "Spotify",
+    "timestamp": "2026-03-10T04:21:00+00:00"
   },
   {
     "id": "57a1332c-3b91-4812-b77a-5605c4e6cba6",
@@ -531,6 +1890,24 @@
     "timestamp": "2026-03-10T10:24:00+00:00"
   },
   {
+    "id": "8aaa25be-49fd-4951-bfd1-f25dc5072628",
+    "user_id": "user_001",
+    "amount": -118.9,
+    "category": "utilities",
+    "description": "History course effect two",
+    "merchant": "City Utilities",
+    "timestamp": "2026-03-10T19:22:00+00:00"
+  },
+  {
+    "id": "4b3f7804-ecbf-4454-9190-fd6eaddb99c2",
+    "user_id": "user_001",
+    "amount": -138.83,
+    "category": "health",
+    "description": "Common community which course century",
+    "merchant": "LabCorp",
+    "timestamp": "2026-03-10T22:23:00+00:00"
+  },
+  {
     "id": "03ac5137-7efe-43d0-a87e-004aa61cdc1b",
     "user_id": "user_001",
     "amount": -47.26,
@@ -538,6 +1915,42 @@
     "description": "Pharmacy refill",
     "merchant": "WellNest Clinic",
     "timestamp": "2026-03-10T23:51:00+00:00"
+  },
+  {
+    "id": "a56ed666-e7db-4f1c-a759-d79e1027321d",
+    "user_id": "user_001",
+    "amount": -15.48,
+    "category": "transport",
+    "description": "Fear window director",
+    "merchant": "CityBike",
+    "timestamp": "2026-03-11T06:50:00+00:00"
+  },
+  {
+    "id": "31f4e449-faa3-4899-a529-31051c593629",
+    "user_id": "user_001",
+    "amount": -103.44,
+    "category": "entertainment",
+    "description": "Leg message several",
+    "merchant": "Spotify",
+    "timestamp": "2026-03-12T10:52:00+00:00"
+  },
+  {
+    "id": "e97cbaab-c126-45ec-b44d-9781f6adc4c5",
+    "user_id": "user_001",
+    "amount": -42.2,
+    "category": "entertainment",
+    "description": "Summer cultural report although sort",
+    "merchant": "MusicHive",
+    "timestamp": "2026-03-13T00:51:00+00:00"
+  },
+  {
+    "id": "ae0c6c75-2596-4674-b1c5-bbcb2167c67c",
+    "user_id": "user_001",
+    "amount": 3005.36,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-03-14T01:09:00+00:00"
   },
   {
     "id": "fe7ff243-875c-4619-91a7-2d5556c57286",
@@ -585,6 +1998,15 @@
     "timestamp": "2026-03-15T15:53:00+00:00"
   },
   {
+    "id": "9e438887-57ee-4c77-84f9-275c5f9e8e99",
+    "user_id": "user_001",
+    "amount": -119.15,
+    "category": "utilities",
+    "description": "Worry loss break",
+    "merchant": "GasMart",
+    "timestamp": "2026-03-15T21:32:00+00:00"
+  },
+  {
     "id": "50049a79-5dbf-4b31-bc6f-54bde36d389f",
     "user_id": "user_001",
     "amount": -35.79,
@@ -594,6 +2016,15 @@
     "timestamp": "2026-03-16T11:09:00+00:00"
   },
   {
+    "id": "a0f4166b-dfb5-4add-8528-8e95e53915b4",
+    "user_id": "user_001",
+    "amount": -121.27,
+    "category": "utilities",
+    "description": "Suggest watch continue religious particularly",
+    "merchant": "TeleLink",
+    "timestamp": "2026-03-16T13:02:00+00:00"
+  },
+  {
     "id": "9c1c96fc-ee90-45f5-8771-453ac65ab05d",
     "user_id": "user_001",
     "amount": -92.5,
@@ -601,6 +2032,24 @@
     "description": "Concert seating",
     "merchant": "StreamVerse",
     "timestamp": "2026-03-16T15:46:00+00:00"
+  },
+  {
+    "id": "c5157874-bb5b-4c3c-97b5-20d355c38592",
+    "user_id": "user_001",
+    "amount": -143.88,
+    "category": "health",
+    "description": "Federal doctor girl program",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-03-16T22:59:00+00:00"
+  },
+  {
+    "id": "f022a89f-5bc1-4548-af1a-379248653701",
+    "user_id": "user_001",
+    "amount": -105.98,
+    "category": "entertainment",
+    "description": "Usually return my",
+    "merchant": "GameZone",
+    "timestamp": "2026-03-17T13:08:00+00:00"
   },
   {
     "id": "efe713c2-7f41-42ca-9df2-41c385dcb627",
@@ -621,6 +2070,42 @@
     "timestamp": "2026-03-19T04:47:00+00:00"
   },
   {
+    "id": "552d46c0-fd61-4b9e-8fb3-2a43a6993f82",
+    "user_id": "user_001",
+    "amount": -18.24,
+    "category": "transport",
+    "description": "Agreement be great exist",
+    "merchant": "Uber",
+    "timestamp": "2026-03-19T22:19:00+00:00"
+  },
+  {
+    "id": "ffe3f5b2-bdf6-42c3-a60e-f276edbb4f18",
+    "user_id": "user_001",
+    "amount": -91.8,
+    "category": "food",
+    "description": "Middle civil approach include country",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-03-20T12:38:00+00:00"
+  },
+  {
+    "id": "d5db1826-5fcd-4768-9637-66f7c62d6af7",
+    "user_id": "user_001",
+    "amount": -69.34,
+    "category": "entertainment",
+    "description": "Who but charge both",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-03-20T16:07:00+00:00"
+  },
+  {
+    "id": "bb1d0715-2f74-4542-a204-7e0cb2545d30",
+    "user_id": "user_001",
+    "amount": -48.23,
+    "category": "transport",
+    "description": "Own clearly couple medical",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-03-22T17:52:00+00:00"
+  },
+  {
     "id": "6c67e44a-af21-49c5-aab0-a76a71c6c5f0",
     "user_id": "user_001",
     "amount": -46.79,
@@ -639,6 +2124,15 @@
     "timestamp": "2026-03-23T10:17:00+00:00"
   },
   {
+    "id": "befb75d3-0c81-4302-a070-5dd44ce1d428",
+    "user_id": "user_001",
+    "amount": -30.29,
+    "category": "health",
+    "description": "Expect girl raise week",
+    "merchant": "VisionCenter",
+    "timestamp": "2026-03-23T16:36:00+00:00"
+  },
+  {
     "id": "8313eabe-178e-4a67-bfe8-15ddfd945df4",
     "user_id": "user_001",
     "amount": -71.73,
@@ -646,6 +2140,33 @@
     "description": "Well term",
     "merchant": "City Diner",
     "timestamp": "2026-03-23T18:34:00+00:00"
+  },
+  {
+    "id": "078b0364-591b-4d18-9441-43df7111e0a2",
+    "user_id": "user_001",
+    "amount": -174.04,
+    "category": "health",
+    "description": "Remain affect billion stuff",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-03-23T23:49:00+00:00"
+  },
+  {
+    "id": "67a33588-8be1-44bc-9791-9250c6ae49a0",
+    "user_id": "user_001",
+    "amount": -38.13,
+    "category": "transport",
+    "description": "Guy picture with",
+    "merchant": "Rail & Ride",
+    "timestamp": "2026-03-24T00:29:00+00:00"
+  },
+  {
+    "id": "ab8710b6-eae4-44f0-93ac-58de24aaee13",
+    "user_id": "user_001",
+    "amount": -44.45,
+    "category": "food",
+    "description": "General police him",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-03-24T03:28:00+00:00"
   },
   {
     "id": "399fd353-ac93-40c1-bef2-4616f4b42d10",
@@ -675,6 +2196,15 @@
     "timestamp": "2026-03-24T21:47:00+00:00"
   },
   {
+    "id": "b1e36d52-3dc0-4b6d-ac69-e6abafbb67ba",
+    "user_id": "user_001",
+    "amount": -158.32,
+    "category": "utilities",
+    "description": "Teach people think these",
+    "merchant": "AquaCity",
+    "timestamp": "2026-03-24T22:32:00+00:00"
+  },
+  {
     "id": "fba2c3da-695b-4666-90ad-c0cf59b1f30d",
     "user_id": "user_001",
     "amount": -34.7,
@@ -691,6 +2221,33 @@
     "description": "Environment raise together",
     "merchant": "City Diner",
     "timestamp": "2026-03-25T12:36:00+00:00"
+  },
+  {
+    "id": "73069f66-069e-424b-b0d2-f7666fffd9f3",
+    "user_id": "user_001",
+    "amount": -15.21,
+    "category": "food",
+    "description": "How available month last",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-03-25T19:00:00+00:00"
+  },
+  {
+    "id": "817f5989-c935-4ea9-83a8-3be75fadf8de",
+    "user_id": "user_001",
+    "amount": -75.99,
+    "category": "entertainment",
+    "description": "Why page also majority",
+    "merchant": "Spotify",
+    "timestamp": "2026-03-25T19:23:00+00:00"
+  },
+  {
+    "id": "d5b8f622-2ca0-408d-be02-ffdbca4db70a",
+    "user_id": "user_001",
+    "amount": -29.39,
+    "category": "entertainment",
+    "description": "Would outside learn",
+    "merchant": "MusicHive",
+    "timestamp": "2026-03-25T21:11:00+00:00"
   },
   {
     "id": "5d55a6e0-ad41-4ace-a6ec-fe64ffa38836",
@@ -720,6 +2277,15 @@
     "timestamp": "2026-03-27T13:23:00+00:00"
   },
   {
+    "id": "3db9eb2a-ffc4-428a-a76f-e38e9ce39eef",
+    "user_id": "user_001",
+    "amount": -250.98,
+    "category": "shopping",
+    "description": "Former doctor in",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-03-27T19:48:00+00:00"
+  },
+  {
     "id": "d9ed7a3a-3c25-4122-891b-6b06da0f5171",
     "user_id": "user_001",
     "amount": -6.87,
@@ -738,6 +2304,33 @@
     "timestamp": "2026-03-27T23:58:00+00:00"
   },
   {
+    "id": "361455f0-bac8-41bb-8ad1-7a51832f7b79",
+    "user_id": "user_001",
+    "amount": -41.74,
+    "category": "health",
+    "description": "Significant couple by",
+    "merchant": "VisionCenter",
+    "timestamp": "2026-03-28T04:08:00+00:00"
+  },
+  {
+    "id": "7f35650f-91fb-4484-a85d-29e2d34533e6",
+    "user_id": "user_001",
+    "amount": -53.32,
+    "category": "food",
+    "description": "Condition discuss occur majority probably",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-03-28T04:23:00+00:00"
+  },
+  {
+    "id": "591fd937-674d-45ff-b7cb-4e956449f2a9",
+    "user_id": "user_001",
+    "amount": 2995.36,
+    "category": "income",
+    "description": "Salary credit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-03-28T09:21:00+00:00"
+  },
+  {
     "id": "f42bd121-f39b-4767-ad59-8d8bba2fb745",
     "user_id": "user_001",
     "amount": -48.5,
@@ -745,6 +2338,15 @@
     "description": "Transit pass",
     "merchant": "Metro Mobility",
     "timestamp": "2026-03-28T20:07:00+00:00"
+  },
+  {
+    "id": "dc4f5c1e-406e-427d-85f3-7dd75f0e9366",
+    "user_id": "user_001",
+    "amount": -79.96,
+    "category": "food",
+    "description": "Government suggest",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-03-29T04:58:00+00:00"
   },
   {
     "id": "d89089f5-c275-402b-942b-a95639747528",
@@ -756,6 +2358,42 @@
     "timestamp": "2026-03-29T23:32:00+00:00"
   },
   {
+    "id": "e466b9ea-de51-444a-b405-1d34ac460560",
+    "user_id": "user_001",
+    "amount": -160.39,
+    "category": "utilities",
+    "description": "Today him",
+    "merchant": "PowerCo",
+    "timestamp": "2026-03-30T01:13:00+00:00"
+  },
+  {
+    "id": "ad8172e6-9c46-4df4-a576-b0cc62e6668c",
+    "user_id": "user_001",
+    "amount": -183.63,
+    "category": "utilities",
+    "description": "Reason opportunity care across better",
+    "merchant": "BrightFiber Internet",
+    "timestamp": "2026-03-30T03:07:00+00:00"
+  },
+  {
+    "id": "d0695b79-7c00-413f-a44c-4049eb744478",
+    "user_id": "user_001",
+    "amount": -17.4,
+    "category": "transport",
+    "description": "Speech could require reduce",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-03-30T19:40:00+00:00"
+  },
+  {
+    "id": "ce7e7553-feb1-490b-a58a-e107f1c45a60",
+    "user_id": "user_001",
+    "amount": -6.44,
+    "category": "transport",
+    "description": "Floor race",
+    "merchant": "Uber",
+    "timestamp": "2026-03-31T00:46:00+00:00"
+  },
+  {
     "id": "3fe88169-d7f7-4b2a-b21a-749f2f93db9b",
     "user_id": "user_001",
     "amount": -137.56,
@@ -763,6 +2401,15 @@
     "description": "Utility bundle",
     "merchant": "TeleLink",
     "timestamp": "2026-03-31T05:14:00+00:00"
+  },
+  {
+    "id": "b6216b8f-5104-433f-8c27-0bc9b603259a",
+    "user_id": "user_001",
+    "amount": -118.51,
+    "category": "entertainment",
+    "description": "House account general man",
+    "merchant": "CineHaus",
+    "timestamp": "2026-03-31T06:20:00+00:00"
   },
   {
     "id": "00c46c16-ec7f-4436-a243-94aa6e7f48a2",
@@ -774,6 +2421,15 @@
     "timestamp": "2026-03-31T18:31:00+00:00"
   },
   {
+    "id": "5cae1e1b-0796-4ff8-80fa-b0b50b606c8f",
+    "user_id": "user_001",
+    "amount": -63.48,
+    "category": "food",
+    "description": "Series traditional",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-03-31T20:23:00+00:00"
+  },
+  {
     "id": "43bcf1ad-5aa7-4b39-9c03-494fd23eaca5",
     "user_id": "user_001",
     "amount": -239.29,
@@ -781,6 +2437,15 @@
     "description": "Home goods",
     "merchant": "Thread & Co.",
     "timestamp": "2026-04-01T00:40:00+00:00"
+  },
+  {
+    "id": "5f4fcb3c-10ec-48f5-b6a4-5eb47d2a3993",
+    "user_id": "user_001",
+    "amount": -28.17,
+    "category": "food",
+    "description": "Win least summer",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-04-01T02:07:00+00:00"
   },
   {
     "id": "4dcee50f-da4a-41f3-90fc-92bb02aa497a",
@@ -801,6 +2466,15 @@
     "timestamp": "2026-04-01T16:06:00+00:00"
   },
   {
+    "id": "598e871a-9002-400e-89cd-403e0ea96449",
+    "user_id": "user_001",
+    "amount": -179.57,
+    "category": "health",
+    "description": "Long base tree",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-04-02T09:44:00+00:00"
+  },
+  {
     "id": "51e71fef-e6a2-4098-83d8-23927cc74709",
     "user_id": "user_001",
     "amount": -33.15,
@@ -819,6 +2493,15 @@
     "timestamp": "2026-04-02T23:39:00+00:00"
   },
   {
+    "id": "a6e26435-3474-4f58-93b4-fc3e5c3321cd",
+    "user_id": "user_001",
+    "amount": -266.48,
+    "category": "shopping",
+    "description": "Each development board character",
+    "merchant": "BookBazaar",
+    "timestamp": "2026-04-03T01:30:00+00:00"
+  },
+  {
     "id": "46312461-17c4-40ee-8467-2789bc2ba0b3",
     "user_id": "user_001",
     "amount": -71.86,
@@ -828,6 +2511,15 @@
     "timestamp": "2026-04-03T03:42:00+00:00"
   },
   {
+    "id": "bdfbf00c-1029-474f-8f12-7a7735d41186",
+    "user_id": "user_001",
+    "amount": -146.84,
+    "category": "health",
+    "description": "Experience research small attention else",
+    "merchant": "DentalCare Plus",
+    "timestamp": "2026-04-03T04:41:00+00:00"
+  },
+  {
     "id": "6e73278e-ca8e-49be-b662-28ec8a7d67b9",
     "user_id": "user_001",
     "amount": -42.07,
@@ -835,6 +2527,33 @@
     "description": "Yourself tend",
     "merchant": "Green Bowl",
     "timestamp": "2026-04-03T11:34:00+00:00"
+  },
+  {
+    "id": "7157b409-ec43-4aee-a5dc-814d8ea087b0",
+    "user_id": "user_001",
+    "amount": -41.54,
+    "category": "food",
+    "description": "Score party late",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-04-03T12:12:00+00:00"
+  },
+  {
+    "id": "5fe7fa91-ee4c-437e-9761-33fa54621482",
+    "user_id": "user_001",
+    "amount": -99.43,
+    "category": "entertainment",
+    "description": "Buy cut science",
+    "merchant": "Netflix",
+    "timestamp": "2026-04-03T13:17:00+00:00"
+  },
+  {
+    "id": "50ea682d-ccae-4029-bf78-b286defcb4ec",
+    "user_id": "user_001",
+    "amount": -187.79,
+    "category": "utilities",
+    "description": "Himself accept buy voice professional",
+    "merchant": "PowerCo",
+    "timestamp": "2026-04-05T02:33:00+00:00"
   },
   {
     "id": "14771b2a-d7de-45b7-8966-a96936a5a24c",
@@ -891,6 +2610,15 @@
     "timestamp": "2026-04-05T19:18:00+00:00"
   },
   {
+    "id": "fc67dcc4-7b93-49a9-bf98-ac790ea1f9da",
+    "user_id": "user_001",
+    "amount": -105.29,
+    "category": "health",
+    "description": "Lead right",
+    "merchant": "DentalCare Plus",
+    "timestamp": "2026-04-05T19:29:00+00:00"
+  },
+  {
     "id": "cb06c64c-2b46-49fb-907b-27ebb3fcce38",
     "user_id": "user_001",
     "amount": -70.65,
@@ -898,6 +2626,15 @@
     "description": "Movie night",
     "merchant": "CineHaus",
     "timestamp": "2026-04-05T20:25:00+00:00"
+  },
+  {
+    "id": "1a1c35f6-0b9d-4537-9927-aff0238c706b",
+    "user_id": "user_001",
+    "amount": -40.33,
+    "category": "food",
+    "description": "Including win thousand",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-05T21:57:00+00:00"
   },
   {
     "id": "b7eb1c4c-3ccc-4974-9129-8d35abaae8ef",
@@ -909,6 +2646,24 @@
     "timestamp": "2026-04-06T01:05:00+00:00"
   },
   {
+    "id": "3cad6712-14bc-423a-9d34-b79b54a171b5",
+    "user_id": "user_001",
+    "amount": -174.21,
+    "category": "shopping",
+    "description": "Husband into something step once",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-04-06T06:07:00+00:00"
+  },
+  {
+    "id": "0102b19b-2e22-4017-b848-4fd766df4a11",
+    "user_id": "user_001",
+    "amount": -29.8,
+    "category": "entertainment",
+    "description": "Structure kid piece",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-04-06T10:39:00+00:00"
+  },
+  {
     "id": "b87c2134-998f-4d19-bd30-97417eb8ce4a",
     "user_id": "user_001",
     "amount": -75.69,
@@ -916,6 +2671,33 @@
     "description": "Streaming bundle",
     "merchant": "StreamVerse",
     "timestamp": "2026-04-07T06:56:00+00:00"
+  },
+  {
+    "id": "05dd9e2a-f3cb-45ec-83e7-a37ffd753ea6",
+    "user_id": "user_001",
+    "amount": -12.23,
+    "category": "transport",
+    "description": "Wife who all vote",
+    "merchant": "Uber",
+    "timestamp": "2026-04-07T08:28:00+00:00"
+  },
+  {
+    "id": "c3642f0e-05ed-4c08-800d-045d19a59758",
+    "user_id": "user_001",
+    "amount": -33.62,
+    "category": "food",
+    "description": "Cultural feel fire force per",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-04-07T10:33:00+00:00"
+  },
+  {
+    "id": "3f17262b-7870-4450-adf7-e30b4e60e629",
+    "user_id": "user_001",
+    "amount": -66.8,
+    "category": "food",
+    "description": "Pass well",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-07T10:36:00+00:00"
   },
   {
     "id": "ae7f9aa9-380c-4759-8848-211077e70d99",
@@ -934,6 +2716,24 @@
     "description": "Utility bundle",
     "merchant": "TeleLink",
     "timestamp": "2026-04-08T14:42:00+00:00"
+  },
+  {
+    "id": "b5ccebbd-20e7-4a9a-ac72-306684482156",
+    "user_id": "user_001",
+    "amount": -110.63,
+    "category": "shopping",
+    "description": "Always beyond resource attack",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-04-09T00:34:00+00:00"
+  },
+  {
+    "id": "3726ce87-7b79-49d1-92ee-f05d46e31db9",
+    "user_id": "user_001",
+    "amount": -13.99,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "Netflix",
+    "timestamp": "2026-04-09T14:59:00+00:00"
   },
   {
     "id": "27783f66-a305-48a5-877c-379dcd40038a",
@@ -963,6 +2763,33 @@
     "timestamp": "2026-04-11T02:30:00+00:00"
   },
   {
+    "id": "f83f3767-54eb-414b-909c-865b509b721e",
+    "user_id": "user_001",
+    "amount": 3027.43,
+    "category": "income",
+    "description": "Salary credit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-04-12T04:56:00+00:00"
+  },
+  {
+    "id": "7135365f-93d7-4603-8f4a-8d9af6a43014",
+    "user_id": "user_001",
+    "amount": -23.11,
+    "category": "transport",
+    "description": "Fill our voice not",
+    "merchant": "ExpressBus",
+    "timestamp": "2026-04-12T05:28:00+00:00"
+  },
+  {
+    "id": "2986ca69-ded4-4aba-b074-23220d01b559",
+    "user_id": "user_001",
+    "amount": -89.16,
+    "category": "food",
+    "description": "Anything south edge through",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-04-13T02:22:00+00:00"
+  },
+  {
     "id": "f1ff61d7-c562-4313-91bb-21695054e8c7",
     "user_id": "user_001",
     "amount": -65.28,
@@ -970,6 +2797,24 @@
     "description": "Build bit around them",
     "merchant": "City Diner",
     "timestamp": "2026-04-13T04:06:00+00:00"
+  },
+  {
+    "id": "aa010395-2de4-4b44-a728-2c92bcb4440f",
+    "user_id": "user_001",
+    "amount": -183.61,
+    "category": "health",
+    "description": "Be address great learn could",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-04-13T04:20:00+00:00"
+  },
+  {
+    "id": "39f38a38-5040-4f99-8760-1b058cf2ea49",
+    "user_id": "user_001",
+    "amount": -63.8,
+    "category": "food",
+    "description": "White discover out suffer",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-13T15:19:00+00:00"
   },
   {
     "id": "5035179b-0d31-46c5-873f-00e6cf5f47c5",
@@ -999,6 +2844,42 @@
     "timestamp": "2026-04-14T04:10:00+00:00"
   },
   {
+    "id": "ba648f0c-b253-4b65-b3af-8ea878355cf1",
+    "user_id": "user_001",
+    "amount": -18.67,
+    "category": "transport",
+    "description": "Instead trade detail",
+    "merchant": "ExpressBus",
+    "timestamp": "2026-04-14T11:06:00+00:00"
+  },
+  {
+    "id": "a7a42f9c-ea08-41cc-9dd3-a4208d69cfc6",
+    "user_id": "user_001",
+    "amount": -10.32,
+    "category": "transport",
+    "description": "Claim across interview",
+    "merchant": "CityBike",
+    "timestamp": "2026-04-15T07:50:00+00:00"
+  },
+  {
+    "id": "55b0fed9-b54f-4892-b28f-ce0cad5c9177",
+    "user_id": "user_001",
+    "amount": -49.54,
+    "category": "food",
+    "description": "By star",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-16T09:04:00+00:00"
+  },
+  {
+    "id": "3bc46e61-beda-44bc-908a-402b8461868f",
+    "user_id": "user_001",
+    "amount": -49.82,
+    "category": "entertainment",
+    "description": "Look part middle year still",
+    "merchant": "Eventbrite",
+    "timestamp": "2026-04-16T11:13:00+00:00"
+  },
+  {
     "id": "5d3ea271-9997-47fa-85d8-d79556973541",
     "user_id": "user_001",
     "amount": -75.18,
@@ -1026,6 +2907,15 @@
     "timestamp": "2026-04-17T05:17:00+00:00"
   },
   {
+    "id": "722a6f4d-6855-4d06-87d1-02e7dabd331c",
+    "user_id": "user_001",
+    "amount": -124.33,
+    "category": "shopping",
+    "description": "Every street player in",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2026-04-17T06:52:00+00:00"
+  },
+  {
     "id": "7094465f-2ed8-4d06-98fa-251cae66fde6",
     "user_id": "user_001",
     "amount": -29.43,
@@ -1033,6 +2923,15 @@
     "description": "Commercial eye light per",
     "merchant": "Green Bowl",
     "timestamp": "2026-04-17T15:06:00+00:00"
+  },
+  {
+    "id": "81418a65-c819-482e-9119-2b37bcffb04a",
+    "user_id": "user_001",
+    "amount": -202.37,
+    "category": "health",
+    "description": "Feeling him language final",
+    "merchant": "VisionCenter",
+    "timestamp": "2026-04-17T17:25:00+00:00"
   },
   {
     "id": "723a2920-8e77-466e-9daa-6ef0cfcfef1b",
@@ -1060,6 +2959,15 @@
     "description": "Utility bundle",
     "merchant": "PowerCo",
     "timestamp": "2026-04-19T06:12:00+00:00"
+  },
+  {
+    "id": "68c8c123-570d-49fb-8711-6d01f2a159d7",
+    "user_id": "user_001",
+    "amount": -95.54,
+    "category": "food",
+    "description": "Require son child",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-04-19T08:05:00+00:00"
   },
   {
     "id": "aa820197-c875-4e9b-984c-e2d0b70c7677",
@@ -1107,6 +3015,15 @@
     "timestamp": "2026-04-20T15:03:00+00:00"
   },
   {
+    "id": "71a044c9-0840-4649-bded-01311a48cb43",
+    "user_id": "user_001",
+    "amount": -43.68,
+    "category": "entertainment",
+    "description": "Message ok",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-04-20T17:12:00+00:00"
+  },
+  {
     "id": "2cf1ebd7-42d2-420c-b9b5-148d25d7ac29",
     "user_id": "user_001",
     "amount": -21.6,
@@ -1114,6 +3031,24 @@
     "description": "Fuel top-up",
     "merchant": "QuickFuel",
     "timestamp": "2026-04-21T03:02:00+00:00"
+  },
+  {
+    "id": "7421bbeb-d78d-4c46-9c95-1a93c48c4a53",
+    "user_id": "user_001",
+    "amount": -18.24,
+    "category": "food",
+    "description": "Expert way paper",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-04-21T22:06:00+00:00"
+  },
+  {
+    "id": "d12fd534-64ed-4fa3-92df-d5898094603b",
+    "user_id": "user_001",
+    "amount": -28.08,
+    "category": "food",
+    "description": "Respond these purpose financial tree",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-04-22T00:36:00+00:00"
   },
   {
     "id": "35f36c60-ee14-459b-85a0-563a9a50d3e3",
@@ -1143,6 +3078,15 @@
     "timestamp": "2026-04-22T07:51:00+00:00"
   },
   {
+    "id": "6ae57275-0b68-4f4e-a15e-e01ec1f088db",
+    "user_id": "user_001",
+    "amount": -27.68,
+    "category": "transport",
+    "description": "Lay score condition prevent local",
+    "merchant": "Lyft",
+    "timestamp": "2026-04-22T08:33:00+00:00"
+  },
+  {
     "id": "d8a4bef2-ea3a-462a-a6bd-a46d93422b18",
     "user_id": "user_001",
     "amount": -28.07,
@@ -1159,6 +3103,15 @@
     "description": "Transit pass",
     "merchant": "Metro Mobility",
     "timestamp": "2026-04-22T17:45:00+00:00"
+  },
+  {
+    "id": "d660cd29-97f5-4d1b-ac41-9ce8b0702c8d",
+    "user_id": "user_001",
+    "amount": -41.12,
+    "category": "food",
+    "description": "Only compare difference small",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-04-23T10:02:00+00:00"
   },
   {
     "id": "6f6bc61b-e04b-4e20-ad55-fd71f5baf4be",
@@ -1188,6 +3141,51 @@
     "timestamp": "2026-04-24T20:36:00+00:00"
   },
   {
+    "id": "31156327-8e33-43a5-93f8-dfc616e16438",
+    "user_id": "user_001",
+    "amount": -124.49,
+    "category": "shopping",
+    "description": "New opportunity international include",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-04-25T02:03:00+00:00"
+  },
+  {
+    "id": "e0d24109-2171-48ee-8e52-7066b6e607f7",
+    "user_id": "user_001",
+    "amount": -40.89,
+    "category": "health",
+    "description": "Morning fill",
+    "merchant": "LabCorp",
+    "timestamp": "2026-04-25T09:10:00+00:00"
+  },
+  {
+    "id": "6aae8666-6ef9-451b-95c1-7ed221e7c96e",
+    "user_id": "user_001",
+    "amount": -187.2,
+    "category": "utilities",
+    "description": "Hard animal",
+    "merchant": "HomeShield Insurance",
+    "timestamp": "2026-04-25T13:06:00+00:00"
+  },
+  {
+    "id": "f88800d8-a4fa-4e62-9600-7ba1bf7508a7",
+    "user_id": "user_001",
+    "amount": -47.03,
+    "category": "food",
+    "description": "Great in final",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-04-26T00:21:00+00:00"
+  },
+  {
+    "id": "c3b9ac65-4891-4754-956d-fe3f5aae7ee7",
+    "user_id": "user_001",
+    "amount": -130.68,
+    "category": "health",
+    "description": "Seat animal despite",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-04-26T03:07:00+00:00"
+  },
+  {
     "id": "651f2c49-7a6d-44e0-8ec4-bbfa779af1c8",
     "user_id": "user_001",
     "amount": -35.27,
@@ -1195,6 +3193,51 @@
     "description": "Fuel top-up",
     "merchant": "QuickFuel",
     "timestamp": "2026-04-26T22:04:00+00:00"
+  },
+  {
+    "id": "8b48ed6e-8531-4953-a016-0f9f6bc65661",
+    "user_id": "user_001",
+    "amount": -20.73,
+    "category": "transport",
+    "description": "More local increase director recent",
+    "merchant": "Parking Authority",
+    "timestamp": "2026-04-27T02:39:00+00:00"
+  },
+  {
+    "id": "5854adc9-7513-4004-85d6-947962f9f5ed",
+    "user_id": "user_001",
+    "amount": -230.79,
+    "category": "shopping",
+    "description": "Ask three a magazine despite",
+    "merchant": "Thrift Haven",
+    "timestamp": "2026-04-27T15:14:00+00:00"
+  },
+  {
+    "id": "99756379-4bbd-443c-acb4-e2d3bec275f4",
+    "user_id": "user_001",
+    "amount": 2992.8,
+    "category": "income",
+    "description": "Salary credit",
+    "merchant": "HR Pay Services",
+    "timestamp": "2026-04-27T20:47:00+00:00"
+  },
+  {
+    "id": "6541d500-2576-46bf-a239-270174426952",
+    "user_id": "user_001",
+    "amount": -24.63,
+    "category": "entertainment",
+    "description": "To around",
+    "merchant": "Netflix",
+    "timestamp": "2026-04-28T00:43:00+00:00"
+  },
+  {
+    "id": "41811393-6285-4b25-8b55-16557e0ce29f",
+    "user_id": "user_001",
+    "amount": -64.52,
+    "category": "food",
+    "description": "Seek feel world analysis",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-04-28T04:47:00+00:00"
   },
   {
     "id": "00899c9e-fcad-4a91-a24f-9e8094f9b6a5",
@@ -1215,6 +3258,24 @@
     "timestamp": "2026-04-28T17:45:00+00:00"
   },
   {
+    "id": "7efd60ef-3e0b-4ffe-8a7d-7c9b3ed5e154",
+    "user_id": "user_001",
+    "amount": -135.11,
+    "category": "utilities",
+    "description": "You quickly condition",
+    "merchant": "TeleLink",
+    "timestamp": "2026-04-29T03:55:00+00:00"
+  },
+  {
+    "id": "b88e8166-9770-4a86-9290-af7df24d3437",
+    "user_id": "user_001",
+    "amount": -87.86,
+    "category": "entertainment",
+    "description": "Grow event",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-04-29T09:57:00+00:00"
+  },
+  {
     "id": "7ab70125-ed4d-43c1-bfb0-09ad6bdf9034",
     "user_id": "user_001",
     "amount": -12.87,
@@ -1233,6 +3294,15 @@
     "timestamp": "2026-04-30T09:15:00+00:00"
   },
   {
+    "id": "a2a24d59-e597-4823-9022-f0be5aee15fa",
+    "user_id": "user_001",
+    "amount": -232.36,
+    "category": "shopping",
+    "description": "Become college base something",
+    "merchant": "ElectroMart",
+    "timestamp": "2026-04-30T15:17:00+00:00"
+  },
+  {
     "id": "fe40838b-e5a4-44a7-9fd2-8216429323c2",
     "user_id": "user_001",
     "amount": -21.94,
@@ -1240,6 +3310,42 @@
     "description": "Forget son in",
     "merchant": "Market Fresh",
     "timestamp": "2026-04-30T17:38:00+00:00"
+  },
+  {
+    "id": "0f7b0d8a-d827-411d-af1c-e238e87170b7",
+    "user_id": "user_001",
+    "amount": -57.94,
+    "category": "food",
+    "description": "Who heavy place campaign",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-04-30T18:41:00+00:00"
+  },
+  {
+    "id": "c3e2aa92-c22c-423b-ab35-5ef8dbaeaca7",
+    "user_id": "user_001",
+    "amount": -33.69,
+    "category": "health",
+    "description": "After picture sort",
+    "merchant": "LabCorp",
+    "timestamp": "2026-04-30T23:55:00+00:00"
+  },
+  {
+    "id": "40eb9b67-3610-478e-b71c-b7759210c3ba",
+    "user_id": "user_001",
+    "amount": -45.13,
+    "category": "food",
+    "description": "You within serious",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-05-01T01:33:00+00:00"
+  },
+  {
+    "id": "9be5cf75-7c6c-4844-9a4b-d087da660bd4",
+    "user_id": "user_001",
+    "amount": -17.81,
+    "category": "transport",
+    "description": "Against boy until",
+    "merchant": "Parking Authority",
+    "timestamp": "2026-05-01T08:46:00+00:00"
   },
   {
     "id": "59d5620b-cb49-429a-8709-583c790a82e6",
@@ -1278,6 +3384,15 @@
     "timestamp": "2026-05-02T03:18:00+00:00"
   },
   {
+    "id": "13b835ac-d25e-4818-b209-e5c6708c1a6f",
+    "user_id": "user_001",
+    "amount": -28.43,
+    "category": "transport",
+    "description": "Pick get",
+    "merchant": "CityBike",
+    "timestamp": "2026-05-02T10:18:00+00:00"
+  },
+  {
     "id": "ef828c76-fcb4-48ea-814d-da947bdcb9f9",
     "user_id": "user_001",
     "amount": -26.54,
@@ -1296,6 +3411,33 @@
     "timestamp": "2026-05-03T14:55:00+00:00"
   },
   {
+    "id": "26cdcc8d-010d-4542-8086-ce267005ad99",
+    "user_id": "user_001",
+    "amount": -53.29,
+    "category": "health",
+    "description": "About edge something want",
+    "merchant": "DentalCare Plus",
+    "timestamp": "2026-05-04T01:47:00+00:00"
+  },
+  {
+    "id": "f7d2ada6-b42a-4834-8d57-6b36816598f4",
+    "user_id": "user_001",
+    "amount": -157.01,
+    "category": "utilities",
+    "description": "Have sound deal",
+    "merchant": "AquaCity",
+    "timestamp": "2026-05-04T15:21:00+00:00"
+  },
+  {
+    "id": "8d3e3c3f-7ba9-4215-9890-8a363b38a253",
+    "user_id": "user_001",
+    "amount": -48.78,
+    "category": "food",
+    "description": "To let seem let",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-05-04T16:53:00+00:00"
+  },
+  {
     "id": "46f310f5-1505-4ea0-a9da-f4862351e9f5",
     "user_id": "user_001",
     "amount": -192.42,
@@ -1303,6 +3445,24 @@
     "description": "Phone & internet",
     "merchant": "PowerCo",
     "timestamp": "2026-05-04T19:46:00+00:00"
+  },
+  {
+    "id": "61cf9dec-60cf-4724-b17d-b4a7e121a0a0",
+    "user_id": "user_001",
+    "amount": -131.33,
+    "category": "shopping",
+    "description": "Defense training call",
+    "merchant": "ElectroMart",
+    "timestamp": "2026-05-04T23:09:00+00:00"
+  },
+  {
+    "id": "ce1f5c4f-511a-4d72-b3c3-ceb616281652",
+    "user_id": "user_001",
+    "amount": -35.72,
+    "category": "food",
+    "description": "Lead day five beautiful director",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-05-05T18:52:00+00:00"
   },
   {
     "id": "539b0932-7025-4aa5-90d2-86f696790c7c",
@@ -1314,6 +3474,15 @@
     "timestamp": "2026-05-06T09:35:00+00:00"
   },
   {
+    "id": "f9bcb5c6-0f25-499b-b835-b484f9175b43",
+    "user_id": "user_001",
+    "amount": -47.64,
+    "category": "transport",
+    "description": "Name instead such race almost",
+    "merchant": "Lyft",
+    "timestamp": "2026-05-06T16:29:00+00:00"
+  },
+  {
     "id": "8950cec5-6da3-4b69-9697-1652d3a1f531",
     "user_id": "user_001",
     "amount": -82.93,
@@ -1323,6 +3492,15 @@
     "timestamp": "2026-05-06T19:45:00+00:00"
   },
   {
+    "id": "fb42a95c-606b-4c4e-acf7-998a4531913b",
+    "user_id": "user_001",
+    "amount": -211.52,
+    "category": "shopping",
+    "description": "Dinner resource seem environmental",
+    "merchant": "BookBazaar",
+    "timestamp": "2026-05-07T00:49:00+00:00"
+  },
+  {
     "id": "6c10b155-1978-42e0-b253-8f2da5c82700",
     "user_id": "user_001",
     "amount": -121.95,
@@ -1330,6 +3508,15 @@
     "description": "Phone & internet",
     "merchant": "PowerCo",
     "timestamp": "2026-05-07T08:48:00+00:00"
+  },
+  {
+    "id": "38f00a69-58b0-49af-be86-92e68ae09250",
+    "user_id": "user_001",
+    "amount": -31.76,
+    "category": "food",
+    "description": "Writer recent",
+    "merchant": "City Diner",
+    "timestamp": "2026-05-07T11:12:00+00:00"
   },
   {
     "id": "7c2865bd-532e-449b-8e6e-846d015b830a",
@@ -1348,5 +3535,3218 @@
     "description": "Payroll deposit",
     "merchant": "ACME Payroll",
     "timestamp": "2026-05-08T00:30:00+00:00"
+  },
+  {
+    "id": "fa5f5e3f-efe0-43a1-8e03-239668893405",
+    "user_id": "user_001",
+    "amount": -30.13,
+    "category": "food",
+    "description": "Three few not",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-05-08T09:25:00+00:00"
+  },
+  {
+    "id": "6b6a83e8-6cea-4f94-b64e-bb56be0503fa",
+    "user_id": "user_001",
+    "amount": -20.99,
+    "category": "entertainment",
+    "description": "House leave religious thought",
+    "merchant": "MusicHive",
+    "timestamp": "2026-05-08T20:11:00+00:00"
+  },
+  {
+    "id": "d07a64d7-97d1-4a39-8b2f-96e5e673c3aa",
+    "user_id": "user_001",
+    "amount": -72.01,
+    "category": "shopping",
+    "description": "Writer work",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-05-09T03:18:00+00:00"
+  },
+  {
+    "id": "b4f41304-c07d-462f-b182-335fe0adb0e1",
+    "user_id": "user_001",
+    "amount": -270.68,
+    "category": "shopping",
+    "description": "At executive set",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-05-09T11:13:00+00:00"
+  },
+  {
+    "id": "7f91e2d8-a04c-4b7f-b17f-05e5b5a009e4",
+    "user_id": "user_001",
+    "amount": -103.43,
+    "category": "food",
+    "description": "Consumer down travel",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-05-09T16:24:00+00:00"
+  },
+  {
+    "id": "1008111b-cae1-459f-a6db-f35ae75669bd",
+    "user_id": "user_001",
+    "amount": -15.49,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "Spotify",
+    "timestamp": "2026-05-09T23:39:00+00:00"
+  },
+  {
+    "id": "e7917cb2-59ee-4b4a-80a5-cdde5dfcf748",
+    "user_id": "user_001",
+    "amount": -10.59,
+    "category": "transport",
+    "description": "Remember left",
+    "merchant": "Parking Authority",
+    "timestamp": "2026-05-10T11:41:00+00:00"
+  },
+  {
+    "id": "0250f6ee-bdf9-4492-93e6-eb43583fa441",
+    "user_id": "user_001",
+    "amount": -34.34,
+    "category": "entertainment",
+    "description": "Action movement sort environmental",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-05-10T18:10:00+00:00"
+  },
+  {
+    "id": "0f4c5661-3431-45cc-8995-b8ef427bae02",
+    "user_id": "user_001",
+    "amount": 2985.87,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "Freelance Platform",
+    "timestamp": "2026-05-12T15:50:00+00:00"
+  },
+  {
+    "id": "a6461e10-08d7-482f-b2f3-e3653741cd18",
+    "user_id": "user_001",
+    "amount": -15.78,
+    "category": "transport",
+    "description": "Effort room yard",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2026-05-12T16:44:00+00:00"
+  },
+  {
+    "id": "b1ab2410-fef7-446e-8f91-3fe9213a5797",
+    "user_id": "user_001",
+    "amount": -83.76,
+    "category": "food",
+    "description": "Most rise amount center",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-05-12T17:36:00+00:00"
+  },
+  {
+    "id": "5cba19c6-3214-4938-af43-e3657a862a3d",
+    "user_id": "user_001",
+    "amount": -46.23,
+    "category": "food",
+    "description": "On last",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-05-12T22:34:00+00:00"
+  },
+  {
+    "id": "cc9571e3-0d81-4bc3-8502-ad893bdcbd6c",
+    "user_id": "user_001",
+    "amount": -70.82,
+    "category": "health",
+    "description": "Continue compare though hour friend",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-05-12T23:22:00+00:00"
+  },
+  {
+    "id": "2c3b5afd-2c72-404f-8c6b-c924f5b6a66d",
+    "user_id": "user_001",
+    "amount": -86.1,
+    "category": "shopping",
+    "description": "Ahead read",
+    "merchant": "ElectroMart",
+    "timestamp": "2026-05-13T03:43:00+00:00"
+  },
+  {
+    "id": "c5287c3f-1111-4440-a0e6-b70e4c04782e",
+    "user_id": "user_001",
+    "amount": -119.14,
+    "category": "entertainment",
+    "description": "As leader scene former",
+    "merchant": "Netflix",
+    "timestamp": "2026-05-14T01:30:00+00:00"
+  },
+  {
+    "id": "9a2af205-1f3f-4676-9484-e4a8995ff807",
+    "user_id": "user_001",
+    "amount": -108.33,
+    "category": "health",
+    "description": "Simply free",
+    "merchant": "LabCorp",
+    "timestamp": "2026-05-14T18:23:00+00:00"
+  },
+  {
+    "id": "5e4c088e-6d48-47d4-be71-5e81ba900019",
+    "user_id": "user_001",
+    "amount": -92.27,
+    "category": "health",
+    "description": "Yeah team finish",
+    "merchant": "MindEase Therapy",
+    "timestamp": "2026-05-15T09:06:00+00:00"
+  },
+  {
+    "id": "d4a8cc02-ce43-4442-8f85-8a22e455f6b0",
+    "user_id": "user_001",
+    "amount": -96.79,
+    "category": "entertainment",
+    "description": "Realize today something yeah",
+    "merchant": "GameZone",
+    "timestamp": "2026-05-15T10:10:00+00:00"
+  },
+  {
+    "id": "ac230028-3b60-4d49-83ab-ec36a8cdc0d0",
+    "user_id": "user_001",
+    "amount": -194.76,
+    "category": "health",
+    "description": "Camera once owner",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-05-15T16:40:00+00:00"
+  },
+  {
+    "id": "c659699c-17f2-4ac9-876f-ed812edfc20d",
+    "user_id": "user_001",
+    "amount": -60.03,
+    "category": "food",
+    "description": "Score hope popular statement movement",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-05-15T20:37:00+00:00"
+  },
+  {
+    "id": "dd7e593b-3849-4d61-a1e6-2ea7d52afab9",
+    "user_id": "user_001",
+    "amount": -32.31,
+    "category": "entertainment",
+    "description": "Together put",
+    "merchant": "Eventbrite",
+    "timestamp": "2026-05-16T11:02:00+00:00"
+  },
+  {
+    "id": "22c473ac-bdeb-4eff-a396-ba630a084a9c",
+    "user_id": "user_001",
+    "amount": -204.51,
+    "category": "shopping",
+    "description": "Across none under",
+    "merchant": "BookBazaar",
+    "timestamp": "2026-05-17T04:48:00+00:00"
+  },
+  {
+    "id": "a5c7ab7b-567a-4c55-929f-ed2d10029717",
+    "user_id": "user_001",
+    "amount": -100.21,
+    "category": "health",
+    "description": "Individual reflect attention eye ten",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-05-17T05:38:00+00:00"
+  },
+  {
+    "id": "82d7ceec-cebb-45a8-bc2a-56e13c7a5cdb",
+    "user_id": "user_001",
+    "amount": -39.69,
+    "category": "shopping",
+    "description": "Size ability her source",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-05-17T17:25:00+00:00"
+  },
+  {
+    "id": "02d58db2-26e7-4047-b66d-71febceb7619",
+    "user_id": "user_001",
+    "amount": -170.66,
+    "category": "entertainment",
+    "description": "Carry large",
+    "merchant": "MusicHive",
+    "timestamp": "2026-05-17T21:31:00+00:00"
+  },
+  {
+    "id": "7ea9faf4-456c-431d-bf57-468641ff294c",
+    "user_id": "user_001",
+    "amount": -111.59,
+    "category": "shopping",
+    "description": "Cause question include evidence",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-05-19T17:48:00+00:00"
+  },
+  {
+    "id": "d770a495-a443-49e7-b6d5-95ad74db5991",
+    "user_id": "user_001",
+    "amount": -156.9,
+    "category": "shopping",
+    "description": "Something compare middle",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-05-19T18:25:00+00:00"
+  },
+  {
+    "id": "c1481028-40b2-4260-80c5-d299baa3fff9",
+    "user_id": "user_001",
+    "amount": -29.17,
+    "category": "food",
+    "description": "Then arrive surface director",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-05-20T13:37:00+00:00"
+  },
+  {
+    "id": "f37abbb7-e2fe-4e73-9302-8a59bd26d705",
+    "user_id": "user_001",
+    "amount": -74.62,
+    "category": "utilities",
+    "description": "During beautiful",
+    "merchant": "HomeShield Insurance",
+    "timestamp": "2026-05-20T17:50:00+00:00"
+  },
+  {
+    "id": "5294431c-00c2-4038-bd7e-cfc0c2439120",
+    "user_id": "user_001",
+    "amount": -69.71,
+    "category": "food",
+    "description": "Outside fine attack certain degree",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-05-22T03:57:00+00:00"
+  },
+  {
+    "id": "62777030-79bf-449c-b6b7-b07b3ed05414",
+    "user_id": "user_001",
+    "amount": -200.43,
+    "category": "health",
+    "description": "But include",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-05-23T01:28:00+00:00"
+  },
+  {
+    "id": "2e50f5fb-6c43-4f45-85e3-e58c0622c2fd",
+    "user_id": "user_001",
+    "amount": -79.0,
+    "category": "shopping",
+    "description": "Serious daughter born happy offer",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-05-23T15:34:00+00:00"
+  },
+  {
+    "id": "870ccc09-3ee6-4a26-ad4a-531e61cf647d",
+    "user_id": "user_001",
+    "amount": -47.77,
+    "category": "entertainment",
+    "description": "Development wide expert",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-05-23T20:21:00+00:00"
+  },
+  {
+    "id": "fed691de-e617-4411-a4c9-84605d6425fe",
+    "user_id": "user_001",
+    "amount": -136.97,
+    "category": "health",
+    "description": "Bag place",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-05-24T04:31:00+00:00"
+  },
+  {
+    "id": "0f76fdda-2c5e-49fa-8aac-7e1c137d4336",
+    "user_id": "user_001",
+    "amount": -104.84,
+    "category": "health",
+    "description": "Defense chance good",
+    "merchant": "MindEase Therapy",
+    "timestamp": "2026-05-25T18:13:00+00:00"
+  },
+  {
+    "id": "84360d5a-1985-4ebb-9951-b54a25599baa",
+    "user_id": "user_001",
+    "amount": -7.71,
+    "category": "transport",
+    "description": "Difficult drop me",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2026-05-25T19:49:00+00:00"
+  },
+  {
+    "id": "313967d3-fe5e-4ce0-9d38-0d4398cc3e5d",
+    "user_id": "user_001",
+    "amount": -98.82,
+    "category": "utilities",
+    "description": "Push large effort",
+    "merchant": "TeleLink",
+    "timestamp": "2026-05-25T21:44:00+00:00"
+  },
+  {
+    "id": "75f64c15-c4e8-4aa3-a94f-e5ae91ea919e",
+    "user_id": "user_001",
+    "amount": -34.33,
+    "category": "food",
+    "description": "Anyone institution light black",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-05-26T17:45:00+00:00"
+  },
+  {
+    "id": "b35e7333-0e44-49af-ab8c-69a455421394",
+    "user_id": "user_001",
+    "amount": -64.4,
+    "category": "food",
+    "description": "Peace quite along start",
+    "merchant": "City Diner",
+    "timestamp": "2026-05-27T18:56:00+00:00"
+  },
+  {
+    "id": "c908a025-d5c4-4023-b23f-310bb8b0ed51",
+    "user_id": "user_001",
+    "amount": 3002.17,
+    "category": "income",
+    "description": "Salary credit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-05-27T19:58:00+00:00"
+  },
+  {
+    "id": "8905eb76-3dbf-4fa2-a400-00cfde35d391",
+    "user_id": "user_001",
+    "amount": -48.68,
+    "category": "transport",
+    "description": "Newspaper reflect",
+    "merchant": "Rail & Ride",
+    "timestamp": "2026-05-28T04:29:00+00:00"
+  },
+  {
+    "id": "673e99b1-628d-49b2-b8fa-33b07f977d6c",
+    "user_id": "user_001",
+    "amount": -50.53,
+    "category": "food",
+    "description": "Street PM politics idea",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-05-28T13:29:00+00:00"
+  },
+  {
+    "id": "364e887c-eebb-4d83-b836-37ab5e4cb4bf",
+    "user_id": "user_001",
+    "amount": -64.28,
+    "category": "food",
+    "description": "Man however push",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-05-29T02:54:00+00:00"
+  },
+  {
+    "id": "a12ae4c0-6f01-4581-a9fa-748ba59b3fdd",
+    "user_id": "user_001",
+    "amount": -62.46,
+    "category": "entertainment",
+    "description": "Dream reality center include",
+    "merchant": "Netflix",
+    "timestamp": "2026-05-30T06:14:00+00:00"
+  },
+  {
+    "id": "a4dc8bac-9c5c-4356-867d-cb31c3bccbd4",
+    "user_id": "user_001",
+    "amount": -13.28,
+    "category": "food",
+    "description": "Enjoy later",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-05-30T18:56:00+00:00"
+  },
+  {
+    "id": "0dfd9cc4-c570-4463-886b-bfc22d99aa87",
+    "user_id": "user_001",
+    "amount": -291.16,
+    "category": "shopping",
+    "description": "Several none",
+    "merchant": "PetEmporium",
+    "timestamp": "2026-05-30T23:22:00+00:00"
+  },
+  {
+    "id": "56ba3703-218f-47ef-8bf0-d2ed46ee3176",
+    "user_id": "user_001",
+    "amount": -34.16,
+    "category": "transport",
+    "description": "Serious us mention evening",
+    "merchant": "Uber",
+    "timestamp": "2026-05-31T10:05:00+00:00"
+  },
+  {
+    "id": "79e56c3b-e2c9-44c7-b6ca-3cedc48694e3",
+    "user_id": "user_001",
+    "amount": -116.03,
+    "category": "health",
+    "description": "Early method view teach",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-06-01T23:05:00+00:00"
+  },
+  {
+    "id": "a346923d-e53f-4d19-b436-620765b7651e",
+    "user_id": "user_001",
+    "amount": -45.37,
+    "category": "food",
+    "description": "Movie remember try street economic",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-06-01T23:39:00+00:00"
+  },
+  {
+    "id": "5491c88d-7b79-4896-983e-85236e38dc64",
+    "user_id": "user_001",
+    "amount": -165.46,
+    "category": "health",
+    "description": "Edge attention accept",
+    "merchant": "MindEase Therapy",
+    "timestamp": "2026-06-04T01:22:00+00:00"
+  },
+  {
+    "id": "969a0477-fba3-4c0d-a4a3-051cda1e060b",
+    "user_id": "user_001",
+    "amount": -100.58,
+    "category": "entertainment",
+    "description": "Growth figure second",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-06-04T05:09:00+00:00"
+  },
+  {
+    "id": "356850fd-3b46-4a3b-b025-bf729f6c4954",
+    "user_id": "user_001",
+    "amount": -134.08,
+    "category": "health",
+    "description": "Force officer alone education",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-06-04T10:39:00+00:00"
+  },
+  {
+    "id": "45e578b4-097b-49c0-9a42-4eaab80e1a50",
+    "user_id": "user_001",
+    "amount": -78.06,
+    "category": "food",
+    "description": "Even stuff",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-06-05T11:06:00+00:00"
+  },
+  {
+    "id": "f1f6c41a-4cd3-414e-8dcb-3ca554364b63",
+    "user_id": "user_001",
+    "amount": -165.13,
+    "category": "shopping",
+    "description": "Knowledge feeling",
+    "merchant": "Thrift Haven",
+    "timestamp": "2026-06-05T13:49:00+00:00"
+  },
+  {
+    "id": "63ffbc18-8d8a-4b5d-814b-d1ec53402400",
+    "user_id": "user_001",
+    "amount": -29.14,
+    "category": "food",
+    "description": "So field",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-06-05T16:20:00+00:00"
+  },
+  {
+    "id": "041259d5-ff47-4f28-b937-1a7e6300b239",
+    "user_id": "user_001",
+    "amount": -30.62,
+    "category": "food",
+    "description": "Piece policy center",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-06-05T17:13:00+00:00"
+  },
+  {
+    "id": "d0b9935f-5aaa-4ce0-8d9e-e906b118bbef",
+    "user_id": "user_001",
+    "amount": -83.49,
+    "category": "entertainment",
+    "description": "Opportunity training rather",
+    "merchant": "GameZone",
+    "timestamp": "2026-06-06T00:55:00+00:00"
+  },
+  {
+    "id": "d48c8a36-2a20-49d0-ab10-eca47b5f6404",
+    "user_id": "user_002",
+    "amount": -15.12,
+    "category": "transport",
+    "description": "Sea hear security",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2025-12-08T05:23:00+00:00"
+  },
+  {
+    "id": "417989f6-f7a3-4891-9220-af68a596f230",
+    "user_id": "user_002",
+    "amount": -256.17,
+    "category": "shopping",
+    "description": "Fill herself country",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2025-12-09T21:03:00+00:00"
+  },
+  {
+    "id": "b452ea8e-1453-4eff-9f5c-e23fcc9eefeb",
+    "user_id": "user_002",
+    "amount": -45.22,
+    "category": "health",
+    "description": "Position chair story",
+    "merchant": "DentalCare Plus",
+    "timestamp": "2025-12-10T00:19:00+00:00"
+  },
+  {
+    "id": "693cb54e-a2c5-4068-a9a3-64a2542793ac",
+    "user_id": "user_002",
+    "amount": -76.19,
+    "category": "health",
+    "description": "Court maintain finish",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2025-12-10T09:57:00+00:00"
+  },
+  {
+    "id": "05c12970-2485-4f81-a5cb-aae5f0732ec7",
+    "user_id": "user_002",
+    "amount": -80.85,
+    "category": "utilities",
+    "description": "Middle deal doctor",
+    "merchant": "TeleLink",
+    "timestamp": "2025-12-10T12:19:00+00:00"
+  },
+  {
+    "id": "3044ba2c-2a48-4122-a3bf-4b61c8293b8f",
+    "user_id": "user_002",
+    "amount": -44.13,
+    "category": "transport",
+    "description": "Air full",
+    "merchant": "Rail & Ride",
+    "timestamp": "2025-12-10T12:35:00+00:00"
+  },
+  {
+    "id": "0b1aa84b-a0b2-46c2-b762-e49b3f85d52a",
+    "user_id": "user_002",
+    "amount": -52.33,
+    "category": "transport",
+    "description": "Somebody decision fire last",
+    "merchant": "Metro Mobility",
+    "timestamp": "2025-12-10T14:55:00+00:00"
+  },
+  {
+    "id": "d4ab5514-d7cb-4642-8895-66a583df9378",
+    "user_id": "user_002",
+    "amount": -81.04,
+    "category": "utilities",
+    "description": "Race usually collection child",
+    "merchant": "TeleLink",
+    "timestamp": "2025-12-10T20:52:00+00:00"
+  },
+  {
+    "id": "9c452043-afb4-4ab1-bc83-47cf50947db2",
+    "user_id": "user_002",
+    "amount": -13.99,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "StreamVerse",
+    "timestamp": "2025-12-10T23:47:00+00:00"
+  },
+  {
+    "id": "6eee42d1-191b-4cc5-b16c-f9314f10662d",
+    "user_id": "user_002",
+    "amount": -38.55,
+    "category": "transport",
+    "description": "Exactly maybe report understand",
+    "merchant": "Metro Mobility",
+    "timestamp": "2025-12-12T11:20:00+00:00"
+  },
+  {
+    "id": "f26152a8-b481-4f25-8990-159d3cc7feb3",
+    "user_id": "user_002",
+    "amount": -270.26,
+    "category": "shopping",
+    "description": "Compare to onto for",
+    "merchant": "ElectroMart",
+    "timestamp": "2025-12-12T12:47:00+00:00"
+  },
+  {
+    "id": "6b366f0c-a961-418a-b4a4-a8a555ebfee1",
+    "user_id": "user_002",
+    "amount": -61.43,
+    "category": "health",
+    "description": "Art others public provide",
+    "merchant": "VisionCenter",
+    "timestamp": "2025-12-13T04:28:00+00:00"
+  },
+  {
+    "id": "74153497-4b00-47d0-848f-2aa7722998dd",
+    "user_id": "user_002",
+    "amount": 5494.24,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "Freelance Platform",
+    "timestamp": "2025-12-13T07:10:00+00:00"
+  },
+  {
+    "id": "ee9995c5-96e8-436d-8a11-2c2dbb9f6214",
+    "user_id": "user_002",
+    "amount": -25.19,
+    "category": "transport",
+    "description": "South American population",
+    "merchant": "Lyft",
+    "timestamp": "2025-12-16T07:29:00+00:00"
+  },
+  {
+    "id": "278205f1-a07f-4819-8793-413b9e0c4106",
+    "user_id": "user_002",
+    "amount": -79.57,
+    "category": "food",
+    "description": "Store threat exist town",
+    "merchant": "Green Bowl",
+    "timestamp": "2025-12-16T07:59:00+00:00"
+  },
+  {
+    "id": "4fbca366-2f1c-4ab1-a515-b076ec48138e",
+    "user_id": "user_002",
+    "amount": -12.67,
+    "category": "food",
+    "description": "Up special remain notice although",
+    "merchant": "Sushi Spot",
+    "timestamp": "2025-12-16T12:10:00+00:00"
+  },
+  {
+    "id": "7dfb79d4-78e4-408f-bf5a-b122b3b52ad4",
+    "user_id": "user_002",
+    "amount": -135.95,
+    "category": "health",
+    "description": "First data tell stop sense",
+    "merchant": "DentalCare Plus",
+    "timestamp": "2025-12-16T14:08:00+00:00"
+  },
+  {
+    "id": "962daae6-eab5-4ce0-997e-75055e5c1f3e",
+    "user_id": "user_002",
+    "amount": -11.07,
+    "category": "transport",
+    "description": "Writer rule boy religious",
+    "merchant": "ExpressBus",
+    "timestamp": "2025-12-16T23:53:00+00:00"
+  },
+  {
+    "id": "678bfc67-d43a-421b-911a-82062827475a",
+    "user_id": "user_002",
+    "amount": -144.38,
+    "category": "shopping",
+    "description": "Social vote hair save",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2025-12-17T00:43:00+00:00"
+  },
+  {
+    "id": "4b0ff8b8-6807-4005-a7fa-a2131066fab7",
+    "user_id": "user_002",
+    "amount": -44.6,
+    "category": "transport",
+    "description": "Himself road mouth director fund",
+    "merchant": "Parking Authority",
+    "timestamp": "2025-12-17T05:10:00+00:00"
+  },
+  {
+    "id": "0faef390-e9a9-4969-b03f-8e71d1a20886",
+    "user_id": "user_002",
+    "amount": -25.55,
+    "category": "food",
+    "description": "Peace these source wall state",
+    "merchant": "Green Bowl",
+    "timestamp": "2025-12-17T14:57:00+00:00"
+  },
+  {
+    "id": "48ddb6d4-d691-420f-8645-643444cc69c1",
+    "user_id": "user_002",
+    "amount": -54.59,
+    "category": "transport",
+    "description": "Far hospital discover provide",
+    "merchant": "ExpressBus",
+    "timestamp": "2025-12-17T17:30:00+00:00"
+  },
+  {
+    "id": "10ef68d9-63f8-45e1-b5d8-d3b4c89fffbe",
+    "user_id": "user_002",
+    "amount": -67.51,
+    "category": "entertainment",
+    "description": "Glass soon return",
+    "merchant": "MusicHive",
+    "timestamp": "2025-12-18T06:28:00+00:00"
+  },
+  {
+    "id": "1d19927f-8e45-41e6-9450-7cf7a45a71f4",
+    "user_id": "user_002",
+    "amount": -77.15,
+    "category": "food",
+    "description": "Head box by create",
+    "merchant": "Corner Bakery",
+    "timestamp": "2025-12-19T11:09:00+00:00"
+  },
+  {
+    "id": "f73d2f07-4bb9-4832-b551-8203d2e77fc9",
+    "user_id": "user_002",
+    "amount": -80.6,
+    "category": "food",
+    "description": "Professor others rich sell",
+    "merchant": "Pizza Palace",
+    "timestamp": "2025-12-19T17:01:00+00:00"
+  },
+  {
+    "id": "0341e75c-e839-4834-adf5-9de7e337a3da",
+    "user_id": "user_002",
+    "amount": -84.84,
+    "category": "food",
+    "description": "Allow production prevent",
+    "merchant": "Sushi Spot",
+    "timestamp": "2025-12-20T01:16:00+00:00"
+  },
+  {
+    "id": "678263fb-757e-4413-99b2-a7a60f745293",
+    "user_id": "user_002",
+    "amount": -32.76,
+    "category": "transport",
+    "description": "Ground bit page magazine many",
+    "merchant": "CityBike",
+    "timestamp": "2025-12-20T12:58:00+00:00"
+  },
+  {
+    "id": "ac59b224-d645-448b-aa1a-f457ae0b0421",
+    "user_id": "user_002",
+    "amount": -25.41,
+    "category": "food",
+    "description": "Heart speak up her stuff",
+    "merchant": "Pizza Palace",
+    "timestamp": "2025-12-20T19:38:00+00:00"
+  },
+  {
+    "id": "0d3bded3-febe-44d5-8014-4813af9c54b0",
+    "user_id": "user_002",
+    "amount": -27.41,
+    "category": "health",
+    "description": "Likely get one probably commercial",
+    "merchant": "PharmaQuick",
+    "timestamp": "2025-12-23T02:03:00+00:00"
+  },
+  {
+    "id": "f6e82fc8-816b-460f-9954-83d3a52474d6",
+    "user_id": "user_002",
+    "amount": -90.94,
+    "category": "food",
+    "description": "Although eye tree",
+    "merchant": "Corner Bakery",
+    "timestamp": "2025-12-23T06:43:00+00:00"
+  },
+  {
+    "id": "bbb8ce5a-c7cf-4306-9609-dc00df03e7a9",
+    "user_id": "user_002",
+    "amount": -30.4,
+    "category": "food",
+    "description": "House husband really there",
+    "merchant": "Market Fresh",
+    "timestamp": "2025-12-26T03:07:00+00:00"
+  },
+  {
+    "id": "495ef98b-6308-4433-a7a5-63e47368333d",
+    "user_id": "user_002",
+    "amount": -102.52,
+    "category": "utilities",
+    "description": "Why least",
+    "merchant": "City Utilities",
+    "timestamp": "2025-12-26T06:12:00+00:00"
+  },
+  {
+    "id": "ba76291b-5d7d-4329-9386-bf4d7c16ed9e",
+    "user_id": "user_002",
+    "amount": -51.75,
+    "category": "food",
+    "description": "International land",
+    "merchant": "Taco Bell",
+    "timestamp": "2025-12-26T20:33:00+00:00"
+  },
+  {
+    "id": "a698885d-a64a-4ec0-8c67-a47f0a35d1c6",
+    "user_id": "user_002",
+    "amount": -239.41,
+    "category": "shopping",
+    "description": "Somebody nice activity day down",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2025-12-26T20:42:00+00:00"
+  },
+  {
+    "id": "f72c2f80-3d17-46a0-bb07-e50b5e854f04",
+    "user_id": "user_002",
+    "amount": -95.92,
+    "category": "food",
+    "description": "Wife accept computer guy",
+    "merchant": "Taco Bell",
+    "timestamp": "2025-12-27T03:11:00+00:00"
+  },
+  {
+    "id": "93198806-3e35-48a8-a66c-65d44b093a31",
+    "user_id": "user_002",
+    "amount": -109.48,
+    "category": "utilities",
+    "description": "Occur finally foreign outside",
+    "merchant": "City Utilities",
+    "timestamp": "2025-12-27T08:59:00+00:00"
+  },
+  {
+    "id": "60ffd70c-73da-41d1-9637-12c991f7341d",
+    "user_id": "user_002",
+    "amount": -46.95,
+    "category": "food",
+    "description": "Guess friend wife",
+    "merchant": "Taco Bell",
+    "timestamp": "2025-12-27T12:45:00+00:00"
+  },
+  {
+    "id": "5a352aec-5e2c-47cf-9e31-a3fd1a03e17c",
+    "user_id": "user_002",
+    "amount": -16.93,
+    "category": "food",
+    "description": "Arm we among necessary",
+    "merchant": "Taco Bell",
+    "timestamp": "2025-12-27T20:22:00+00:00"
+  },
+  {
+    "id": "6eb7a86f-101f-42b2-a29a-aeb2690fdef8",
+    "user_id": "user_002",
+    "amount": -15.69,
+    "category": "transport",
+    "description": "Get cost",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2025-12-27T22:46:00+00:00"
+  },
+  {
+    "id": "fac01bce-b2a8-48c6-a656-06b2c0ef5633",
+    "user_id": "user_002",
+    "amount": 5483.82,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2025-12-28T10:31:00+00:00"
+  },
+  {
+    "id": "ea1ec93f-fa77-4ad7-8ead-b44e1f14cc55",
+    "user_id": "user_002",
+    "amount": -169.13,
+    "category": "health",
+    "description": "Research site teach commercial language",
+    "merchant": "PharmaQuick",
+    "timestamp": "2025-12-29T03:40:00+00:00"
+  },
+  {
+    "id": "f74b0d68-c441-4290-bc24-544c35c047f5",
+    "user_id": "user_002",
+    "amount": -234.89,
+    "category": "shopping",
+    "description": "Enter question many ready",
+    "merchant": "GardenWorld",
+    "timestamp": "2025-12-30T08:55:00+00:00"
+  },
+  {
+    "id": "bab4d486-818d-4b52-a3ac-25a15d72a342",
+    "user_id": "user_002",
+    "amount": -12.06,
+    "category": "food",
+    "description": "Region still type what",
+    "merchant": "Sushi Spot",
+    "timestamp": "2025-12-30T22:09:00+00:00"
+  },
+  {
+    "id": "c1e2d590-a9c0-47cd-a957-f8685d4b5ca4",
+    "user_id": "user_002",
+    "amount": -44.45,
+    "category": "transport",
+    "description": "End chance",
+    "merchant": "Uber",
+    "timestamp": "2025-12-30T23:44:00+00:00"
+  },
+  {
+    "id": "dac9add5-b4cd-48a9-8a0b-eeb8f2152705",
+    "user_id": "user_002",
+    "amount": -50.34,
+    "category": "food",
+    "description": "Stock true beat",
+    "merchant": "Corner Bakery",
+    "timestamp": "2025-12-31T13:21:00+00:00"
+  },
+  {
+    "id": "81fd1402-9ecd-4093-a239-498fade32819",
+    "user_id": "user_002",
+    "amount": -36.86,
+    "category": "transport",
+    "description": "Him citizen hour appear",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-01-01T19:14:00+00:00"
+  },
+  {
+    "id": "30285b14-dd4c-49dd-b478-eb08c08b7329",
+    "user_id": "user_002",
+    "amount": -113.28,
+    "category": "food",
+    "description": "Range yes",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-01-04T03:50:00+00:00"
+  },
+  {
+    "id": "0f2c6cf5-42a6-46d6-bd44-85c39f54b616",
+    "user_id": "user_002",
+    "amount": -15.42,
+    "category": "transport",
+    "description": "Enough provide",
+    "merchant": "CityBike",
+    "timestamp": "2026-01-04T09:52:00+00:00"
+  },
+  {
+    "id": "9c162bf2-dbf4-497d-8a70-25abd8d122a1",
+    "user_id": "user_002",
+    "amount": -48.38,
+    "category": "entertainment",
+    "description": "Listen number before friend",
+    "merchant": "BookNook",
+    "timestamp": "2026-01-04T23:37:00+00:00"
+  },
+  {
+    "id": "663874e4-2e27-4bcc-8725-797d3644e036",
+    "user_id": "user_002",
+    "amount": -21.04,
+    "category": "transport",
+    "description": "Chair yard be",
+    "merchant": "Uber",
+    "timestamp": "2026-01-05T11:45:00+00:00"
+  },
+  {
+    "id": "69f3aaec-80db-40e8-ae34-cd2955f9a98d",
+    "user_id": "user_002",
+    "amount": -21.67,
+    "category": "food",
+    "description": "Prove blood identify production source",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-01-06T06:17:00+00:00"
+  },
+  {
+    "id": "e472cbff-b55c-424a-8efb-40e6edae6b49",
+    "user_id": "user_002",
+    "amount": -75.87,
+    "category": "food",
+    "description": "Tough relate claim but during",
+    "merchant": "City Diner",
+    "timestamp": "2026-01-08T02:14:00+00:00"
+  },
+  {
+    "id": "a52d4327-e037-40fa-9051-1012985d8c04",
+    "user_id": "user_002",
+    "amount": -27.99,
+    "category": "transport",
+    "description": "Table relate program",
+    "merchant": "Rail & Ride",
+    "timestamp": "2026-01-08T10:13:00+00:00"
+  },
+  {
+    "id": "2fd7139e-26be-45ff-9021-cef8642fd77c",
+    "user_id": "user_002",
+    "amount": -13.99,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "Netflix",
+    "timestamp": "2026-01-09T04:54:00+00:00"
+  },
+  {
+    "id": "33b13fe0-6b68-412f-8af2-653671268268",
+    "user_id": "user_002",
+    "amount": -264.34,
+    "category": "shopping",
+    "description": "Beautiful remember above",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-01-09T06:02:00+00:00"
+  },
+  {
+    "id": "01c44105-e36b-448a-9015-a6d4b45d4763",
+    "user_id": "user_002",
+    "amount": -164.55,
+    "category": "utilities",
+    "description": "Best option investment",
+    "merchant": "TeleLink",
+    "timestamp": "2026-01-09T17:59:00+00:00"
+  },
+  {
+    "id": "d564f304-556c-4ff3-ac20-fc85b8b5a2df",
+    "user_id": "user_002",
+    "amount": -21.71,
+    "category": "food",
+    "description": "Maintain note much later",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-01-11T03:57:00+00:00"
+  },
+  {
+    "id": "7aeef1fb-2fcd-45ba-ab04-f3954ae63dd0",
+    "user_id": "user_002",
+    "amount": -68.23,
+    "category": "health",
+    "description": "Bring offer PM mind",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-01-11T08:13:00+00:00"
+  },
+  {
+    "id": "1a555a21-e6b7-4420-bba6-84b4fc72114a",
+    "user_id": "user_002",
+    "amount": -155.23,
+    "category": "utilities",
+    "description": "Professional music",
+    "merchant": "City Utilities",
+    "timestamp": "2026-01-11T09:50:00+00:00"
+  },
+  {
+    "id": "8be60180-ff6f-491b-b2bb-e2af5321bf21",
+    "user_id": "user_002",
+    "amount": -50.0,
+    "category": "transport",
+    "description": "Better everyone thought trial",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-01-11T18:40:00+00:00"
+  },
+  {
+    "id": "6ee8892e-9fd0-4c95-8705-407434219652",
+    "user_id": "user_002",
+    "amount": -40.58,
+    "category": "food",
+    "description": "A feel prove",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-01-11T22:46:00+00:00"
+  },
+  {
+    "id": "ab1eb97e-c35f-45a3-80ef-25eb75c3937b",
+    "user_id": "user_002",
+    "amount": -180.73,
+    "category": "health",
+    "description": "Age assume kind next",
+    "merchant": "DentalCare Plus",
+    "timestamp": "2026-01-12T14:29:00+00:00"
+  },
+  {
+    "id": "c58ecd3b-1e2c-4c61-a9fc-f619ec9c1d1c",
+    "user_id": "user_002",
+    "amount": 5513.74,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "Freelance Platform",
+    "timestamp": "2026-01-12T16:47:00+00:00"
+  },
+  {
+    "id": "28acfd1d-0b56-4787-9b7f-9199ff74b322",
+    "user_id": "user_002",
+    "amount": -63.38,
+    "category": "food",
+    "description": "Whatever apply product",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-01-14T04:00:00+00:00"
+  },
+  {
+    "id": "7626e212-c5bd-4f42-bccf-36f45729212d",
+    "user_id": "user_002",
+    "amount": -69.44,
+    "category": "food",
+    "description": "Keep affect answer",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-01-14T19:34:00+00:00"
+  },
+  {
+    "id": "8b18077d-85f0-47d7-980e-359981391862",
+    "user_id": "user_002",
+    "amount": -101.88,
+    "category": "entertainment",
+    "description": "Mean keep either fact",
+    "merchant": "Eventbrite",
+    "timestamp": "2026-01-16T01:41:00+00:00"
+  },
+  {
+    "id": "ab7bc9c6-28d9-4a2a-9bd0-c11186bfa4cd",
+    "user_id": "user_002",
+    "amount": -8.42,
+    "category": "transport",
+    "description": "Big long little",
+    "merchant": "Parking Authority",
+    "timestamp": "2026-01-16T05:49:00+00:00"
+  },
+  {
+    "id": "3d53ee72-63d2-4ae5-b0d6-814d94a2afd8",
+    "user_id": "user_002",
+    "amount": -49.41,
+    "category": "transport",
+    "description": "Later office yeah begin",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2026-01-16T22:40:00+00:00"
+  },
+  {
+    "id": "79881cc8-2e96-410f-98e3-e8e33947a608",
+    "user_id": "user_002",
+    "amount": -175.04,
+    "category": "entertainment",
+    "description": "Important area look",
+    "merchant": "BookNook",
+    "timestamp": "2026-01-17T08:30:00+00:00"
+  },
+  {
+    "id": "c4cdd654-a8a1-40fc-9be1-1fc04717226c",
+    "user_id": "user_002",
+    "amount": -102.07,
+    "category": "food",
+    "description": "Town war",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-01-17T15:46:00+00:00"
+  },
+  {
+    "id": "f4b75a0d-c3d1-4ae1-9b5d-664c8a857299",
+    "user_id": "user_002",
+    "amount": -76.95,
+    "category": "health",
+    "description": "Break painting during",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-01-17T19:27:00+00:00"
+  },
+  {
+    "id": "dab7283b-1b79-4a75-88da-a9dbd4ecd21f",
+    "user_id": "user_002",
+    "amount": -30.99,
+    "category": "food",
+    "description": "Begin weight collection",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-01-18T21:32:00+00:00"
+  },
+  {
+    "id": "27387a49-c0ec-4037-b8ee-54ccf652508f",
+    "user_id": "user_002",
+    "amount": -48.02,
+    "category": "food",
+    "description": "General a",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-01-19T01:42:00+00:00"
+  },
+  {
+    "id": "ab7a04df-82a7-48c1-8bf0-fb702fa5e703",
+    "user_id": "user_002",
+    "amount": -59.03,
+    "category": "utilities",
+    "description": "Time young join evidence",
+    "merchant": "PowerCo",
+    "timestamp": "2026-01-19T06:37:00+00:00"
+  },
+  {
+    "id": "48cc9d8d-2bac-419b-815f-efd540f238f9",
+    "user_id": "user_002",
+    "amount": -223.57,
+    "category": "shopping",
+    "description": "Able image learn",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2026-01-19T13:17:00+00:00"
+  },
+  {
+    "id": "f6c0a8ba-cc45-4a4f-8ea4-23e397c258c6",
+    "user_id": "user_002",
+    "amount": -20.67,
+    "category": "transport",
+    "description": "Choice attack same machine",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-01-19T15:32:00+00:00"
+  },
+  {
+    "id": "da2283c2-456b-4d48-9201-9dc794fe3f45",
+    "user_id": "user_002",
+    "amount": -251.95,
+    "category": "shopping",
+    "description": "Last perhaps onto",
+    "merchant": "ElectroMart",
+    "timestamp": "2026-01-19T20:51:00+00:00"
+  },
+  {
+    "id": "f83a720b-b768-4daa-bfd0-95d910dab7d0",
+    "user_id": "user_002",
+    "amount": -235.83,
+    "category": "shopping",
+    "description": "Born popular heart",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-01-19T22:14:00+00:00"
+  },
+  {
+    "id": "65e6a67f-ca15-4177-ba77-e8462a59674a",
+    "user_id": "user_002",
+    "amount": -147.29,
+    "category": "health",
+    "description": "Sister reality minute",
+    "merchant": "VisionCenter",
+    "timestamp": "2026-01-20T21:22:00+00:00"
+  },
+  {
+    "id": "79562530-e00b-4f95-a87f-38f8d4245e92",
+    "user_id": "user_002",
+    "amount": -51.21,
+    "category": "transport",
+    "description": "Probably national room produce",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2026-01-21T08:04:00+00:00"
+  },
+  {
+    "id": "e13a4daa-df0e-43f1-91ab-c6ff8504ba47",
+    "user_id": "user_002",
+    "amount": -58.35,
+    "category": "food",
+    "description": "Toward the international most",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-01-21T14:08:00+00:00"
+  },
+  {
+    "id": "708d28c3-7963-4e90-9560-a8fe5c2e0c89",
+    "user_id": "user_002",
+    "amount": -7.73,
+    "category": "transport",
+    "description": "Air plant short",
+    "merchant": "Uber",
+    "timestamp": "2026-01-21T19:17:00+00:00"
+  },
+  {
+    "id": "9b4ade67-9993-4345-8d4f-59ff313587ce",
+    "user_id": "user_002",
+    "amount": -78.95,
+    "category": "food",
+    "description": "News protect usually our",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-01-22T19:26:00+00:00"
+  },
+  {
+    "id": "4efac4ff-8d59-40e5-8299-7e3a84d6397f",
+    "user_id": "user_002",
+    "amount": -224.85,
+    "category": "shopping",
+    "description": "Recognize perhaps",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-01-23T01:17:00+00:00"
+  },
+  {
+    "id": "c2512215-c7cb-4a7b-b2ad-cc8b8a3ea691",
+    "user_id": "user_002",
+    "amount": -151.24,
+    "category": "health",
+    "description": "Education south his",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-01-23T05:03:00+00:00"
+  },
+  {
+    "id": "f78dfaac-bf5c-4b3c-b908-31fc13b6d1d4",
+    "user_id": "user_002",
+    "amount": -12.8,
+    "category": "transport",
+    "description": "Finally many spend",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-01-23T18:29:00+00:00"
+  },
+  {
+    "id": "e29936d5-5678-4e62-9e5d-19591ffa5da5",
+    "user_id": "user_002",
+    "amount": -48.28,
+    "category": "health",
+    "description": "Whole stage both",
+    "merchant": "VisionCenter",
+    "timestamp": "2026-01-23T21:22:00+00:00"
+  },
+  {
+    "id": "a71b387c-7036-4895-927c-0b3bb2d237d9",
+    "user_id": "user_002",
+    "amount": -91.11,
+    "category": "food",
+    "description": "Technology than",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-01-23T23:27:00+00:00"
+  },
+  {
+    "id": "dec9a401-9836-4fd9-9c2f-cecf78dcf737",
+    "user_id": "user_002",
+    "amount": -144.63,
+    "category": "utilities",
+    "description": "Condition sport soldier must but",
+    "merchant": "AquaCity",
+    "timestamp": "2026-01-24T16:50:00+00:00"
+  },
+  {
+    "id": "b9d750be-8585-4825-a1f5-4be3135d9265",
+    "user_id": "user_002",
+    "amount": -37.7,
+    "category": "transport",
+    "description": "Mind itself including strong success",
+    "merchant": "ExpressBus",
+    "timestamp": "2026-01-25T00:48:00+00:00"
+  },
+  {
+    "id": "7af43300-a1ea-456b-aa33-848c416b2296",
+    "user_id": "user_002",
+    "amount": -18.64,
+    "category": "transport",
+    "description": "Say side",
+    "merchant": "Parking Authority",
+    "timestamp": "2026-01-25T04:20:00+00:00"
+  },
+  {
+    "id": "65650e83-5a86-4c32-8c0c-80dcfe2d5296",
+    "user_id": "user_002",
+    "amount": -23.2,
+    "category": "food",
+    "description": "Weight several simple sure within",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-01-25T11:42:00+00:00"
+  },
+  {
+    "id": "3c5d9b5a-9229-4a1a-ac3f-c29379262b92",
+    "user_id": "user_002",
+    "amount": -207.57,
+    "category": "shopping",
+    "description": "Summer issue information you couple",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-01-26T14:42:00+00:00"
+  },
+  {
+    "id": "16e923b2-888a-45be-be4a-dc4dca07b265",
+    "user_id": "user_002",
+    "amount": -62.87,
+    "category": "shopping",
+    "description": "Car leave run stuff sign",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-01-27T05:02:00+00:00"
+  },
+  {
+    "id": "88d48202-462b-47c4-a623-d2e976c259a7",
+    "user_id": "user_002",
+    "amount": 5481.97,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "HR Pay Services",
+    "timestamp": "2026-01-27T14:59:00+00:00"
+  },
+  {
+    "id": "cdf85867-7dcd-4e47-b7e7-5b2ab115a3f4",
+    "user_id": "user_002",
+    "amount": -269.94,
+    "category": "shopping",
+    "description": "For rather wall",
+    "merchant": "BookBazaar",
+    "timestamp": "2026-01-27T15:31:00+00:00"
+  },
+  {
+    "id": "df1fe69d-f463-4e3a-baf2-a0b6ef7dede5",
+    "user_id": "user_002",
+    "amount": -44.94,
+    "category": "food",
+    "description": "Ground politics know",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-01-28T06:10:00+00:00"
+  },
+  {
+    "id": "8a647cef-0ec2-4ad4-a90a-341d87e78129",
+    "user_id": "user_002",
+    "amount": -158.22,
+    "category": "utilities",
+    "description": "Teacher least Mrs",
+    "merchant": "City Utilities",
+    "timestamp": "2026-01-29T04:36:00+00:00"
+  },
+  {
+    "id": "6d34bd56-14c0-4ffc-9319-1392dfc0511f",
+    "user_id": "user_002",
+    "amount": -98.93,
+    "category": "entertainment",
+    "description": "Head clear simply game hair",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-01-29T09:30:00+00:00"
+  },
+  {
+    "id": "dfe17593-3b96-4ffc-9f6b-ccdffb27ea26",
+    "user_id": "user_002",
+    "amount": -47.22,
+    "category": "transport",
+    "description": "About table send",
+    "merchant": "Rail & Ride",
+    "timestamp": "2026-01-30T09:49:00+00:00"
+  },
+  {
+    "id": "e89b2bfa-340c-4c44-ab6c-11b57fee3638",
+    "user_id": "user_002",
+    "amount": -19.91,
+    "category": "transport",
+    "description": "Concern civil",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-01-30T19:31:00+00:00"
+  },
+  {
+    "id": "c2f31df0-1eaa-4cb6-ad26-e96b4ff8cf5c",
+    "user_id": "user_002",
+    "amount": -26.23,
+    "category": "transport",
+    "description": "Door order",
+    "merchant": "ExpressBus",
+    "timestamp": "2026-01-30T23:18:00+00:00"
+  },
+  {
+    "id": "61ed0675-7a8f-4c8b-ad41-437a10a66360",
+    "user_id": "user_002",
+    "amount": -40.4,
+    "category": "food",
+    "description": "You national message spend them",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-01-31T09:19:00+00:00"
+  },
+  {
+    "id": "27e4b171-377f-4d19-bcc0-32359df126d4",
+    "user_id": "user_002",
+    "amount": -106.19,
+    "category": "health",
+    "description": "Glass movie through while modern",
+    "merchant": "MindEase Therapy",
+    "timestamp": "2026-01-31T15:42:00+00:00"
+  },
+  {
+    "id": "da48a139-98d9-4ab8-a8ef-6ea3f547b377",
+    "user_id": "user_002",
+    "amount": -91.69,
+    "category": "food",
+    "description": "Study very and too",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-01-31T17:55:00+00:00"
+  },
+  {
+    "id": "0420af9b-4f5a-4c72-a447-64ed505953e7",
+    "user_id": "user_002",
+    "amount": -63.21,
+    "category": "food",
+    "description": "Prove less though find",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-02-01T18:54:00+00:00"
+  },
+  {
+    "id": "5aa1d12f-73ef-4f4f-b2ab-447a75097e7e",
+    "user_id": "user_002",
+    "amount": -10.08,
+    "category": "transport",
+    "description": "Education report door",
+    "merchant": "ExpressBus",
+    "timestamp": "2026-02-02T21:39:00+00:00"
+  },
+  {
+    "id": "e99c23de-d07e-4b8f-b1f2-46344d1307c6",
+    "user_id": "user_002",
+    "amount": -266.81,
+    "category": "shopping",
+    "description": "Far recently",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-02-05T06:05:00+00:00"
+  },
+  {
+    "id": "8bfba840-6789-4868-a570-d38cf9d2e00e",
+    "user_id": "user_002",
+    "amount": -85.65,
+    "category": "health",
+    "description": "Either control future",
+    "merchant": "MindEase Therapy",
+    "timestamp": "2026-02-05T14:22:00+00:00"
+  },
+  {
+    "id": "a3aad08f-efc2-4ea0-a9d0-178fc19d045c",
+    "user_id": "user_002",
+    "amount": -48.64,
+    "category": "shopping",
+    "description": "Quality time",
+    "merchant": "ElectroMart",
+    "timestamp": "2026-02-05T18:53:00+00:00"
+  },
+  {
+    "id": "90fd2ef2-2e57-4672-95f8-f312ca3e4f30",
+    "user_id": "user_002",
+    "amount": -27.42,
+    "category": "food",
+    "description": "Kitchen check home education usually",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-02-07T12:09:00+00:00"
+  },
+  {
+    "id": "e2bb8bc5-d33c-49e9-ae2e-f7a27d57aa57",
+    "user_id": "user_002",
+    "amount": -125.13,
+    "category": "health",
+    "description": "Her describe because road",
+    "merchant": "LabCorp",
+    "timestamp": "2026-02-08T03:24:00+00:00"
+  },
+  {
+    "id": "bfc53035-f305-45e4-a157-209be8c82edc",
+    "user_id": "user_002",
+    "amount": -9.99,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "Netflix",
+    "timestamp": "2026-02-08T16:37:00+00:00"
+  },
+  {
+    "id": "d50cf56a-b844-4ae9-9eaf-c84768f09ed7",
+    "user_id": "user_002",
+    "amount": -68.74,
+    "category": "health",
+    "description": "Determine who show risk public",
+    "merchant": "VisionCenter",
+    "timestamp": "2026-02-09T06:44:00+00:00"
+  },
+  {
+    "id": "1de8715f-1fdb-4da3-8bb0-d3ef8869185a",
+    "user_id": "user_002",
+    "amount": -252.71,
+    "category": "shopping",
+    "description": "Happen specific evidence rise",
+    "merchant": "Urban Supply",
+    "timestamp": "2026-02-10T14:59:00+00:00"
+  },
+  {
+    "id": "b324efa7-c448-45a6-8184-4e8e7f4d9d2e",
+    "user_id": "user_002",
+    "amount": -49.42,
+    "category": "transport",
+    "description": "Reveal small trip",
+    "merchant": "ExpressBus",
+    "timestamp": "2026-02-10T17:19:00+00:00"
+  },
+  {
+    "id": "d6950ff1-80b3-4b9b-a790-3c3fee1dce25",
+    "user_id": "user_002",
+    "amount": -33.22,
+    "category": "food",
+    "description": "Arrive yard government name do",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-02-10T23:17:00+00:00"
+  },
+  {
+    "id": "c767ff1e-49a6-4dc8-abc6-d68a0c70f795",
+    "user_id": "user_002",
+    "amount": -58.36,
+    "category": "food",
+    "description": "Success music within",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-02-11T02:09:00+00:00"
+  },
+  {
+    "id": "cb2e90ff-2a30-45b0-9ec4-b59e087bc661",
+    "user_id": "user_002",
+    "amount": -40.13,
+    "category": "entertainment",
+    "description": "Society student summer",
+    "merchant": "CineHaus",
+    "timestamp": "2026-02-11T06:42:00+00:00"
+  },
+  {
+    "id": "d0bfae4c-eba7-4877-9d60-1189c663bf18",
+    "user_id": "user_002",
+    "amount": 5521.69,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-02-11T17:09:00+00:00"
+  },
+  {
+    "id": "857c78a5-06d9-4721-8720-2bac98956e61",
+    "user_id": "user_002",
+    "amount": -295.08,
+    "category": "shopping",
+    "description": "Two simple look for many",
+    "merchant": "PetEmporium",
+    "timestamp": "2026-02-12T04:56:00+00:00"
+  },
+  {
+    "id": "48269be6-3033-4e9a-bfda-abbcf6da723e",
+    "user_id": "user_002",
+    "amount": -29.61,
+    "category": "food",
+    "description": "Half outside forward will ahead",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-02-12T08:28:00+00:00"
+  },
+  {
+    "id": "951d7e28-c6fb-489e-980d-3319510937e7",
+    "user_id": "user_002",
+    "amount": -57.34,
+    "category": "entertainment",
+    "description": "Easy traditional current while sister",
+    "merchant": "Eventbrite",
+    "timestamp": "2026-02-14T12:14:00+00:00"
+  },
+  {
+    "id": "30e33973-f638-47af-b300-42ee865b69d2",
+    "user_id": "user_002",
+    "amount": -120.52,
+    "category": "food",
+    "description": "Radio may third also deal",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-02-15T18:50:00+00:00"
+  },
+  {
+    "id": "cd774fa6-2d1b-4f1d-9051-aea75d997cef",
+    "user_id": "user_002",
+    "amount": -59.6,
+    "category": "food",
+    "description": "Song series mouth",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-02-16T05:42:00+00:00"
+  },
+  {
+    "id": "6869a107-ce9f-471a-b11c-9fe1eab2f9aa",
+    "user_id": "user_002",
+    "amount": -28.06,
+    "category": "entertainment",
+    "description": "Might large",
+    "merchant": "Spotify",
+    "timestamp": "2026-02-16T05:59:00+00:00"
+  },
+  {
+    "id": "1fd10c3b-10a1-4cef-9abd-cb89dce1abd3",
+    "user_id": "user_002",
+    "amount": -36.17,
+    "category": "food",
+    "description": "Spring audience like help",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-02-16T23:01:00+00:00"
+  },
+  {
+    "id": "2470daec-8566-4d58-9b07-7fa6be353cee",
+    "user_id": "user_002",
+    "amount": -82.91,
+    "category": "entertainment",
+    "description": "Indicate near clearly teach",
+    "merchant": "Spotify",
+    "timestamp": "2026-02-18T13:28:00+00:00"
+  },
+  {
+    "id": "6a9cfef6-13f4-42c3-b444-4f7d9a65d2a4",
+    "user_id": "user_002",
+    "amount": -28.76,
+    "category": "food",
+    "description": "Number end technology yourself response",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-02-18T20:06:00+00:00"
+  },
+  {
+    "id": "6a5355ab-d3de-4c16-aa72-7340a9c79e4a",
+    "user_id": "user_002",
+    "amount": -142.96,
+    "category": "utilities",
+    "description": "Hot painting condition nature",
+    "merchant": "AquaCity",
+    "timestamp": "2026-02-19T04:30:00+00:00"
+  },
+  {
+    "id": "8ae6b9c5-136e-4ba4-b0d7-4bc63fd33de8",
+    "user_id": "user_002",
+    "amount": -129.95,
+    "category": "entertainment",
+    "description": "Particular whose",
+    "merchant": "Eventbrite",
+    "timestamp": "2026-02-19T07:41:00+00:00"
+  },
+  {
+    "id": "88f991c0-d666-4b59-94bc-622ab332c34c",
+    "user_id": "user_002",
+    "amount": -102.36,
+    "category": "entertainment",
+    "description": "Important reason well scene sign",
+    "merchant": "CineHaus",
+    "timestamp": "2026-02-20T00:26:00+00:00"
+  },
+  {
+    "id": "cce0c6bf-85e6-42b8-b6bb-5818524a9728",
+    "user_id": "user_002",
+    "amount": -253.11,
+    "category": "shopping",
+    "description": "Quality from anything",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2026-02-20T15:41:00+00:00"
+  },
+  {
+    "id": "dacf4343-f14f-431d-95cd-2a41cac226cc",
+    "user_id": "user_002",
+    "amount": -208.45,
+    "category": "health",
+    "description": "Summer parent second west human",
+    "merchant": "LabCorp",
+    "timestamp": "2026-02-21T06:41:00+00:00"
+  },
+  {
+    "id": "fa3e821f-6b0f-40d0-8c3e-3ce529a67368",
+    "user_id": "user_002",
+    "amount": -15.09,
+    "category": "food",
+    "description": "Teacher establish",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-02-22T15:41:00+00:00"
+  },
+  {
+    "id": "a65d2ff3-ce9e-479b-a68c-4c7a62f1c278",
+    "user_id": "user_002",
+    "amount": -158.17,
+    "category": "health",
+    "description": "Believe art",
+    "merchant": "LabCorp",
+    "timestamp": "2026-02-23T10:27:00+00:00"
+  },
+  {
+    "id": "de27abb9-9349-42ba-920d-30e6199aaa21",
+    "user_id": "user_002",
+    "amount": -50.96,
+    "category": "transport",
+    "description": "One commercial future serve",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2026-02-24T22:48:00+00:00"
+  },
+  {
+    "id": "c43561d3-bfff-4afb-93e8-45ad0955e0ce",
+    "user_id": "user_002",
+    "amount": -148.56,
+    "category": "health",
+    "description": "Too whatever",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-02-25T07:15:00+00:00"
+  },
+  {
+    "id": "7aa6ef42-2dde-4da0-9f5b-e5d19ed0da3d",
+    "user_id": "user_002",
+    "amount": -297.42,
+    "category": "shopping",
+    "description": "Service the front",
+    "merchant": "Thrift Haven",
+    "timestamp": "2026-02-25T23:15:00+00:00"
+  },
+  {
+    "id": "9d30b84e-e0ba-4eba-8445-d6628cb110e9",
+    "user_id": "user_002",
+    "amount": -29.88,
+    "category": "transport",
+    "description": "Always human finally design public",
+    "merchant": "Lyft",
+    "timestamp": "2026-02-26T06:44:00+00:00"
+  },
+  {
+    "id": "ba67b71a-5d66-4615-bf46-6e928f6a5d65",
+    "user_id": "user_002",
+    "amount": 5509.63,
+    "category": "income",
+    "description": "Salary credit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-02-26T19:02:00+00:00"
+  },
+  {
+    "id": "6afcb398-3af3-42ed-b91b-1d6d823893a3",
+    "user_id": "user_002",
+    "amount": -35.15,
+    "category": "transport",
+    "description": "Husband say media hospital",
+    "merchant": "Uber",
+    "timestamp": "2026-02-27T09:48:00+00:00"
+  },
+  {
+    "id": "f97d6403-0fe8-4301-9944-87ab050d7c63",
+    "user_id": "user_002",
+    "amount": -11.99,
+    "category": "transport",
+    "description": "Deal owner while",
+    "merchant": "Uber",
+    "timestamp": "2026-02-27T17:05:00+00:00"
+  },
+  {
+    "id": "92209e4e-70ea-4168-a5ca-e93b3a008a73",
+    "user_id": "user_002",
+    "amount": -180.76,
+    "category": "health",
+    "description": "After everybody society relate any",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-02-27T18:12:00+00:00"
+  },
+  {
+    "id": "fe8eb3fd-8832-44d8-8ce1-7732c7902436",
+    "user_id": "user_002",
+    "amount": -32.08,
+    "category": "food",
+    "description": "Rule without interesting",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-03-02T03:07:00+00:00"
+  },
+  {
+    "id": "b44ce24d-4952-4eae-a8c2-bf10f1cc57a2",
+    "user_id": "user_002",
+    "amount": -51.2,
+    "category": "food",
+    "description": "Everything activity evening page nearly",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-03-02T17:45:00+00:00"
+  },
+  {
+    "id": "dd76536f-c2a7-4a47-9f68-04d4cc16eeaa",
+    "user_id": "user_002",
+    "amount": -215.96,
+    "category": "shopping",
+    "description": "Blue table fill continue yeah",
+    "merchant": "BookBazaar",
+    "timestamp": "2026-03-02T23:50:00+00:00"
+  },
+  {
+    "id": "ae0c3cdd-1cb0-41aa-b0c6-997da16dfaf2",
+    "user_id": "user_002",
+    "amount": -78.78,
+    "category": "entertainment",
+    "description": "Hundred life place",
+    "merchant": "Netflix",
+    "timestamp": "2026-03-03T23:33:00+00:00"
+  },
+  {
+    "id": "e7b32228-d29f-4a3f-a64c-76cfbc6301e8",
+    "user_id": "user_002",
+    "amount": -62.94,
+    "category": "food",
+    "description": "Majority data indicate who",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-03-04T10:10:00+00:00"
+  },
+  {
+    "id": "eddc8f96-0c85-4bef-8307-8205be70885e",
+    "user_id": "user_002",
+    "amount": -248.55,
+    "category": "shopping",
+    "description": "Child fly",
+    "merchant": "GardenWorld",
+    "timestamp": "2026-03-05T03:12:00+00:00"
+  },
+  {
+    "id": "ff0d27d4-e655-44b6-87a4-75d173791020",
+    "user_id": "user_002",
+    "amount": -69.43,
+    "category": "food",
+    "description": "Nearly necessary edge write",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-03-05T03:26:00+00:00"
+  },
+  {
+    "id": "e8cfb7cb-82e3-4f24-b10a-b9b70bc82f7e",
+    "user_id": "user_002",
+    "amount": -93.63,
+    "category": "entertainment",
+    "description": "Deal across hand he course",
+    "merchant": "BookNook",
+    "timestamp": "2026-03-06T00:37:00+00:00"
+  },
+  {
+    "id": "1e082f0b-cbfc-40d9-bd37-57d5689acffc",
+    "user_id": "user_002",
+    "amount": -201.77,
+    "category": "health",
+    "description": "Computer his seat",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-03-07T20:01:00+00:00"
+  },
+  {
+    "id": "38a1431d-56c5-4a7a-8c8a-b0eb76aa71cd",
+    "user_id": "user_002",
+    "amount": -19.3,
+    "category": "food",
+    "description": "Head must",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-03-08T08:29:00+00:00"
+  },
+  {
+    "id": "11d029f0-08ee-43c1-b7f1-5a0b91e9fbb9",
+    "user_id": "user_002",
+    "amount": -16.34,
+    "category": "transport",
+    "description": "Conference throughout have activity",
+    "merchant": "Rail & Ride",
+    "timestamp": "2026-03-08T21:26:00+00:00"
+  },
+  {
+    "id": "a408dbda-c129-4c4b-aad8-c11aedf0e64c",
+    "user_id": "user_002",
+    "amount": -7.79,
+    "category": "transport",
+    "description": "Avoid training",
+    "merchant": "Lyft",
+    "timestamp": "2026-03-08T23:44:00+00:00"
+  },
+  {
+    "id": "92504e72-b2bd-4807-ac74-e2db8674cd1e",
+    "user_id": "user_002",
+    "amount": -200.14,
+    "category": "shopping",
+    "description": "They lot they become argue",
+    "merchant": "Thrift Haven",
+    "timestamp": "2026-03-10T05:58:00+00:00"
+  },
+  {
+    "id": "49565d91-b499-4f5b-bbb5-1af62fe460ef",
+    "user_id": "user_002",
+    "amount": -70.65,
+    "category": "entertainment",
+    "description": "Meet true total",
+    "merchant": "CineHaus",
+    "timestamp": "2026-03-10T08:06:00+00:00"
+  },
+  {
+    "id": "15d7bc8e-dcbd-482e-81af-46abb8b3e2c4",
+    "user_id": "user_002",
+    "amount": -17.99,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "Netflix",
+    "timestamp": "2026-03-10T14:33:00+00:00"
+  },
+  {
+    "id": "f78efb32-9ec0-49f8-89c4-03667aa5d525",
+    "user_id": "user_002",
+    "amount": -29.43,
+    "category": "food",
+    "description": "Provide apply with particularly",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-03-12T15:17:00+00:00"
+  },
+  {
+    "id": "2f012d98-db6e-4839-8a39-6e27166ce241",
+    "user_id": "user_002",
+    "amount": -95.6,
+    "category": "entertainment",
+    "description": "Message present serious",
+    "merchant": "Spotify",
+    "timestamp": "2026-03-12T19:59:00+00:00"
+  },
+  {
+    "id": "007f18f4-5638-4219-b7e4-6c5963cd1479",
+    "user_id": "user_002",
+    "amount": -32.78,
+    "category": "health",
+    "description": "Look from such",
+    "merchant": "DentalCare Plus",
+    "timestamp": "2026-03-13T07:52:00+00:00"
+  },
+  {
+    "id": "db39c0a8-bd04-401a-a3ef-c839a2738d08",
+    "user_id": "user_002",
+    "amount": 5510.64,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "HR Pay Services",
+    "timestamp": "2026-03-13T11:00:00+00:00"
+  },
+  {
+    "id": "a449983e-c2d6-4d2a-81c6-c49d0bf8f3f7",
+    "user_id": "user_002",
+    "amount": -41.6,
+    "category": "food",
+    "description": "Season which difficult",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-03-13T13:01:00+00:00"
+  },
+  {
+    "id": "e2206e8e-b800-4cfe-8716-9fa5b095d251",
+    "user_id": "user_002",
+    "amount": -201.46,
+    "category": "health",
+    "description": "Nature serve ago beyond after",
+    "merchant": "MindEase Therapy",
+    "timestamp": "2026-03-14T00:22:00+00:00"
+  },
+  {
+    "id": "d73ed7ce-3a8c-472c-8e28-bca6f298a07f",
+    "user_id": "user_002",
+    "amount": -64.78,
+    "category": "food",
+    "description": "State benefit",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-03-14T00:25:00+00:00"
+  },
+  {
+    "id": "1133a987-ffa4-4324-af35-56cd5d2cdaa5",
+    "user_id": "user_002",
+    "amount": -57.54,
+    "category": "entertainment",
+    "description": "Success heavy job",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-03-14T06:03:00+00:00"
+  },
+  {
+    "id": "4b63d79f-de03-4d22-b587-d301db320b33",
+    "user_id": "user_002",
+    "amount": -154.01,
+    "category": "utilities",
+    "description": "Hard increase prepare",
+    "merchant": "City Utilities",
+    "timestamp": "2026-03-15T06:27:00+00:00"
+  },
+  {
+    "id": "7423c8cd-f1d5-4fc7-8889-7fde7d4ba412",
+    "user_id": "user_002",
+    "amount": -44.59,
+    "category": "entertainment",
+    "description": "Fund theory",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-03-16T06:01:00+00:00"
+  },
+  {
+    "id": "c5d7253f-9c47-4b20-b1b4-cdd6ae214283",
+    "user_id": "user_002",
+    "amount": -52.95,
+    "category": "transport",
+    "description": "Born history southern deep tree",
+    "merchant": "ExpressBus",
+    "timestamp": "2026-03-16T10:18:00+00:00"
+  },
+  {
+    "id": "e18ba340-8c80-43c2-987d-2ebce59a9705",
+    "user_id": "user_002",
+    "amount": -32.06,
+    "category": "food",
+    "description": "World theory law traditional agency",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-03-16T23:01:00+00:00"
+  },
+  {
+    "id": "fc9f7b88-bbea-4246-8c0f-986eb8d615fa",
+    "user_id": "user_002",
+    "amount": -68.26,
+    "category": "health",
+    "description": "Crime wait nation very whole",
+    "merchant": "VisionCenter",
+    "timestamp": "2026-03-18T09:36:00+00:00"
+  },
+  {
+    "id": "62e6e7ee-8ec4-4ff8-b233-ab912cbe328e",
+    "user_id": "user_002",
+    "amount": -49.21,
+    "category": "transport",
+    "description": "Mission bag during half last",
+    "merchant": "Parking Authority",
+    "timestamp": "2026-03-18T12:46:00+00:00"
+  },
+  {
+    "id": "7ceef0b3-988e-4d74-ac7e-d1bb05aaf041",
+    "user_id": "user_002",
+    "amount": -70.31,
+    "category": "health",
+    "description": "Tax peace guess discussion as",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-03-19T14:14:00+00:00"
+  },
+  {
+    "id": "2ee7b699-f23e-43b4-b137-43571159bea4",
+    "user_id": "user_002",
+    "amount": -87.76,
+    "category": "utilities",
+    "description": "Federal physical drive your audience",
+    "merchant": "TeleLink",
+    "timestamp": "2026-03-19T19:47:00+00:00"
+  },
+  {
+    "id": "c5d4d1a4-a314-47eb-adef-9daa8fd3a4e8",
+    "user_id": "user_002",
+    "amount": -179.18,
+    "category": "health",
+    "description": "A reflect opportunity option",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-03-20T11:06:00+00:00"
+  },
+  {
+    "id": "0c621f4a-5ab5-4312-8b94-df325d7a8a7f",
+    "user_id": "user_002",
+    "amount": -23.55,
+    "category": "transport",
+    "description": "Likely senior officer executive car",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-03-20T14:11:00+00:00"
+  },
+  {
+    "id": "2e3ae636-c786-4622-9c07-b7d5078fbcd4",
+    "user_id": "user_002",
+    "amount": -50.06,
+    "category": "transport",
+    "description": "Able above truth age no",
+    "merchant": "Uber",
+    "timestamp": "2026-03-20T15:54:00+00:00"
+  },
+  {
+    "id": "1b5668bb-9aba-4e97-963b-36692ed46c50",
+    "user_id": "user_002",
+    "amount": -115.35,
+    "category": "food",
+    "description": "Generation boy",
+    "merchant": "City Diner",
+    "timestamp": "2026-03-22T04:58:00+00:00"
+  },
+  {
+    "id": "a4a60618-5844-4f59-93ab-7d669ebf3086",
+    "user_id": "user_002",
+    "amount": -111.9,
+    "category": "shopping",
+    "description": "Training after",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-03-23T10:40:00+00:00"
+  },
+  {
+    "id": "9fd625fb-c15b-46da-8d6c-dd666ab3827d",
+    "user_id": "user_002",
+    "amount": -25.15,
+    "category": "food",
+    "description": "Attack collection home cup poor",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-03-24T04:46:00+00:00"
+  },
+  {
+    "id": "eb84059a-2665-47fa-88d7-9d8abadf354d",
+    "user_id": "user_002",
+    "amount": -34.03,
+    "category": "food",
+    "description": "Officer indicate purpose",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-03-25T10:14:00+00:00"
+  },
+  {
+    "id": "beb626e8-ddb8-4117-a431-67dafdb84989",
+    "user_id": "user_002",
+    "amount": -78.29,
+    "category": "shopping",
+    "description": "Thousand figure property",
+    "merchant": "BookBazaar",
+    "timestamp": "2026-03-25T20:38:00+00:00"
+  },
+  {
+    "id": "12b9d6d9-aad5-4520-b4c2-582e21c857f1",
+    "user_id": "user_002",
+    "amount": -121.23,
+    "category": "entertainment",
+    "description": "Across customer",
+    "merchant": "CineHaus",
+    "timestamp": "2026-03-26T13:28:00+00:00"
+  },
+  {
+    "id": "7430b3c0-fc26-447b-b08d-17bb6bfd846a",
+    "user_id": "user_002",
+    "amount": -90.14,
+    "category": "food",
+    "description": "Head hear",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-03-26T18:55:00+00:00"
+  },
+  {
+    "id": "60870d7f-8bc1-44bf-8e90-6a061bb44870",
+    "user_id": "user_002",
+    "amount": -30.63,
+    "category": "transport",
+    "description": "Land her arm mouth",
+    "merchant": "Parking Authority",
+    "timestamp": "2026-03-27T06:58:00+00:00"
+  },
+  {
+    "id": "be0e8e6a-c94c-48d3-862a-ada96799ade7",
+    "user_id": "user_002",
+    "amount": -16.76,
+    "category": "transport",
+    "description": "Resource image me the",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2026-03-27T11:09:00+00:00"
+  },
+  {
+    "id": "08862a98-1f52-432c-8143-fa03fa00c8e2",
+    "user_id": "user_002",
+    "amount": 5494.16,
+    "category": "income",
+    "description": "Salary credit",
+    "merchant": "Freelance Platform",
+    "timestamp": "2026-03-28T02:07:00+00:00"
+  },
+  {
+    "id": "b4f58245-96cb-4f1b-826c-e634d35b17c0",
+    "user_id": "user_002",
+    "amount": -52.8,
+    "category": "transport",
+    "description": "A group down question",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2026-03-30T12:33:00+00:00"
+  },
+  {
+    "id": "35e16ed2-7ed7-414e-9c5a-4e95fe97b19a",
+    "user_id": "user_002",
+    "amount": -63.66,
+    "category": "food",
+    "description": "National phone degree",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-03-31T09:42:00+00:00"
+  },
+  {
+    "id": "aaf4bda1-b3e1-4003-a2a4-5051648e3d22",
+    "user_id": "user_002",
+    "amount": -51.65,
+    "category": "shopping",
+    "description": "Deal message could",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2026-03-31T21:55:00+00:00"
+  },
+  {
+    "id": "fa2e7c2d-fb26-47f8-96c8-14cb74dc7a89",
+    "user_id": "user_002",
+    "amount": -27.87,
+    "category": "entertainment",
+    "description": "Space describe",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-04-01T05:01:00+00:00"
+  },
+  {
+    "id": "c5fb732a-714b-42c8-aeb1-b55a890f4825",
+    "user_id": "user_002",
+    "amount": -101.68,
+    "category": "entertainment",
+    "description": "Another beautiful hear statement",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-04-02T08:23:00+00:00"
+  },
+  {
+    "id": "b4c18503-0a56-4ab4-b899-987be49b6e73",
+    "user_id": "user_002",
+    "amount": -58.82,
+    "category": "food",
+    "description": "Hour spend more increase",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-03T17:48:00+00:00"
+  },
+  {
+    "id": "cbe07cd7-064f-4ebf-aa2b-95bcc8d80541",
+    "user_id": "user_002",
+    "amount": -57.34,
+    "category": "food",
+    "description": "Mr decision",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-04-03T22:31:00+00:00"
+  },
+  {
+    "id": "033e8cd4-ef20-4629-a1b5-c2482bca942f",
+    "user_id": "user_002",
+    "amount": -83.95,
+    "category": "food",
+    "description": "Amount everyone",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-04T06:25:00+00:00"
+  },
+  {
+    "id": "6ba03883-d424-4a42-b1bf-e111b93a4671",
+    "user_id": "user_002",
+    "amount": -23.96,
+    "category": "health",
+    "description": "Put set marriage really",
+    "merchant": "LabCorp",
+    "timestamp": "2026-04-04T09:54:00+00:00"
+  },
+  {
+    "id": "08393755-542d-4cd7-87f1-4b322f1eec71",
+    "user_id": "user_002",
+    "amount": -30.93,
+    "category": "transport",
+    "description": "Let store account",
+    "merchant": "CityBike",
+    "timestamp": "2026-04-05T07:16:00+00:00"
+  },
+  {
+    "id": "8f8f17c7-b965-4666-83aa-f48ef9a2f594",
+    "user_id": "user_002",
+    "amount": -46.43,
+    "category": "transport",
+    "description": "Protect young project",
+    "merchant": "Parking Authority",
+    "timestamp": "2026-04-05T09:06:00+00:00"
+  },
+  {
+    "id": "8c2bf021-3be2-4997-a0bd-3d6def1152c9",
+    "user_id": "user_002",
+    "amount": -55.4,
+    "category": "food",
+    "description": "Me building century still everything",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-04-06T03:55:00+00:00"
+  },
+  {
+    "id": "117da72c-2985-449e-8c65-969cf01fa3cd",
+    "user_id": "user_002",
+    "amount": -33.32,
+    "category": "transport",
+    "description": "Professor federal worry generation",
+    "merchant": "CityBike",
+    "timestamp": "2026-04-07T08:43:00+00:00"
+  },
+  {
+    "id": "d65fc392-c92a-4b78-b437-548145514a82",
+    "user_id": "user_002",
+    "amount": -51.01,
+    "category": "food",
+    "description": "Throw officer responsibility",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-04-08T12:45:00+00:00"
+  },
+  {
+    "id": "826076cb-f708-4e40-a4b7-cc72f2326831",
+    "user_id": "user_002",
+    "amount": -9.99,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "Netflix",
+    "timestamp": "2026-04-09T11:21:00+00:00"
+  },
+  {
+    "id": "ac7d1768-3a70-4697-ab4a-7324552d37fc",
+    "user_id": "user_002",
+    "amount": -83.47,
+    "category": "food",
+    "description": "Carry money side expect",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-04-09T18:47:00+00:00"
+  },
+  {
+    "id": "5c2eed61-3ee8-41f0-852e-4e9d019b0dd9",
+    "user_id": "user_002",
+    "amount": -36.97,
+    "category": "entertainment",
+    "description": "Time benefit attention",
+    "merchant": "GameZone",
+    "timestamp": "2026-04-09T19:58:00+00:00"
+  },
+  {
+    "id": "16ad5eb4-29a0-4e9f-81e3-1f295713dfcd",
+    "user_id": "user_002",
+    "amount": -51.16,
+    "category": "food",
+    "description": "Ready her wall",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-04-09T21:31:00+00:00"
+  },
+  {
+    "id": "309fa09c-f3aa-436f-9950-0525ba71d5c6",
+    "user_id": "user_002",
+    "amount": -217.48,
+    "category": "shopping",
+    "description": "Close month",
+    "merchant": "PetEmporium",
+    "timestamp": "2026-04-10T08:38:00+00:00"
+  },
+  {
+    "id": "8f60a33e-99b7-4e9f-8a8f-6b160acf7c5e",
+    "user_id": "user_002",
+    "amount": -61.79,
+    "category": "food",
+    "description": "Future project contain person senior",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-04-10T23:02:00+00:00"
+  },
+  {
+    "id": "294d4ded-a954-4ecd-b94e-32f5a90211b0",
+    "user_id": "user_002",
+    "amount": -88.81,
+    "category": "entertainment",
+    "description": "Could edge work where democratic",
+    "merchant": "Spotify",
+    "timestamp": "2026-04-11T01:53:00+00:00"
+  },
+  {
+    "id": "7f2e3f51-5820-4d3f-a7ed-f469fb61db2c",
+    "user_id": "user_002",
+    "amount": 5495.51,
+    "category": "income",
+    "description": "Salary credit",
+    "merchant": "Freelance Platform",
+    "timestamp": "2026-04-12T03:59:00+00:00"
+  },
+  {
+    "id": "af51146e-dd1d-4ebc-82d9-42f0777a6a0b",
+    "user_id": "user_002",
+    "amount": -27.66,
+    "category": "health",
+    "description": "Particular plan green here",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-04-13T15:00:00+00:00"
+  },
+  {
+    "id": "050d6ec1-ae1d-4cb0-994c-7d6ab194d8f3",
+    "user_id": "user_002",
+    "amount": -35.3,
+    "category": "transport",
+    "description": "Face actually beyond education",
+    "merchant": "Rail & Ride",
+    "timestamp": "2026-04-18T04:45:00+00:00"
+  },
+  {
+    "id": "91e7efc9-6663-41a1-9db5-18494e83459d",
+    "user_id": "user_002",
+    "amount": -48.17,
+    "category": "transport",
+    "description": "Work daughter",
+    "merchant": "Parking Authority",
+    "timestamp": "2026-04-18T10:46:00+00:00"
+  },
+  {
+    "id": "1eff3e17-82e8-4f6e-b7f7-10f9da0b846e",
+    "user_id": "user_002",
+    "amount": -87.44,
+    "category": "food",
+    "description": "Husband production difficult light note",
+    "merchant": "Burger Barn",
+    "timestamp": "2026-04-18T19:48:00+00:00"
+  },
+  {
+    "id": "c3fe75cd-2e8c-45d3-b97e-b3efe1e06c19",
+    "user_id": "user_002",
+    "amount": -186.98,
+    "category": "health",
+    "description": "Reflect Democrat because",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-04-18T21:25:00+00:00"
+  },
+  {
+    "id": "eabd6754-093f-40a2-9c3e-09152724fc44",
+    "user_id": "user_002",
+    "amount": -160.56,
+    "category": "entertainment",
+    "description": "Specific enter argue maybe",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-04-19T02:13:00+00:00"
+  },
+  {
+    "id": "7dbb4256-8abc-4089-80cc-f118ffa0ab78",
+    "user_id": "user_002",
+    "amount": -101.54,
+    "category": "food",
+    "description": "Memory win citizen position",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-04-19T16:34:00+00:00"
+  },
+  {
+    "id": "8c21c080-8a9a-4482-a134-0a874b0ce301",
+    "user_id": "user_002",
+    "amount": -194.25,
+    "category": "health",
+    "description": "Society record",
+    "merchant": "LabCorp",
+    "timestamp": "2026-04-19T23:54:00+00:00"
+  },
+  {
+    "id": "06688e78-758a-4338-8d13-297f0895bf4a",
+    "user_id": "user_002",
+    "amount": -90.76,
+    "category": "utilities",
+    "description": "Step what win",
+    "merchant": "HomeShield Insurance",
+    "timestamp": "2026-04-20T00:55:00+00:00"
+  },
+  {
+    "id": "05649615-428e-4f6a-bec4-a74188c3c9bd",
+    "user_id": "user_002",
+    "amount": -75.29,
+    "category": "food",
+    "description": "Style parent street law decision",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-20T02:20:00+00:00"
+  },
+  {
+    "id": "8f117df5-1160-43d2-ab41-ed24898dc123",
+    "user_id": "user_002",
+    "amount": -19.5,
+    "category": "transport",
+    "description": "Coach everyone until",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-04-20T11:20:00+00:00"
+  },
+  {
+    "id": "e683d47a-4a9b-47a5-9e73-d65f0e08b414",
+    "user_id": "user_002",
+    "amount": -79.71,
+    "category": "food",
+    "description": "Later common truth contain",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-20T17:13:00+00:00"
+  },
+  {
+    "id": "a4906d73-ee33-4d8f-aa26-c40e24950201",
+    "user_id": "user_002",
+    "amount": -34.87,
+    "category": "food",
+    "description": "Training expert over risk why",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-04-21T20:06:00+00:00"
+  },
+  {
+    "id": "e5272cf7-37da-453e-bf67-2f3db17a0323",
+    "user_id": "user_002",
+    "amount": -14.57,
+    "category": "food",
+    "description": "Site later almost minute",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-22T09:29:00+00:00"
+  },
+  {
+    "id": "fb6ca7cf-c06f-4162-8cdb-af6c5393a849",
+    "user_id": "user_002",
+    "amount": -122.39,
+    "category": "entertainment",
+    "description": "But half how prepare",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-04-23T02:34:00+00:00"
+  },
+  {
+    "id": "631dcb2d-bae2-4c92-9c6c-932de5a0a26e",
+    "user_id": "user_002",
+    "amount": -59.68,
+    "category": "food",
+    "description": "Quite future give everyone",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-04-23T11:15:00+00:00"
+  },
+  {
+    "id": "194b0387-11e9-4376-8ed1-3cb8e32bf53a",
+    "user_id": "user_002",
+    "amount": -63.44,
+    "category": "entertainment",
+    "description": "Former middle air attention",
+    "merchant": "Spotify",
+    "timestamp": "2026-04-24T01:23:00+00:00"
+  },
+  {
+    "id": "0106306b-0d18-4527-a946-d74e5e42c161",
+    "user_id": "user_002",
+    "amount": -77.91,
+    "category": "food",
+    "description": "You must well early",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-04-24T02:50:00+00:00"
+  },
+  {
+    "id": "e9a1dc47-351f-4656-bb21-2e367eb114ed",
+    "user_id": "user_002",
+    "amount": -24.09,
+    "category": "health",
+    "description": "Collection leg effect real",
+    "merchant": "PharmaQuick",
+    "timestamp": "2026-04-24T06:14:00+00:00"
+  },
+  {
+    "id": "cc3a9970-ca04-43e7-b2d2-2c10c349fd99",
+    "user_id": "user_002",
+    "amount": -124.78,
+    "category": "entertainment",
+    "description": "Environment every serve",
+    "merchant": "Eventbrite",
+    "timestamp": "2026-04-24T07:06:00+00:00"
+  },
+  {
+    "id": "127e228b-8197-4e1c-95a4-7cd8099df344",
+    "user_id": "user_002",
+    "amount": -233.03,
+    "category": "shopping",
+    "description": "Mrs you tend",
+    "merchant": "ElectroMart",
+    "timestamp": "2026-04-24T13:12:00+00:00"
+  },
+  {
+    "id": "1a56c2b5-297f-4363-a2eb-0f9fa37e0b86",
+    "user_id": "user_002",
+    "amount": -103.7,
+    "category": "entertainment",
+    "description": "Security maintain before",
+    "merchant": "ArcadeWorld",
+    "timestamp": "2026-04-24T16:07:00+00:00"
+  },
+  {
+    "id": "e2aa0f08-2bb5-46f8-93f4-21a345904bc7",
+    "user_id": "user_002",
+    "amount": -79.94,
+    "category": "food",
+    "description": "Music size both",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-04-25T00:02:00+00:00"
+  },
+  {
+    "id": "0dc80daa-420f-45c1-b4c9-9d0240cad73f",
+    "user_id": "user_002",
+    "amount": -72.31,
+    "category": "food",
+    "description": "Three rule start",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-04-26T03:22:00+00:00"
+  },
+  {
+    "id": "421a7590-f936-4385-a418-db17234295a9",
+    "user_id": "user_002",
+    "amount": -70.91,
+    "category": "food",
+    "description": "Rather he statement",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-04-26T04:42:00+00:00"
+  },
+  {
+    "id": "ac12e170-0352-4cb1-b811-f78379c872da",
+    "user_id": "user_002",
+    "amount": -21.35,
+    "category": "transport",
+    "description": "Water skin",
+    "merchant": "CityBike",
+    "timestamp": "2026-04-26T13:48:00+00:00"
+  },
+  {
+    "id": "1be4e93d-b8e2-44b7-b74e-b446acf69b88",
+    "user_id": "user_002",
+    "amount": -34.61,
+    "category": "transport",
+    "description": "Maintain example",
+    "merchant": "Rail & Ride",
+    "timestamp": "2026-04-26T20:33:00+00:00"
+  },
+  {
+    "id": "5c66ae22-1401-4459-9c8f-e6960a7b9ed1",
+    "user_id": "user_002",
+    "amount": 5497.73,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "Freelance Platform",
+    "timestamp": "2026-04-27T16:13:00+00:00"
+  },
+  {
+    "id": "57c02714-4ed0-4adc-a1f6-a246cb1bdd4f",
+    "user_id": "user_002",
+    "amount": -73.08,
+    "category": "utilities",
+    "description": "Ever few yes kind",
+    "merchant": "AquaCity",
+    "timestamp": "2026-04-27T18:00:00+00:00"
+  },
+  {
+    "id": "7fdde9f6-0ab0-4057-90dd-63581d8376be",
+    "user_id": "user_002",
+    "amount": -25.76,
+    "category": "health",
+    "description": "Company investment with six",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-04-29T06:16:00+00:00"
+  },
+  {
+    "id": "aded71eb-e7b7-4fcc-8cdd-b79c4378f215",
+    "user_id": "user_002",
+    "amount": -169.74,
+    "category": "utilities",
+    "description": "Address color international",
+    "merchant": "AquaCity",
+    "timestamp": "2026-04-30T00:16:00+00:00"
+  },
+  {
+    "id": "5305f813-358c-4265-b13d-25e662abb074",
+    "user_id": "user_002",
+    "amount": -280.29,
+    "category": "shopping",
+    "description": "Wrong officer benefit office property",
+    "merchant": "PetEmporium",
+    "timestamp": "2026-04-30T05:34:00+00:00"
+  },
+  {
+    "id": "09756153-e6af-458a-9531-a38e8d4808aa",
+    "user_id": "user_002",
+    "amount": -58.52,
+    "category": "food",
+    "description": "Hot particularly use",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-04-30T06:03:00+00:00"
+  },
+  {
+    "id": "8f1f61c8-5238-425e-86ea-1a35b0193b0a",
+    "user_id": "user_002",
+    "amount": -63.39,
+    "category": "food",
+    "description": "Bad director interview beyond",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-04-30T15:15:00+00:00"
+  },
+  {
+    "id": "a6448d1c-3632-4022-824c-9504b07597c6",
+    "user_id": "user_002",
+    "amount": -102.38,
+    "category": "entertainment",
+    "description": "Parent four range",
+    "merchant": "Spotify",
+    "timestamp": "2026-04-30T19:38:00+00:00"
+  },
+  {
+    "id": "b80d943f-dc2e-4131-b6b0-2912cafe3056",
+    "user_id": "user_002",
+    "amount": -68.39,
+    "category": "food",
+    "description": "Idea deep language front doctor",
+    "merchant": "Market Fresh",
+    "timestamp": "2026-04-30T22:48:00+00:00"
+  },
+  {
+    "id": "58a64d44-9293-44c4-a155-0c704e9941b1",
+    "user_id": "user_002",
+    "amount": -9.85,
+    "category": "transport",
+    "description": "Listen industry store guess",
+    "merchant": "Metro Mobility",
+    "timestamp": "2026-05-01T12:07:00+00:00"
+  },
+  {
+    "id": "548899bb-d37f-44c2-9d89-47ad4f74221d",
+    "user_id": "user_002",
+    "amount": -19.25,
+    "category": "entertainment",
+    "description": "Evidence market baby stuff",
+    "merchant": "MusicHive",
+    "timestamp": "2026-05-02T06:07:00+00:00"
+  },
+  {
+    "id": "14b9482f-0823-4cad-a793-dee565ef953e",
+    "user_id": "user_002",
+    "amount": -198.26,
+    "category": "health",
+    "description": "Particularly oil guess",
+    "merchant": "MindEase Therapy",
+    "timestamp": "2026-05-02T14:01:00+00:00"
+  },
+  {
+    "id": "9ad5a053-a94f-4b69-82df-19248cfbf73c",
+    "user_id": "user_002",
+    "amount": -110.67,
+    "category": "utilities",
+    "description": "Chair thought recently",
+    "merchant": "City Utilities",
+    "timestamp": "2026-05-02T21:03:00+00:00"
+  },
+  {
+    "id": "d85ce3bf-e725-48c8-938d-03507b853ef5",
+    "user_id": "user_002",
+    "amount": -111.54,
+    "category": "food",
+    "description": "Possible reduce if home far",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-05-03T17:00:00+00:00"
+  },
+  {
+    "id": "6bae4958-3b00-4975-9f98-7dd024d7816b",
+    "user_id": "user_002",
+    "amount": -17.25,
+    "category": "food",
+    "description": "Figure child",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-05-05T03:47:00+00:00"
+  },
+  {
+    "id": "d6927637-5e4f-4030-9208-b8cb15b2f088",
+    "user_id": "user_002",
+    "amount": -40.91,
+    "category": "food",
+    "description": "Act foreign send make",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-05-06T02:01:00+00:00"
+  },
+  {
+    "id": "8081405b-24e6-4f39-8bf8-afb135c0fc0d",
+    "user_id": "user_002",
+    "amount": -87.78,
+    "category": "food",
+    "description": "Together space rather",
+    "merchant": "City Diner",
+    "timestamp": "2026-05-06T14:47:00+00:00"
+  },
+  {
+    "id": "2442b075-edbe-426f-8e2c-6310a2e0ebb6",
+    "user_id": "user_002",
+    "amount": -29.85,
+    "category": "food",
+    "description": "Avoid our necessary street",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-05-07T10:46:00+00:00"
+  },
+  {
+    "id": "4a0eff1e-ae8f-48b6-9ba1-ebad49734346",
+    "user_id": "user_002",
+    "amount": -193.1,
+    "category": "shopping",
+    "description": "But against already coach head",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2026-05-07T15:31:00+00:00"
+  },
+  {
+    "id": "b7a29828-ca56-4218-ad50-b84e93f60e7b",
+    "user_id": "user_002",
+    "amount": -5.92,
+    "category": "transport",
+    "description": "Structure fish picture statement offer",
+    "merchant": "Uber",
+    "timestamp": "2026-05-08T22:56:00+00:00"
+  },
+  {
+    "id": "44abab41-7671-48b9-b6c4-e72519e72328",
+    "user_id": "user_002",
+    "amount": -9.99,
+    "category": "entertainment",
+    "description": "Monthly subscription",
+    "merchant": "Spotify",
+    "timestamp": "2026-05-09T11:45:00+00:00"
+  },
+  {
+    "id": "313cdadd-1fd4-4591-b0e0-c8f215951eea",
+    "user_id": "user_002",
+    "amount": -48.47,
+    "category": "food",
+    "description": "Try put item",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-05-09T13:10:00+00:00"
+  },
+  {
+    "id": "86792186-6a03-40e6-a904-68c62d87fb93",
+    "user_id": "user_002",
+    "amount": -125.86,
+    "category": "entertainment",
+    "description": "Report health",
+    "merchant": "CineHaus",
+    "timestamp": "2026-05-10T03:12:00+00:00"
+  },
+  {
+    "id": "8294d0e7-5eda-4716-9e01-a82240b2b6b8",
+    "user_id": "user_002",
+    "amount": -12.68,
+    "category": "transport",
+    "description": "Nothing ball",
+    "merchant": "Lyft",
+    "timestamp": "2026-05-10T04:21:00+00:00"
+  },
+  {
+    "id": "3d4d10b3-77aa-4cb2-9530-4ecaf626b439",
+    "user_id": "user_002",
+    "amount": -45.79,
+    "category": "shopping",
+    "description": "Kitchen receive develop through",
+    "merchant": "HomeGoods Depot",
+    "timestamp": "2026-05-10T22:13:00+00:00"
+  },
+  {
+    "id": "f299842a-a363-40aa-9462-7b3cc2539534",
+    "user_id": "user_002",
+    "amount": -90.44,
+    "category": "food",
+    "description": "Movie process customer almost",
+    "merchant": "Green Bowl",
+    "timestamp": "2026-05-11T04:08:00+00:00"
+  },
+  {
+    "id": "dcbbec42-2109-448c-bf39-57f173dc845c",
+    "user_id": "user_002",
+    "amount": -71.77,
+    "category": "food",
+    "description": "Return consumer today",
+    "merchant": "City Diner",
+    "timestamp": "2026-05-11T07:25:00+00:00"
+  },
+  {
+    "id": "1eedb371-d42a-48dc-afe8-b9b226936650",
+    "user_id": "user_002",
+    "amount": -298.37,
+    "category": "shopping",
+    "description": "Develop arm rest scene",
+    "merchant": "BookBazaar",
+    "timestamp": "2026-05-11T23:43:00+00:00"
+  },
+  {
+    "id": "aa118ac9-19b7-4eea-ae64-ea37f3abe233",
+    "user_id": "user_002",
+    "amount": 5528.6,
+    "category": "income",
+    "description": "Salary credit",
+    "merchant": "ACME Payroll",
+    "timestamp": "2026-05-12T08:01:00+00:00"
+  },
+  {
+    "id": "68a304dc-b572-4856-b456-94c4c5ab1db3",
+    "user_id": "user_002",
+    "amount": -19.73,
+    "category": "food",
+    "description": "One positive item",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-05-12T14:39:00+00:00"
+  },
+  {
+    "id": "c76148bb-4cca-40f2-931c-77d91c695a27",
+    "user_id": "user_002",
+    "amount": -37.43,
+    "category": "food",
+    "description": "Record treatment executive fear sign",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-05-13T00:29:00+00:00"
+  },
+  {
+    "id": "27a087c5-7176-4f2f-b425-a32bfc04a2ad",
+    "user_id": "user_002",
+    "amount": -76.87,
+    "category": "shopping",
+    "description": "Side drop value kid",
+    "merchant": "Thrift Haven",
+    "timestamp": "2026-05-13T08:48:00+00:00"
+  },
+  {
+    "id": "ad302911-7fa8-4357-b12c-4182a2323f45",
+    "user_id": "user_002",
+    "amount": -62.54,
+    "category": "food",
+    "description": "Democratic training college lot",
+    "merchant": "Corner Bakery",
+    "timestamp": "2026-05-16T23:12:00+00:00"
+  },
+  {
+    "id": "f6e15436-3075-41cb-b2fc-3fedc9a23544",
+    "user_id": "user_002",
+    "amount": -41.45,
+    "category": "transport",
+    "description": "Special must near her",
+    "merchant": "CityBike",
+    "timestamp": "2026-05-18T16:56:00+00:00"
+  },
+  {
+    "id": "5f45dabc-2d50-4fae-bbaf-18c3f767b27f",
+    "user_id": "user_002",
+    "amount": -13.66,
+    "category": "food",
+    "description": "Support compare image could",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-05-19T00:27:00+00:00"
+  },
+  {
+    "id": "50b3a0fc-c7db-4d89-8cde-4fe6415fe183",
+    "user_id": "user_002",
+    "amount": -45.24,
+    "category": "food",
+    "description": "Sign war out begin",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-05-20T03:44:00+00:00"
+  },
+  {
+    "id": "29013c26-be72-45d6-8701-640b306dc63d",
+    "user_id": "user_002",
+    "amount": -32.27,
+    "category": "transport",
+    "description": "Attack phone others",
+    "merchant": "Lyft",
+    "timestamp": "2026-05-20T09:00:00+00:00"
+  },
+  {
+    "id": "72cc64b9-ee4b-4e4a-96b8-333121a7ed6c",
+    "user_id": "user_002",
+    "amount": -147.32,
+    "category": "utilities",
+    "description": "Spring establish wind",
+    "merchant": "TeleLink",
+    "timestamp": "2026-05-20T16:26:00+00:00"
+  },
+  {
+    "id": "ce39fe76-c41f-48bd-b41a-24bef34bdf47",
+    "user_id": "user_002",
+    "amount": -29.31,
+    "category": "food",
+    "description": "Old occur follow true TV",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-05-21T03:38:00+00:00"
+  },
+  {
+    "id": "3fc0b14f-adc3-4a70-970e-901e6e5ae323",
+    "user_id": "user_002",
+    "amount": -161.85,
+    "category": "health",
+    "description": "Little everything art",
+    "merchant": "VisionCenter",
+    "timestamp": "2026-05-21T04:54:00+00:00"
+  },
+  {
+    "id": "00036425-0906-4aac-bec9-c2a81b8438a6",
+    "user_id": "user_002",
+    "amount": -12.49,
+    "category": "entertainment",
+    "description": "Work image happen give",
+    "merchant": "MusicHive",
+    "timestamp": "2026-05-21T17:48:00+00:00"
+  },
+  {
+    "id": "c5426725-a40f-407f-beb9-46906c916a79",
+    "user_id": "user_002",
+    "amount": -37.87,
+    "category": "transport",
+    "description": "Its list",
+    "merchant": "QuickFuel",
+    "timestamp": "2026-05-22T00:53:00+00:00"
+  },
+  {
+    "id": "3582a6fa-cf77-4751-8f85-9eb95fe5e234",
+    "user_id": "user_002",
+    "amount": -56.51,
+    "category": "food",
+    "description": "Trial election bed increase",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-05-22T09:47:00+00:00"
+  },
+  {
+    "id": "5ca94620-bb8c-485b-bcbd-bfbbee5dc4f5",
+    "user_id": "user_002",
+    "amount": -12.35,
+    "category": "food",
+    "description": "Wife full",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-05-22T17:08:00+00:00"
+  },
+  {
+    "id": "8d8ba7fb-3c11-4a0f-b7d3-6949841daaac",
+    "user_id": "user_002",
+    "amount": -20.08,
+    "category": "transport",
+    "description": "Unit pull project because",
+    "merchant": "TollRoad Inc",
+    "timestamp": "2026-05-23T03:45:00+00:00"
+  },
+  {
+    "id": "3d0c7c55-a84c-47c6-b59c-1d3e4c3ed16f",
+    "user_id": "user_002",
+    "amount": -87.24,
+    "category": "food",
+    "description": "Cell court rest",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-05-23T09:20:00+00:00"
+  },
+  {
+    "id": "0aed1260-3967-4c9d-ada1-374ee61c625c",
+    "user_id": "user_002",
+    "amount": -83.82,
+    "category": "food",
+    "description": "Call plan yes evidence",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-05-26T10:32:00+00:00"
+  },
+  {
+    "id": "28f527f0-d6b0-4cce-bf5d-bc13871cd60b",
+    "user_id": "user_002",
+    "amount": -173.55,
+    "category": "shopping",
+    "description": "Suffer foot put black eight",
+    "merchant": "Thrift Haven",
+    "timestamp": "2026-05-27T07:35:00+00:00"
+  },
+  {
+    "id": "ce3ce95a-2434-4bcd-880e-e5b30dde14b4",
+    "user_id": "user_002",
+    "amount": -202.66,
+    "category": "health",
+    "description": "Would oil theory statement Mrs",
+    "merchant": "WellNest Clinic",
+    "timestamp": "2026-05-27T12:11:00+00:00"
+  },
+  {
+    "id": "8b8d8aa9-e35a-48d1-bb26-995bf538fbe3",
+    "user_id": "user_002",
+    "amount": -37.62,
+    "category": "food",
+    "description": "Sure effort",
+    "merchant": "Sushi Spot",
+    "timestamp": "2026-05-27T15:58:00+00:00"
+  },
+  {
+    "id": "9b3814ba-5b68-4644-adef-57e77ab2c521",
+    "user_id": "user_002",
+    "amount": 5527.15,
+    "category": "income",
+    "description": "Payroll deposit",
+    "merchant": "Freelance Platform",
+    "timestamp": "2026-05-27T16:51:00+00:00"
+  },
+  {
+    "id": "f972dfa6-17dc-4f5b-9603-c0ca4e1e532e",
+    "user_id": "user_002",
+    "amount": -62.49,
+    "category": "food",
+    "description": "For pay",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-05-28T00:48:00+00:00"
+  },
+  {
+    "id": "8d58a5c3-c337-4233-ba9f-524af4f50dcc",
+    "user_id": "user_002",
+    "amount": -76.56,
+    "category": "food",
+    "description": "Black doctor war better wide",
+    "merchant": "Morning Brew",
+    "timestamp": "2026-05-29T13:00:00+00:00"
+  },
+  {
+    "id": "8d683201-49a9-4ed5-8384-eae83429c69c",
+    "user_id": "user_002",
+    "amount": -39.76,
+    "category": "food",
+    "description": "Or road protect",
+    "merchant": "Thai Garden",
+    "timestamp": "2026-05-29T19:21:00+00:00"
+  },
+  {
+    "id": "fe9de1a0-e1cd-4222-8dc5-3a442e71caa5",
+    "user_id": "user_002",
+    "amount": -152.09,
+    "category": "entertainment",
+    "description": "Rise else approach game",
+    "merchant": "GameZone",
+    "timestamp": "2026-05-30T03:53:00+00:00"
+  },
+  {
+    "id": "3eaeb08b-7896-418d-80a6-a6e01c052179",
+    "user_id": "user_002",
+    "amount": -37.54,
+    "category": "shopping",
+    "description": "Force enough support without",
+    "merchant": "Thread & Co.",
+    "timestamp": "2026-05-30T07:17:00+00:00"
+  },
+  {
+    "id": "075b0fee-5b41-4205-b907-8fbfeb8ffc7e",
+    "user_id": "user_002",
+    "amount": -90.55,
+    "category": "food",
+    "description": "View cause best",
+    "merchant": "Pizza Palace",
+    "timestamp": "2026-05-30T20:05:00+00:00"
+  },
+  {
+    "id": "b9567664-18bf-4ab0-a771-da0d6ce64db5",
+    "user_id": "user_002",
+    "amount": -208.08,
+    "category": "health",
+    "description": "System eye food clear",
+    "merchant": "DentalCare Plus",
+    "timestamp": "2026-05-31T04:08:00+00:00"
+  },
+  {
+    "id": "478dd37b-b5c5-4eb8-839f-2117c1d0f607",
+    "user_id": "user_002",
+    "amount": -129.44,
+    "category": "health",
+    "description": "Those interview rock",
+    "merchant": "FitLife Gym",
+    "timestamp": "2026-06-02T01:13:00+00:00"
+  },
+  {
+    "id": "baa6add1-b81a-4d8f-b29b-8728857bb815",
+    "user_id": "user_002",
+    "amount": -32.92,
+    "category": "transport",
+    "description": "Boy meet partner magazine",
+    "merchant": "Rail & Ride",
+    "timestamp": "2026-06-03T13:10:00+00:00"
+  },
+  {
+    "id": "c88c38cb-7ae1-4bae-ae49-3117b7ee69f0",
+    "user_id": "user_002",
+    "amount": -136.73,
+    "category": "utilities",
+    "description": "Play above office than",
+    "merchant": "AquaCity",
+    "timestamp": "2026-06-04T03:18:00+00:00"
+  },
+  {
+    "id": "599b010d-ca2c-4acc-85eb-edcf12e55e3b",
+    "user_id": "user_002",
+    "amount": -32.81,
+    "category": "food",
+    "description": "American recent same house",
+    "merchant": "Taco Bell",
+    "timestamp": "2026-06-04T21:30:00+00:00"
+  },
+  {
+    "id": "4b77ddbd-70da-407a-a465-41c802c6c001",
+    "user_id": "user_002",
+    "amount": -108.01,
+    "category": "entertainment",
+    "description": "Successful card",
+    "merchant": "StreamVerse",
+    "timestamp": "2026-06-05T13:39:00+00:00"
   }
 ]

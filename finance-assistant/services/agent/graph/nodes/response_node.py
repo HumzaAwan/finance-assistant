@@ -7,6 +7,7 @@ from langchain_core.messages import HumanMessage
 
 from deps import get_runtime
 from graph.state import AgentState
+from utils.llm_utils import safe_invoke_or_none
 
 _log = logging.getLogger("agent.graph.nodes.response_node")
 
@@ -76,7 +77,7 @@ def _offline_summary(intent: str, insights: dict | None, txs: list) -> str:
             "check BANKING_API_URL and mock API logs, ensure Ollama is running."
         )
 
-    if intent not in {"transaction_query", "insight_request"} or not insights:
+    if intent not in {"transaction_query", "insight_request", "financial_advice"} or not insights:
         return (
             f"Loaded {len(txs)} transactions, but Ollama is unavailable for a fuller answer. "
             "Install/start Ollama and pull llama3.2."
@@ -93,18 +94,14 @@ def _offline_summary(intent: str, insights: dict | None, txs: list) -> str:
 
 
 def response_node(state: AgentState):
-    srv = get_runtime()
+    llm = get_runtime().llm_chat
 
-    llm = srv.llm_chat
-    memory = srv.memory
-
-
-
-    session_id = state.get("session_id", "anonymous")
-
-    transcript = memory.get_history(session_id, 5)
-
-    memory_block = "\n".join(f"{row['role'].upper()}: {row['content']}" for row in transcript)
+    # Use the snapshot captured in agent_app.py before graph invocation.
+    # We must NOT call memory.get_history() here — messages are only written
+    # to Redis after GRAPH.invoke returns, so any direct read gives a view
+    # that is missing the current user turn.
+    snapshot = state.get("memory_snapshot") or []
+    memory_block = "\n".join(f"{row['role'].upper()}: {row['content']}" for row in snapshot)
 
     question = _latest_user(list(state.get("messages", []) or []))
     intent = state.get("intent", "general")
@@ -128,15 +125,7 @@ def response_node(state: AgentState):
 
     txn_preview = json.dumps(sampled, indent=2) if sampled else "none"
 
-    route_hint = state.get("route_hint")
-
-    hint_line = ""
-
-    if route_hint:
-        hint_line = (
-            f"\nn8n_route_hint(non_binding)={route_hint}\n")
-
-    if intent in {"transaction_query", "insight_request"}:
+    if intent in {"transaction_query", "insight_request", "financial_advice"}:
         upstream = bundle.get("upstream_error")
 
         note = bundle.get("fetch_note") or ""
@@ -173,40 +162,39 @@ def response_node(state: AgentState):
 
             return {"final_response": finale}
 
+    system_prompt = (
+        "You are an accurate personal finance copilot connected to transactional JSON, "
+        "derived insights, and curated knowledge snippets. Lead with factual numbers when present, "
+        "cite categories, acknowledge uncertainty rather than hallucinating unsupported totals, "
+        "and weave practical guidance when knowledge snippets arrive. "
+        "When insights JSON includes calendar_week_comparison, use current_week_partial_spend and "
+        "prior_calendar_week_spend for this week vs last week; do not substitute biggest_transaction "
+        "or total_spent for weekly totals. Respect scope_note fields. "
+        "Write normal flowing sentences and paragraphs. "
+        "Never insert a line break between individual letters; debits are stored as negative numbers in JSON, which is expected, not an error. "
+        "Do not paste internal metadata lines (e.g. anything starting with classified_intent=) or raw insight JSON unless the user explicitly asks for technical detail. "
+        "If INSIGHT JSON reads as the literal \"none\", you must not cite dollar totals—explain that aggregates were unavailable for this reply."
+    )
+
     human_payload = (
         "AUTHORITATIVE_NUMBERS_RULE: Use INSIGHT JSON (including calendar_week_comparison) for aggregates. "
         "TRANSACTION PREVIEW is truncated (≤35 rows) — never treat it as exhaustive or as the full week's ledger.\n"
-        f"classified_intent={intent}{hint_line}\n"
+        f"classified_intent={intent}\n"
         f"LATEST QUESTION:\n{question}\n\n"
-        f"MEMORY (last 5 Redis turns):\n{memory_block or '[empty]'}\n\n"
+        f"MEMORY (last 5 turns):\n{memory_block or '[empty]'}\n\n"
         f"INSIGHT JSON:\n{insights_text}\n\n"
         f"TRANSACTION PREVIEW JSON (truncated):\n{txn_preview}\n\n"
-        f"RAG CONTEXT:\n{rag_lines or '[none]'}\n")
+        f"RAG CONTEXT:\n{rag_lines or '[none]'}\n"
+    )
 
+    # Streaming mode: skip LLM call; return assembled context for the caller to stream.
+    if state.get("streaming_mode"):
+        return {"streaming_context": {"system": system_prompt, "human": human_payload}}
 
-    try:
-        assistant = llm.invoke(
-            [
-                (
-                    "system",
-                    "You are an accurate personal finance copilot connected to transactional JSON, "
-                    "derived insights, and curated knowledge snippets. Lead with factual numbers when present, "
-                    "cite categories, acknowledge uncertainty rather than hallucinating unsupported totals, "
-                    "and weave practical guidance when knowledge snippets arrive. "
-                    "When insights JSON includes calendar_week_comparison, use current_week_partial_spend and "
-                    "prior_calendar_week_spend for this week vs last week; do not substitute biggest_transaction "
-                    "or total_spent for weekly totals. Respect scope_note fields. "
-                    "Write normal flowing sentences and paragraphs. "
-                    "Never insert a line break between individual letters; debits are stored as negative numbers in JSON, which is expected, not an error. "
-                    "Do not paste internal metadata lines (e.g. anything starting with classified_intent=) or raw insight JSON unless the user explicitly asks for technical detail. "
-                    "If INSIGHT JSON reads as the literal \"none\", you must not cite dollar totals—explain that aggregates were unavailable for this reply.",
-                ),
-                ("human", human_payload),
-            ],
-        )
+    assistant = safe_invoke_or_none(llm, [("system", system_prompt), ("human", human_payload)])
+    if assistant is not None:
         finale = assistant.content.strip()
-    except Exception as exc:
-        _log.warning({"event": "response_llm_failed", "detail": repr(exc)})
+    else:
         finale = _offline_summary(intent, insights, txs)
 
     finale = _squash_single_char_alpha_lines(finale)

@@ -12,6 +12,7 @@ from langchain_core.messages import AIMessage, HumanMessage
 
 from deps import get_runtime
 from graph.state import AgentState
+from utils.llm_utils import safe_invoke_or_none
 
 _log = logging.getLogger("agent.graph.nodes.transactions_node")
 
@@ -125,19 +126,15 @@ def transactions_node(state: AgentState):
         f"Interpret relative expressions using today UTC {today}. Dates must remain realistic."
     )
 
-    try:
-        extractor = llm.invoke(
-            [
-                ("system", system_prompt),
-                ("human", f"CONVERSATION SNIPPET:\n{transcript}\n\nQUESTION:\n{raw_question}"),
-            ]
-        )
-
+    extractor = safe_invoke_or_none(
+        llm,
+        [("system", system_prompt), ("human", f"CONVERSATION SNIPPET:\n{transcript}\n\nQUESTION:\n{raw_question}")],
+    )
+    if extractor is not None:
         cleaned = extractor.content.strip()
         cleaned = re.sub(r"^```(?:json)?", "", cleaned, flags=re.IGNORECASE).replace("```", "").strip()
-
-    except Exception as exc:
-        _log.warning({"event": "tx_extract_llm_failed", "detail": repr(exc)})
+    else:
+        _log.warning({"event": "tx_extract_llm_failed", "fallback": "empty_params"})
         cleaned = "{}"
 
     try:
@@ -194,10 +191,11 @@ def transactions_node(state: AgentState):
     if normalized_category:
         params["category"] = normalized_category
 
+    _NULL_STRINGS = {"null", "none", "undefined", "n/a", ""}
     for key_src in ("start_date", "end_date"):
         value = parsed.get(key_src)
-
-        if value:
+        # LLMs sometimes return the literal string "null"/"none" — drop those.
+        if value and str(value).lower().strip() not in _NULL_STRINGS:
             params[key_src] = str(value).split("T")[0]
 
     endpoint = f"{banking_base}/transactions"
@@ -242,6 +240,18 @@ def transactions_node(state: AgentState):
         **({"upstream_error": body["error"]} if body.get("error") else {}),
     }
 
-    _log.info({"event": "transactions_fetched", **{"transactions": payload["count"], "filters": dict(params)}})
+    # Fetch budget targets for intents that may need spending comparisons.
+    if intent_kind in {"insight_request", "financial_advice"}:
+        budget_endpoint = f"{banking_base}/budgets/{params['user_id']}"
+        try:
+            with httpx.Client(timeout=timeout) as client:
+                br = client.get(budget_endpoint)
+                if br.status_code == 200:
+                    payload["budgets"] = br.json().get("categories", [])
+                    _log.info({"event": "budgets_fetched", "count": len(payload["budgets"])})
+        except Exception as exc:
+            _log.debug({"event": "budgets_fetch_skipped", "detail": repr(exc)})
+
+    _log.info({"event": "transactions_fetched", "transactions": payload["count"], "filters": dict(params)})
 
     return {"transaction_data": payload}

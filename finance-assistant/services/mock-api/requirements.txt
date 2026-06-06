@@ -4,3 +4,4 @@ pydantic==2.7.0
 sqlalchemy==2.0.30
 faker==24.0.0
 python-dotenv==1.0.1
+prometheus-client>=0.20.0

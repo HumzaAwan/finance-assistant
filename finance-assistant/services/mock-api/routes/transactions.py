@@ -27,28 +27,40 @@ def parse_dt(value: str) -> datetime:
     return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
 
 
+_NULL_STRINGS = frozenset({"null", "none", "undefined", "n/a", ""})
+
+
 def _list_filter_bounds(start_date: str | None, end_date: str | None) -> tuple[datetime | None, datetime | None]:
-    """Inclusive calendar-day semantics for YYYY-MM-DD query params (UTC)."""
+    """Inclusive calendar-day semantics for YYYY-MM-DD query params (UTC).
+
+    Silently ignores null-like strings (e.g. the literal "null" that LLMs sometimes emit).
+    """
 
     start_bound: datetime | None = None
     end_exclusive: datetime | None = None
 
-    if start_date:
-        raw = start_date.strip()
-        if "T" in raw:
-            start_bound = parse_dt(raw)
-        else:
-            d = date.fromisoformat(raw[:10])
-            start_bound = datetime(d.year, d.month, d.day, tzinfo=timezone.utc)
+    if start_date and start_date.strip().lower() not in _NULL_STRINGS:
+        try:
+            raw = start_date.strip()
+            if "T" in raw:
+                start_bound = parse_dt(raw)
+            else:
+                d = date.fromisoformat(raw[:10])
+                start_bound = datetime(d.year, d.month, d.day, tzinfo=timezone.utc)
+        except (ValueError, TypeError):
+            log.warning("%s", json.dumps({"event": "bad_start_date", "value": start_date}))
 
-    if end_date:
-        raw = end_date.strip()
-        if "T" in raw:
-            d = parse_dt(raw).astimezone(timezone.utc).date()
-        else:
-            d = date.fromisoformat(raw[:10])
-        nx = d + timedelta(days=1)
-        end_exclusive = datetime(nx.year, nx.month, nx.day, tzinfo=timezone.utc)
+    if end_date and end_date.strip().lower() not in _NULL_STRINGS:
+        try:
+            raw = end_date.strip()
+            if "T" in raw:
+                d = parse_dt(raw).astimezone(timezone.utc).date()
+            else:
+                d = date.fromisoformat(raw[:10])
+            nx = d + timedelta(days=1)
+            end_exclusive = datetime(nx.year, nx.month, nx.day, tzinfo=timezone.utc)
+        except (ValueError, TypeError):
+            log.warning("%s", json.dumps({"event": "bad_end_date", "value": end_date}))
 
     return start_bound, end_exclusive
 
