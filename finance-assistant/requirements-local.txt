@@ -34,3 +34,10 @@ tenacity>=8.2.3,<9          # LLM retry with exponential backoff
 rank-bm25>=0.2.2             # BM25 hybrid search in RAG retriever
 slowapi>=0.1.9               # Rate limiting on Agent API
 prometheus-client>=0.20.0    # /metrics endpoints on both services
+
+# Optional: cross-encoder reranker (P3-2). Uncomment to enable reranking.
+# Downloads ms-marco-MiniLM-L-6-v2 (~80 MB) on first run.
+# sentence-transformers>=3.0.0,<4
+
+# Test runner
+pytest>=8.0.0,<9

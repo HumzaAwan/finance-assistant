@@ -1,8 +1,8 @@
 # AI-Powered Personal Finance Assistant
 
-A **locally runnable** AI finance assistant — Streamlit chat + live dashboard, LangGraph agent, hybrid RAG (BM25 + vector + RRF), SSE streaming, budget tracking, and Prometheus observability. No Docker, no cloud API key required.
+A **locally runnable** AI finance assistant — Streamlit chat + live dashboard, async LangGraph agent with 7 nodes, hybrid RAG (BM25 + Chroma + RRF + cross-encoder reranker), financial health scoring, anomaly detection, FCA compliance guardrail, UK fintech knowledge base, SSE streaming, and end-to-end evaluation framework. No Docker, no cloud API key required.
 
-Full architecture → **`PROJECT_OVERVIEW.md`** · Audit trail → **`BACKEND_AUDIT_ROADMAP.md`**
+Full architecture → **`PROJECT_OVERVIEW.md`** · Audit trail → **`BACKEND_AUDIT_ROADMAP.md`** · Diagrams → **`ARCHITECTURE_DIAGRAMS.md`**
 
 ---
 
@@ -11,17 +11,17 @@ Full architecture → **`PROJECT_OVERVIEW.md`** · Audit trail → **`BACKEND_AU
 ```mermaid
 graph TB
     subgraph Browser["Browser"]
-        ST["Streamlit :8501<br/>💬 Chat  |  📊 Dashboard"]
+        ST["Streamlit :8501\n💬 Chat  |  📊 Dashboard\n🏥 Health Score Gauge"]
     end
 
-    subgraph AgentSvc["Agent API  :8000  (FastAPI + LangGraph)"]
+    subgraph AgentSvc["Agent API  :8000  (FastAPI + async LangGraph)"]
         direction TB
-        EP_CHAT["POST /chat<br/>POST /chat/stream (SSE)"]
-        EP_META["GET /health<br/>GET /metrics"]
-        LG["LangGraph Graph"]
-        MEM["FakeRedis / Redis<br/>Session Memory"]
-        RAG["Hybrid RAG<br/>BM25 + Chroma + RRF"]
-        OLL["Ollama :11434<br/>llama3.2 · nomic-embed-text"]
+        EP_CHAT["POST /chat\nPOST /chat/stream (SSE)"]
+        EP_META["GET /health  GET /metrics"]
+        LG["Async LangGraph Graph\n7 nodes"]
+        MEM["FakeRedis / Redis\nSession Memory"]
+        RAG["Hybrid RAG\nBM25 + Chroma + RRF\n+ Cross-Encoder Reranker"]
+        OLL["Ollama :11434\nllama3.2 · nomic-embed-text"]
 
         EP_CHAT --> LG
         LG --> MEM
@@ -31,84 +31,81 @@ graph TB
     end
 
     subgraph MockSvc["Mock Banking API  :8001  (FastAPI + SQLite)"]
-        direction TB
-        TXN["GET /transactions<br/>GET /transactions/summary"]
-        ACC["GET /accounts<br/>GET /accounts/balance"]
-        BUD["GET /budgets<br/>PUT /budgets"]
-        PROM2["GET /metrics"]
-        DB[("SQLite<br/>600 txns · 2 users<br/>accounts · budgets")]
+        TXN["GET /transactions\nGET /transactions/summary"]
+        ACC["GET /accounts"]
+        BUD["GET /budgets  PUT /budgets"]
+        DB[("SQLite\n600 txns · 2 users")]
 
         TXN & ACC & BUD --> DB
     end
 
-    ST -->|"POST /chat<br/>POST /chat/stream"| EP_CHAT
-    ST -->|"/metrics /accounts<br/>/budgets /summary"| MockSvc
-    LG -->|"fetch transactions<br/>+ budget targets"| MockSvc
-    EP_META --> AgentSvc
+    subgraph Eval["Evaluation"]
+        EV["eval/run_eval.py\n20 queries · 6 intents\nRelevance · Groundedness\nCompliance scoring"]
+    end
+
+    ST -->|"POST /chat"| EP_CHAT
+    ST -->|"/accounts /budgets /metrics"| MockSvc
+    LG -->|"async httpx"| MockSvc
+    EV -->|"POST /chat"| EP_CHAT
 ```
 
 ---
 
-## LangGraph Agent Flow
+## LangGraph Agent Flow (7 nodes, all async)
 
 ```mermaid
 flowchart TD
-    A([User Message]) --> B[intent_router\nChatOllama classification\n+ heuristic fallback]
+    A([User Message]) --> B["intent_router\nasync · 6 labels\nChatOllama + heuristic fallback"]
 
-    B -->|transaction_query\ninsight_request\nfinancial_advice| C[transactions_node\nLLM extracts date·category·limit\nfetch /transactions + /budgets]
-    B -->|general| G
+    B -->|"transaction_query\ninsight_request\nfinancial_advice\nfinancial_health\nanomaly_check"| C["transactions_node\nasync · structured output\nTxQueryParams via with_structured_output\nfallback: regex extraction\nasync httpx.AsyncClient"]
 
-    C --> D[insights_node\nPure-Python aggregation\ntotals · by-category · week-over-week\nbudget vs actual comparison]
+    B -->|"general"| G
 
-    D -->|financial_advice| E[rag_node\nTopic filter by intent+keywords\nBM25 + vector search\nRRF fusion → top-4 chunks]
-    D -->|transaction_query\ninsight_request| G
+    C --> D["insights_node\nasync · pure-Python\ntotals · by-category · week-over-week\nbudget vs actual comparison"]
 
-    E --> G[response_node\nAssemble system prompt\nInsights JSON + RAG lines\n+ memory snapshot\n→ ChatOllama synthesis]
+    D -->|"financial_advice"| E["rag_node\nasync · UK + US topics\nBM25 + vector + RRF\n+ cross-encoder reranker"]
+    D -->|"financial_health"| FH["financial_health_node\nasync · 5-component score\n0–100 · grade · improvement tip"]
+    D -->|"anomaly_check"| AN["anomalies_node\nasync · 4-rule detection\nz-score · duplicate · time · MCC"]
+    D -->|"transaction_query\ninsight_request"| G
 
-    G -->|streaming_mode=False| H([Final response\nstored in Redis])
-    G -->|streaming_mode=True| I([Prompt context returned\nto /chat/stream endpoint\n→ llm.astream tokens])
+    E --> G
+    FH --> G
+    AN --> G
+
+    G["response_node\nasync · FCA compliance guardrail\nblocks regulated advice\nappends disclaimer to financial_advice\nChatorllama synthesis"]
+
+    G --> H(["Final response"])
 ```
 
 ---
 
-## RAG Pipeline
+## Hybrid RAG Pipeline with Reranker
 
 ```mermaid
 flowchart LR
     subgraph Ingest["Ingest  (run once)"]
-        direction TB
-        DOCS["11 Markdown\ndocuments"]
-        MHS["MarkdownHeaderTextSplitter\nsection metadata → chunks"]
+        DOCS["16 Markdown docs\n11 US + 5 UK"]
+        MHS["MarkdownHeaderTextSplitter\n## / ### → section metadata"]
         RCS["RecursiveCharacterTextSplitter\nchunk_size=800  overlap=160"]
-        EMB["OllamaEmbeddings\nnomic-embed-text"]
+        EMB["OllamaEmbeddings\nnomic-embed-text  batch=48"]
         CHR[("Chroma\nlocal_data/chroma/")]
 
         DOCS --> MHS --> RCS --> EMB --> CHR
     end
 
     subgraph Retrieve["Retrieve  (per query)"]
-        direction TB
         Q["User Query"]
-        VEC["Dense: embed query\n→ Chroma similarity\n→ ranked list A"]
-        BM["Sparse: BM25Okapi\n→ keyword scores\n→ ranked list B"]
-        RRF["Reciprocal Rank Fusion\nscore = Σ 1 / 60 + rank\n→ fused ranked list"]
-        THR["Score threshold ≥ 0.20\n→ top-4 chunks"]
+        VEC["Dense: Chroma similarity\nranked list A"]
+        BM["Sparse: BM25Okapi\nranked list B"]
+        RRF["RRF fusion  k=60"]
+        CE["Cross-Encoder Reranker\nms-marco-MiniLM-L-6-v2\n(RERANKER_ENABLED=true)"]
+        THR["Top-K  score ≥ 0.20"]
 
-        Q --> VEC & BM
-        VEC & BM --> RRF --> THR
+        Q --> VEC & BM --> RRF --> CE --> THR
     end
 
-    subgraph Filter["Topic Filter  (rag_node)"]
-        direction TB
-        MAP["intent + keywords\n→ topic whitelist"]
-        WH["where topic IN list\napplied to Chroma + BM25"]
-        MAP --> WH
-    end
-
-    CHR -.->|"build BM25 index\nat startup"| BM
+    CHR -.->|"BM25 index\nat startup"| BM
     CHR --> VEC
-    Filter --> VEC
-    Filter --> BM
 ```
 
 ---
@@ -121,6 +118,11 @@ flowchart LR
 ```bash
 ollama pull llama3.2
 ollama pull nomic-embed-text
+```
+
+Optional — cross-encoder reranker (~80 MB download on first run):
+```bash
+pip install sentence-transformers
 ```
 
 ---
@@ -162,25 +164,76 @@ Stop with **Ctrl+C**.
 
 ## Example questions
 
-**Transactions / Insights**
+**Transactions & Insights**
 - "List my recent spending"
 - "What did I spend on food this month?"
 - "Compare my spending this week vs last week"
 - "Which category am I overspending in?"
 
-**Financial advice (triggers RAG)**
+**Financial Health Score**
+- "What is my overall financial health score?"
+- "Am I on track financially? What should I improve?"
+- "Give me a full financial situation assessment"
+
+**Anomaly Detection**
+- "Are there any suspicious transactions?"
+- "Show me unusual activity in my account"
+- "Have I been charged twice for anything?"
+
+**Financial Advice (triggers RAG · UK knowledge base)**
 - "How much should I have in my emergency fund?"
-- "Explain the 50/30/20 rule with my income in mind"
-- "Should I use the debt avalanche or snowball method?"
-- "What's the difference between a Roth IRA and a 401k?"
-- "How does my spending compare to the average American?"
+- "Explain the UK ISA allowance — which type should I use?"
+- "How does salary sacrifice work for pension contributions?"
+- "What is the 50/30/20 rule?"
+- "How do UK credit scores work?"
+
+---
+
+## Running the evaluation suite
+
+```bash
+# Requires the full stack to be running
+python eval/run_eval.py
+
+# Or target a specific user / server
+python eval/run_eval.py --url http://127.0.0.1:8000 --user-id user_001
+```
+
+Outputs a summary table to stdout and saves `eval/results/eval_YYYY-MM-DD.json`.
+
+---
+
+## Running the tests
+
+```bash
+cd services/agent
+pytest tests/ -v
+```
+
+Includes `tests/test_bug_fixes.py` — 59 regression tests covering all 7 Bug Fix Round 2 items.
+
+---
+
+## Engineering quality — Bug Fix Round 2 (June 2026)
+
+Seven confirmed engineering bugs were found through 20-query live system testing and fixed:
+
+| # | Symptom | Root cause fixed |
+|---|---|---|
+| 1 | Different queries returned identical responses | Added `_assert_clean_state()` guard before every `ainvoke`; defensive history copy |
+| 2 | LLM replied "you didn't ask a specific question" | Restructured `human_payload`: question first, JSON context after, directive last |
+| 3 | "Cash ISA vs S&S ISA" routed to `transaction_query` | Strong-signal keyword override (`_apply_strong_overrides`) fires regardless of LLM label |
+| 4 | Financial health score changed between identical calls | `anchor_date` pinned once at node entry; 90-day income fallback; per-session cache |
+| 5 | Anomaly detection returned "no suspicious transactions" | Leave-one-out z-score; 4 synthetic anomalies injected into seed; `anomaly_check` now fetches 250 transactions |
+| 6 | "Which stocks would you recommend" bypassed guardrail | 11 new FCA regex patterns; guardrail returns fixed message with zero LLM calls |
+| 7 | Gibberish input returned detailed financial advice | Gibberish/low-signal check before LLM; `unclear_intent` route with constrained one-sentence clarifier |
 
 ---
 
 ## Resetting local data
 
 ```bash
-rm -rf services/mock-api/data/    # SQLite DB (transactions, accounts, budgets)
+rm -rf services/mock-api/data/    # SQLite DB
 rm -rf local_data/chroma/          # Vector database
-python run_local.py                # Rebuilds everything from scratch
+python run_local.py                # Rebuilds from scratch
 ```

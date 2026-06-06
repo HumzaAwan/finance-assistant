@@ -13,13 +13,11 @@ _log = logging.getLogger("agent.graph.nodes.insights_node")
 def _parse_dt(value: Any) -> datetime | None:
     if not value:
         return None
-
     try:
         dt = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
         if dt.tzinfo is None:
             dt = dt.replace(tzinfo=timezone.utc)
         return dt.astimezone(timezone.utc)
-
     except ValueError:
         return None
 
@@ -36,7 +34,6 @@ def _utc_date_only(value: Any) -> date | None:
 
 def calculate_week_comparison(expenses: list[dict]) -> float:
     totals: dict[tuple[int, int], float] = defaultdict(float)
-
     for row in expenses:
         parsed = _parse_dt(row.get("timestamp"))
         if not parsed:
@@ -53,13 +50,11 @@ def calculate_week_comparison(expenses: list[dict]) -> float:
     prev_tot = totals[prev_key]
     if prev_tot == 0:
         return 0.0
-
     return (curr - prev_tot) / prev_tot * 100.0
 
 
 def _calendar_week_comparison(expenses: list[dict]) -> dict[str, Any]:
     """Split debits by ISO Monday weeks in UTC — current week partial through today."""
-
     today = datetime.now(timezone.utc).date()
     monday_this = today - timedelta(days=today.weekday())
     prior_monday = monday_this - timedelta(days=7)
@@ -99,9 +94,7 @@ def _calendar_week_comparison(expenses: list[dict]) -> dict[str, Any]:
 
 
 def aggregate_insights(transactions: list[dict]) -> dict | None:
-
     if not transactions:
-
         return None
 
     expenses: list[dict] = []
@@ -113,17 +106,13 @@ def aggregate_insights(transactions: list[dict]) -> dict | None:
         amount_value = float(tx.get("amount", 0))
 
         if category == "income" and amount_value > 0:
-
             continue
-
         if amount_value >= 0:
-
             continue
 
         abs_amount = abs(amount_value)
         expenses.append(tx)
         by_category[category] += abs_amount
-
         total_spent += abs_amount
 
     top_category = max(by_category.items(), default=("", 0.0), key=lambda item: item[1])[0]
@@ -136,10 +125,8 @@ def aggregate_insights(transactions: list[dict]) -> dict | None:
     avg_daily_spend = total_spent / denominator
 
     biggest_transaction = None
-
     if expenses:
         worst = min(expenses, key=lambda row: float(row.get("amount", 0.0)))
-
         biggest_transaction = {
             "amount": float(worst.get("amount", 0)),
             "description": str(worst.get("description", "")),
@@ -153,24 +140,16 @@ def aggregate_insights(transactions: list[dict]) -> dict | None:
         "total_spent": round(total_spent, 2),
         "scope_note": "total_spent aggregates every expense row in the fetched batch; use calendar_week_comparison for this week vs last week.",
         "by_category": dict(by_category),
-
         "top_category": top_category,
-
         "avg_daily_spend": round(avg_daily_spend, 2),
-
         "biggest_transaction": biggest_transaction,
-
         "week_over_week_change": round(wow, 2),
-
         "calendar_week_comparison": cal_week,
     }
 
 
 def _budget_comparison(by_category: dict[str, float], budgets: list[dict]) -> dict:
-    """Compare actual monthly-equivalent spending against budget targets.
-
-    Returns a dict keyed by category with actual vs. limit vs. pct_used.
-    """
+    """Compare actual monthly-equivalent spending against budget targets."""
     if not budgets:
         return {}
 
@@ -192,7 +171,7 @@ def _budget_comparison(by_category: dict[str, float], budgets: list[dict]) -> di
     return comparison
 
 
-def insights_node(state: AgentState):
+async def insights_node(state: AgentState) -> dict:
     bundle = state.get("transaction_data") or {}
     txs = list(bundle.get("transactions") or [])
 
@@ -202,7 +181,6 @@ def insights_node(state: AgentState):
         _log.info({"event": "insights_empty_dataset"})
         return {"insights": None}
 
-    # Attach budget comparison when budget data was fetched by transactions_node.
     budgets = bundle.get("budgets") or []
     if budgets:
         comparison = _budget_comparison(insights_payload.get("by_category", {}), budgets)
@@ -213,5 +191,4 @@ def insights_node(state: AgentState):
                 insights_payload["over_budget_categories"] = over_budget
 
     _log.info({"event": "insights_ready", "top_category": insights_payload.get("top_category"), "budget_cats": len(budgets)})
-
     return {"insights": insights_payload}

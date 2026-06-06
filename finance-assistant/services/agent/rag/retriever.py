@@ -14,12 +14,20 @@ _log = logging.getLogger("agent.rag.retriever")
 # every request, which was causing unnecessary disk I/O and file-lock pressure.
 _retriever_instance: "RAGRetriever | None" = None
 
+RERANKER_MODEL = os.getenv("RERANKER_MODEL", "cross-encoder/ms-marco-MiniLM-L-6-v2")
+
 
 def get_retriever() -> "RAGRetriever":
     global _retriever_instance
     if _retriever_instance is None:
         _retriever_instance = RAGRetriever()
     return _retriever_instance
+
+
+def reset_retriever() -> None:
+    """Force re-initialisation on next call (used after ingest)."""
+    global _retriever_instance
+    _retriever_instance = None
 
 
 def _tokenize(text: str) -> list[str]:
@@ -36,12 +44,26 @@ def _rrf(ranked_lists: list[list[str]], k: int = 60) -> list[str]:
     return sorted(scores, key=scores.__getitem__, reverse=True)
 
 
+def _reranker_enabled() -> bool:
+    """Return True if RERANKER_ENABLED is not explicitly 'false' and sentence-transformers is available."""
+    env_flag = os.getenv("RERANKER_ENABLED", "true").lower().strip()
+    if env_flag == "false":
+        return False
+    try:
+        import sentence_transformers  # noqa: F401
+        return True
+    except ImportError:
+        return False
+
+
 class RAGRetriever:
-    """Hybrid BM25 + dense-vector retriever with Reciprocal Rank Fusion.
+    """Hybrid BM25 + dense-vector retriever with Reciprocal Rank Fusion and
+    optional cross-encoder reranking.
 
     At construction time the full corpus is loaded from Chroma to build the
     BM25 index.  The dense-vector path uses the existing Chroma query API.
-    Both result lists are fused with RRF before the score threshold is applied.
+    Both result lists are fused with RRF before the optional cross-encoder
+    reranker rescores and re-orders candidates.
     """
 
     def __init__(self) -> None:
@@ -50,7 +72,55 @@ class RAGRetriever:
         self.collection = self.client.get_collection(name)
         self.embedder = embedding_model()
         self._build_bm25_index()
-        _log.info({"event": "retriever_ready", "collection": name, "corpus_size": len(self._bm25_ids)})
+        self._reranker = None
+        self._reranker_enabled = _reranker_enabled()
+        if self._reranker_enabled:
+            self._load_reranker()
+        _log.info({
+            "event": "retriever_ready",
+            "collection": name,
+            "corpus_size": len(self._bm25_ids),
+            "reranker_enabled": self._reranker_enabled,
+            "reranker_model": RERANKER_MODEL if self._reranker_enabled else None,
+        })
+
+    # ── Reranker ──────────────────────────────────────────────────────────────
+
+    def _load_reranker(self) -> None:
+        """Load cross-encoder reranker once at init; disable gracefully on failure."""
+        try:
+            from sentence_transformers import CrossEncoder
+            self._reranker = CrossEncoder(RERANKER_MODEL, max_length=512)
+            _log.info({"event": "reranker_loaded", "model": RERANKER_MODEL})
+        except Exception as exc:
+            _log.warning({"event": "reranker_load_failed", "detail": repr(exc), "hint": "pip install sentence-transformers"})
+            self._reranker = None
+            self._reranker_enabled = False
+
+    def _rerank(self, query: str, candidates: list[dict]) -> list[dict]:
+        """Score (query, chunk_text) pairs with the cross-encoder; sort descending."""
+        if self._reranker is None or not candidates:
+            return candidates
+
+        pairs = [(query, c["content"]) for c in candidates]
+        try:
+            scores: list[float] = self._reranker.predict(pairs).tolist()
+        except Exception as exc:
+            _log.warning({"event": "reranker_predict_failed", "detail": repr(exc)})
+            return candidates
+
+        for chunk, score in zip(candidates, scores):
+            chunk["reranker_score"] = round(float(score), 4)
+
+        reranked = sorted(candidates, key=lambda c: c.get("reranker_score", 0.0), reverse=True)
+
+        _log.info({
+            "event": "reranker_scored",
+            "n": len(reranked),
+            "top_score": reranked[0].get("reranker_score") if reranked else None,
+            "top_source": reranked[0].get("source") if reranked else None,
+        })
+        return reranked
 
     # ── BM25 index ────────────────────────────────────────────────────────────
 
@@ -85,12 +155,13 @@ class RAGRetriever:
         min_score: float = 0.20,
         topic_filter: list[str] | None = None,
     ) -> List[dict]:
-        """Hybrid retrieve: vector search + BM25 fused with RRF.
+        """Hybrid retrieve: vector search + BM25 fused with RRF + optional reranker.
 
         Args:
             query: Natural-language query string.
-            top_k: Maximum chunks to return after fusion and filtering.
-            min_score: Minimum normalised vector score (0–1) to include a chunk.
+            top_k: Maximum chunks to return after fusion, reranking, and filtering.
+            min_score: Minimum normalised vector score (0–1) to include a chunk
+                       in the pre-reranker candidate set.
             topic_filter: If set, restrict Chroma vector search to these topics.
         """
         # ── Dense vector search ───────────────────────────────────────────────
@@ -145,7 +216,9 @@ class RAGRetriever:
         if bm25_ids:
             ranked_lists.append(bm25_ids)
 
-        fused_ids = _rrf(ranked_lists)[:top_k * 2]
+        # Widen candidate pool for reranker (it needs more to choose from)
+        pool_size = top_k * 4 if self._reranker_enabled else top_k * 2
+        fused_ids = _rrf(ranked_lists)[:pool_size]
 
         # ── Assemble results ──────────────────────────────────────────────────
         # For IDs that appeared only in BM25 (not in vector hits), fetch from Chroma
@@ -174,8 +247,28 @@ class RAGRetriever:
                 "topic": meta.get("topic", ""),
                 "score": round(score, 4),
             })
-            if len(rows) >= top_k:
-                break
 
-        _log.info({"event": "rag_query", "results": len(rows), "hybrid": bool(bm25_ids), "min_score": min_score})
+        # ── Cross-encoder reranking ───────────────────────────────────────────
+        if self._reranker_enabled and rows:
+            rows = self._rerank(query, rows)
+
+        # Apply final top-K after reranking
+        rows = rows[:top_k]
+
+        _log.info({
+            "event": "rag_query",
+            "results": len(rows),
+            "hybrid": bool(bm25_ids),
+            "reranked": self._reranker_enabled,
+            "min_score": min_score,
+        })
         return rows
+
+    @property
+    def health_info(self) -> dict:
+        """Summary for /health endpoint."""
+        return {
+            "reranker_enabled": self._reranker_enabled,
+            "reranker_model": RERANKER_MODEL if self._reranker_enabled else None,
+            "corpus_size": len(self._bm25_ids),
+        }

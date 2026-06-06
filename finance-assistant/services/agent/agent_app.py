@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import asyncio
 import json
 import logging
 import os
@@ -71,7 +70,29 @@ class ChatPayload(BaseModel):
     route_hint: str | None = Field(None, max_length=256)
 
 
+class ChatResponse(BaseModel):
+    response: str
+    intent: str
+    session_id: str
+    compliance_triggered: bool = False
+
+
 # ── Shared state-builder ──────────────────────────────────────────────────────
+
+_MUTABLE_STATE_FIELDS = ("transaction_data", "insights", "rag_context", "anomalies", "health_score")
+
+
+def _assert_clean_state(state: dict) -> None:
+    """Raise AssertionError if any mutable result field is non-empty at graph entry.
+
+    This guard fires if _build_state accidentally carries data across requests.
+    """
+    for field in _MUTABLE_STATE_FIELDS:
+        value = state.get(field)
+        assert value is None or value == [] or value == {}, (
+            f"State field '{field}' must be None/empty at graph entry but got: {type(value).__name__}"
+        )
+
 
 def _build_state(body: ChatPayload, history: list, streaming_mode: bool = False) -> dict:
     msgs: list = []
@@ -84,7 +105,9 @@ def _build_state(body: ChatPayload, history: list, streaming_mode: bool = False)
             msgs.append(AIMessage(content=text))
     msgs.append(HumanMessage(content=body.message))
 
-    return {
+    # Explicitly set every field to a clean sentinel so there is no possibility
+    # of mutable state leaking across graph invocations (Bug 1 fix).
+    state: dict = {
         "messages": msgs,
         "user_id": body.user_id,
         "session_id": body.session_id,
@@ -92,17 +115,21 @@ def _build_state(body: ChatPayload, history: list, streaming_mode: bool = False)
         "transaction_data": None,
         "insights": None,
         "rag_context": None,
+        "health_score": None,
+        "anomalies": None,
         "final_response": "",
         "route_hint": body.route_hint,
-        "memory_snapshot": history,
+        "memory_snapshot": list(history),  # defensive copy
         "streaming_mode": streaming_mode,
         "streaming_context": None,
+        "compliance_triggered": False,
     }
+    return state
 
 
 # ── Endpoints ─────────────────────────────────────────────────────────────────
 
-@app.post("/chat")
+@app.post("/chat", response_model=ChatResponse)
 @limiter.limit("30/minute")
 async def chat_endpoint(request: Request, body: ChatPayload):  # noqa: ARG001
     log = logging.getLogger("agent.agent_app.chat")
@@ -112,11 +139,14 @@ async def chat_endpoint(request: Request, body: ChatPayload):  # noqa: ARG001
         t0 = time.perf_counter()
         history = memory.get_history(body.session_id, 5)
         state = _build_state(body, history)
+        _assert_clean_state(state)
 
-        result = await asyncio.to_thread(GRAPH.invoke, state)
+        # All nodes are async — use ainvoke directly (no asyncio.to_thread overhead).
+        result = await GRAPH.ainvoke(state)
         reply_text = str(result.get("final_response", "")).strip()
         intent_label = str(result.get("intent", ""))
         rag_ctx = result.get("rag_context") or []
+        compliance = bool(result.get("compliance_triggered", False))
 
         memory.add_message(body.session_id, "user", body.message)
         memory.add_message(body.session_id, "assistant", reply_text)
@@ -127,13 +157,24 @@ async def chat_endpoint(request: Request, body: ChatPayload):  # noqa: ARG001
         if rag_ctx:
             RAG_HITS.inc()
 
-        log.info({"event": "chat_complete", "intent": intent_label, "chars": len(reply_text), "elapsed_s": round(elapsed, 2)})
-        return {"response": reply_text, "intent": intent_label, "session_id": body.session_id}
+        log.info({
+            "event": "chat_complete",
+            "intent": intent_label,
+            "chars": len(reply_text),
+            "elapsed_s": round(elapsed, 2),
+            "compliance_triggered": compliance,
+        })
+        return ChatResponse(
+            response=reply_text,
+            intent=intent_label,
+            session_id=body.session_id,
+            compliance_triggered=compliance,
+        )
 
     except HTTPException:
         raise
-    except Exception:
-        log.exception({"event": "chat_failed"})
+    except Exception as exc:
+        log.exception({"event": "chat_failed", "detail": repr(exc)})
         raise HTTPException(status_code=503, detail="Agent invocation failed — see server logs.") from None
 
 
@@ -156,13 +197,14 @@ async def chat_stream(request: Request, body: ChatPayload):  # noqa: ARG001
 
     history = memory.get_history(body.session_id, 5)
     state = _build_state(body, history, streaming_mode=True)
+    _assert_clean_state(state)
 
-    # Stage 1 — run graph to collect context (fast: no LLM response generation)
-    result = await asyncio.to_thread(GRAPH.invoke, state)
+    # Stage 1 — run graph to collect context (all nodes async; no thread overhead).
+    result = await GRAPH.ainvoke(state)
     streaming_ctx = result.get("streaming_context") or {}
     intent_label = str(result.get("intent", ""))
 
-    # If response_node short-circuited (e.g. upstream error), stream the text directly.
+    # If response_node short-circuited (compliance guardrail or upstream error), stream directly.
     pre_built = str(result.get("final_response", "")).strip()
 
     async def event_gen():
@@ -210,7 +252,22 @@ async def history_delete(session_id: str):
 @app.get("/health")
 async def health_endpoint():
     ollama_ok = check_ollama_health()
-    return {"status": "ok", "service": "agent", "ollama": "reachable" if ollama_ok else "unreachable"}
+
+    # Include reranker info from the retriever if it's been initialised.
+    reranker_info: dict = {"reranker_enabled": False, "reranker_model": None}
+    try:
+        from rag.retriever import _retriever_instance
+        if _retriever_instance is not None:
+            reranker_info = _retriever_instance.health_info
+    except Exception:
+        pass
+
+    return {
+        "status": "ok",
+        "service": "agent",
+        "ollama": "reachable" if ollama_ok else "unreachable",
+        **reranker_info,
+    }
 
 
 @app.get("/metrics")

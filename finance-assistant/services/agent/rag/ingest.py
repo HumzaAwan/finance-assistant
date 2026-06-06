@@ -18,7 +18,7 @@ from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharac
 
 from deps import embedding_model
 from rag.chroma_factory import get_chroma_client
-from rag.retriever import _retriever_instance  # noqa: F401 — reset singleton after reingest
+from rag.retriever import reset_retriever
 
 _log = logging.getLogger("agent.rag.ingest")
 
@@ -85,8 +85,6 @@ def split_document(doc: Document) -> list[Document]:
 
 
 def ingest_main() -> None:
-    import rag.retriever as _ret_mod
-
     logging.basicConfig(level=os.getenv("LOG_LEVEL", "INFO"))
 
     collection_name = os.environ["CHROMA_COLLECTION"]
@@ -138,7 +136,7 @@ def ingest_main() -> None:
     print(f"Ingested {total_chunks} chunks across {len(loaded)} Markdown sources")
 
     # Reset the RAGRetriever singleton so the next query picks up the new index.
-    _ret_mod._retriever_instance = None
+    reset_retriever()
     _log.info({"event": "retriever_singleton_reset"})
 
 

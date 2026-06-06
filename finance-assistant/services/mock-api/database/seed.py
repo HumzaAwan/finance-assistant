@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
 import random
@@ -74,6 +75,118 @@ DEFAULT_BUDGETS = {
     "health": 150.0,
     "shopping": 200.0,
 }
+
+
+def _anomaly_id(name: str) -> str:
+    """Deterministic UUID derived from a fixed name — safe to merge on re-run."""
+    return str(uuid.UUID(hashlib.md5(f"anomaly-user_001-{name}".encode()).hexdigest()))
+
+
+# Fixed IDs for the four synthetic anomalies so session.merge() is idempotent.
+_ANOMALY_IDS = {
+    "duplicate_a": _anomaly_id("duplicate_charge_a"),
+    "duplicate_b": _anomaly_id("duplicate_charge_b"),
+    "amount_outlier": _anomaly_id("amount_zscore_outlier"),
+    "unusual_time": _anomaly_id("unusual_time_0317"),
+    "high_risk": _anomaly_id("high_risk_gambling"),
+}
+
+
+def seed_anomalies(session, now: datetime) -> None:
+    """Inject four deterministic anomaly transactions for user_001.
+
+    Called unconditionally in run_seed() so anomalies are always present even
+    when the main dataset was seeded in a previous run. Uses session.merge() so
+    re-runs are safe (no duplicate rows).
+
+    Anomalies injected:
+        1. Duplicate charge — Netflix £14.99 twice within 4 hours (last 14 days)
+        2. Amount z-score outlier — Green Bowl £295.00 (~6× the usual food spend)
+        3. Unusual time — City Diner £42.50 at 03:17 UTC
+        4. High-risk merchant — BetKing Casino £50.00 (first-time gambling)
+    """
+    # Check if anomalies already exist; skip if all four are present.
+    existing_ids = {
+        row.id
+        for row in session.scalars(
+            select(TransactionRecord).where(
+                TransactionRecord.id.in_(list(_ANOMALY_IDS.values()))
+            )
+        ).all()
+    }
+    if len(existing_ids) == len(_ANOMALY_IDS):
+        log.info({"event": "anomalies_already_seeded"})
+        return
+
+    # Anchor all anomaly timestamps relative to *now* so they remain within
+    # the anomaly detection window (last 90 days) however long ago the main
+    # seed ran.
+    recent = now - timedelta(days=7)   # 1 week ago
+    duplicate_base = now - timedelta(days=3)
+    unusual_day = now - timedelta(days=10)
+    high_risk_day = now - timedelta(days=5)
+
+    anomalies = [
+        # 1 — Duplicate: Netflix £14.99 twice, 4 hours apart
+        TransactionRecord(
+            id=_ANOMALY_IDS["duplicate_a"],
+            user_id="user_001",
+            amount=-14.99,
+            category="entertainment",
+            description="Monthly subscription",
+            merchant="Netflix",
+            timestamp=duplicate_base.replace(hour=14, minute=0, second=0, microsecond=0),
+        ),
+        TransactionRecord(
+            id=_ANOMALY_IDS["duplicate_b"],
+            user_id="user_001",
+            amount=-14.99,
+            category="entertainment",
+            description="Monthly subscription",
+            merchant="Netflix",
+            timestamp=duplicate_base.replace(hour=18, minute=0, second=0, microsecond=0),
+        ),
+        # 2 — Amount outlier: Green Bowl at £295.00 (~6× typical food spend of ~£50)
+        TransactionRecord(
+            id=_ANOMALY_IDS["amount_outlier"],
+            user_id="user_001",
+            amount=-295.00,
+            category="food",
+            description="Large catering order",
+            merchant="Green Bowl",
+            timestamp=recent.replace(hour=13, minute=0, second=0, microsecond=0),
+        ),
+        # 3 — Unusual time: City Diner at 03:17 UTC
+        TransactionRecord(
+            id=_ANOMALY_IDS["unusual_time"],
+            user_id="user_001",
+            amount=-42.50,
+            category="food",
+            description="Late night purchase",
+            merchant="City Diner",
+            timestamp=unusual_day.replace(hour=3, minute=17, second=0, microsecond=0),
+        ),
+        # 4 — High-risk merchant: first-time gambling transaction
+        TransactionRecord(
+            id=_ANOMALY_IDS["high_risk"],
+            user_id="user_001",
+            amount=-50.00,
+            category="entertainment",
+            description="gambling deposit",
+            merchant="BetKing Casino",
+            timestamp=high_risk_day.replace(hour=20, minute=0, second=0, microsecond=0),
+        ),
+    ]
+
+    for record in anomalies:
+        session.merge(record)
+
+    log.info({
+        "event": "anomalies_seeded",
+        "user_id": "user_001",
+        "count": len(anomalies),
+        "ids": list(_ANOMALY_IDS.values()),
+    })
 
 
 def transaction_count(session, user_id: str) -> int:
@@ -247,10 +360,19 @@ def run_seed():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     logging.basicConfig(level=logging.INFO)
 
+    now = datetime.now(timezone.utc)
+
+    # Always inject anomalies regardless of whether the main seed has run,
+    # so they remain within the detection window even on an already-seeded DB.
+    anomaly_session = get_session()
+    try:
+        seed_anomalies(anomaly_session, now)
+        anomaly_session.commit()
+    finally:
+        anomaly_session.close()
+
     if already_seeded():
         return
-
-    now = datetime.now(timezone.utc)
     session = get_session()
     all_payloads: list[dict] = []
 

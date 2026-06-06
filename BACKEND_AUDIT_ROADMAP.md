@@ -1,6 +1,6 @@
 # AI-Powered Personal Finance Assistant — Backend Audit & Roadmap
 
-> **Last updated:** June 2026 — All P1, P2, and P3 items implemented. Roadmap complete.
+> **Last updated:** June 2026 — All P1, P2, and P3 items implemented. Bug Fix Round 2 complete.
 
 ---
 
@@ -172,3 +172,38 @@ Convert all nodes to `async def`, replace `httpx.Client` → `httpx.AsyncClient`
 
 **One-liner for your CV:**
 > "Built a local-first AI personal finance assistant: LangGraph agent with hybrid RAG (BM25 + vector + RRF), SSE streaming, budget tracking, and full Prometheus observability — running entirely on Ollama with no cloud dependencies."
+
+---
+
+## Bug Fix Round 2 — June 2026
+
+Seven confirmed engineering bugs discovered through 20-query live system testing. All fixed with full working code and dedicated regression tests in `tests/test_bug_fixes.py`.
+
+| ID | File(s) | Bug | Root Cause | Fix |
+|---|---|---|---|---|
+| BF2-1 | `agent_app.py` | Stale state between requests — different questions returned identical responses | `_build_state` was correct but lacked an explicit guard; same session ID caused memory bleed | Added `_assert_clean_state()` guard called before every `ainvoke`; defensive `list(history)` copy; `_MUTABLE_STATE_FIELDS` tuple |
+| BF2-2 | `graph/nodes/response_node.py` | User question lost in LLM prompt — LLM pattern-matched to previous context | `human_payload` buried the question after JSON context blocks | Restructured: question is **first line** (`User question: {q}`); directive is **last line** ("Answer the user's question directly and specifically.") |
+| BF2-3 | `graph/nodes/intent_router.py` | Intent router missing UK finance keywords — "Cash ISA vs S&S ISA" routed to `transaction_query` | Heuristic upgrade only fired from `general`, could not override a wrong LLM classification | Added `_apply_strong_overrides()` that fires unconditionally for high-confidence UK domain signals (ISA, SIPP, pension, fraud, etc.); added `unclear_intent` to `LABELS` |
+| BF2-4 | `graph/nodes/financial_health_node.py` | Financial health score non-deterministic — same user returned 48 then 38 in same session | Each component function called `datetime.now()` independently; minor execution timing differences produced different cutoffs | `anchor_date = date.today()` pinned **once** at top of `financial_health_node` and passed to every component; added income 90-day lookback fallback; added `_SCORE_CACHE` keyed on `(user_id, anchor_date)` |
+| BF2-5A | `services/mock-api/database/seed.py` | Anomaly detection never fired — 600 transactions, zero anomalies | Seed data had no actual anomalies (all amounts consistent, no duplicates, no 3am transactions, no gambling) | Added `seed_anomalies()` injecting 4 deterministic anomalies for `user_001`: duplicate Netflix £14.99, Green Bowl £295 outlier (~6× mean), City Diner at 03:17 UTC, BetKing Casino gambling. Called unconditionally via `session.merge()` on every startup |
+| BF2-5B | `graph/nodes/anomalies_node.py`, `graph/nodes/transactions_node.py` | Anomaly detection logic — z-score self-contamination | z-score built baseline **including** the outlier, inflating mean/std and hiding the anomaly; `anomaly_check` fetched only 20 transactions (LLM default) | Fixed `_rule_amount_zscore` to use **leave-one-out** baseline; added `anomaly_check` to the 120-250 limit block in `transactions_node`; made duplicate window configurable via `ANOMALY_DUPLICATE_WINDOW_HOURS`; added per-transaction evaluation log |
+| BF2-6 | `graph/nodes/response_node.py` | FCA guardrail incomplete — "which stocks would you recommend" passed through | Stock-recommendation phrasings not in pattern list | Added 11 new `re.compile` patterns: `which stocks`, `recommend i buy`, `what should i invest`, `best fund`, `which fund`, `should i put my money in`, `worth investing in`, `good investment`, `buy shares`, `where should i invest`, `what to invest in` |
+| BF2-7 | `graph/nodes/intent_router.py`, `graph/nodes/response_node.py` | Garbage input returns hallucinated response — "asdfjkl xyz 123" routed to financial_advice | No confidence threshold or low-signal guard; every message was classified and routed | Added `_is_gibberish()` and `_is_low_signal()` checks (English vocabulary comparison); `unclear_intent` label added to `LABELS`; gibberish short-circuits before LLM call; `response_node` handles `unclear_intent` with a one-sentence constrained clarification prompt |
+
+### Regression Test Coverage
+
+All 7 fixes have dedicated unit tests in `services/agent/tests/test_bug_fixes.py`:
+
+```
+pytest services/agent/tests/test_bug_fixes.py -v
+```
+
+Key assertions:
+- `_assert_clean_state()` raises `AssertionError` on dirty state
+- `human_payload` first line starts with `"User question:"`
+- `_intent_from_heuristics("Cash ISA vs Stocks and Shares ISA")` → `financial_advice`
+- `financial_health_node` called twice → identical `overall_score`
+- `_rule_amount_zscore` flags leave-one-out outlier at £300 for Green Bowl baseline of £30
+- `_rule_duplicate` flags Netflix £14.99 twice within 4h; rejects same merchant >24h apart
+- FCA guardrail for `"which stocks would you recommend"` → exact fixed message, zero LLM calls
+- `"asdfjkl xyz 123"` → `intent == "unclear_intent"`, LLM not called

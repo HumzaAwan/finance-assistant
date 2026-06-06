@@ -35,8 +35,9 @@ st.set_page_config(page_title="Finance Assistant", layout="wide", page_icon="�
 STARTER_PROMPTS: tuple[str, ...] = (
     "How much did I spend last week?",
     "What are my top spending categories this month?",
-    "Give me advice on budgeting",
-    "Compare my spending this week vs last week",
+    "What is my financial health score?",
+    "Are there any suspicious transactions?",
+    "Explain the UK ISA allowance",
     "How do I build an emergency fund?",
 )
 
@@ -219,7 +220,7 @@ with chat_tab:
 
     if not messages:
         st.markdown("**Welcome.** Pick a starter or type your own question below.")
-        cols = st.columns(5)
+        cols = st.columns(6)
         for col, starter in zip(cols, STARTER_PROMPTS):
             if col.button(starter, use_container_width=True):
                 ship_turn(starter)
@@ -322,6 +323,116 @@ with dash_tab:
         st.bar_chart(intent_df.set_index("Intent"), height=200)
     else:
         st.info("No chat requests yet — start a conversation in the Chat tab.")
+
+    # ── Row 2b — Compliance and structured output metrics ─────────────────────
+    comp_triggered = metric_total(agent_metrics, "compliance_triggered_total")
+    so_success = metric_total(agent_metrics, "structured_output_success_total")
+    so_fallback = metric_total(agent_metrics, "structured_output_fallback_total")
+    anomalies_detected = metric_total(agent_metrics, "anomalies_detected_total")
+
+    if any([comp_triggered, so_success, so_fallback, anomalies_detected]):
+        st.markdown("**ML Reliability Metrics**")
+        r1, r2, r3, r4 = st.columns(4)
+        with r1:
+            so_total = so_success + so_fallback
+            so_rate = f"{so_success / so_total * 100:.0f}%" if so_total > 0 else "—"
+            st.metric(
+                "Structured Output Rate",
+                so_rate,
+                delta=f"{int(so_fallback)} fallbacks",
+                delta_color="inverse",
+                help="% of TxQueryParams extractions that used with_structured_output (vs regex fallback)",
+            )
+        with r2:
+            st.metric(
+                "FCA Guardrail Activations",
+                int(comp_triggered),
+                help="Queries blocked by the regulated-advice compliance guardrail",
+            )
+        with r3:
+            st.metric(
+                "Anomalies Detected",
+                int(anomalies_detected),
+                help="Total anomalous transactions flagged across all rules",
+            )
+        with r4:
+            reranker_on = isinstance(agent_health, dict) and agent_health.get("reranker_enabled", False)
+            st.metric(
+                "Reranker",
+                "🟢 Enabled" if reranker_on else "⚪ Disabled",
+                delta=str(agent_health.get("reranker_model", "—")) if reranker_on else "Install sentence-transformers",
+                delta_color="normal" if reranker_on else "off",
+                help="Cross-encoder reranker status from /health",
+            )
+
+    st.divider()
+
+    # ── Row 2c — Financial Health Score gauge ─────────────────────────────────
+    st.markdown("#### 🏥 Financial Health Score")
+    fh_left, fh_right = st.columns([1, 2])
+
+    with fh_left:
+        if "health_score_cache" not in st.session_state:
+            st.session_state.health_score_cache = None
+
+        if st.button("🧮 Compute Health Score", use_container_width=True, help="Runs a financial health query against your account data"):
+            with st.spinner("Analysing your financial health…"):
+                try:
+                    resp = httpx.post(
+                        f"{BASE_URL}/chat",
+                        json={
+                            "message": "What is my overall financial health score?",
+                            "session_id": f"dash-health-{user_id}",
+                            "user_id": user_id,
+                        },
+                        timeout=180.0,
+                    )
+                    resp.raise_for_status()
+                    data = resp.json()
+                    st.session_state.health_score_cache = data.get("response", "")
+                except Exception as exc:
+                    st.error(f"Failed to get health score: {exc}")
+
+        if st.session_state.health_score_cache:
+            response_text = str(st.session_state.health_score_cache)
+
+            import re as _re
+            score_match = _re.search(r"(\d{1,3})/100", response_text)
+            grade_match = _re.search(r"(Excellent|Good|Fair|Needs attention)", response_text, _re.IGNORECASE)
+
+            score = int(score_match.group(1)) if score_match else None
+            grade = grade_match.group(1) if grade_match else None
+
+            if score is not None:
+                grade_color = {
+                    "Excellent": "green",
+                    "Good": "#90EE90",
+                    "Fair": "orange",
+                    "Needs attention": "red",
+                }.get(grade or "", "gray")
+
+                st.markdown(f"""
+<div style="text-align:center; padding: 1rem; border-radius: 12px; border: 2px solid {grade_color}; background: rgba(0,0,0,0.02);">
+    <div style="font-size: 3.5rem; font-weight: bold; color: {grade_color};">{score}</div>
+    <div style="font-size: 1rem; color: gray;">out of 100</div>
+    <div style="font-size: 1.2rem; font-weight: 600; color: {grade_color}; margin-top: 0.5rem;">{grade or 'Unknown'}</div>
+</div>
+""", unsafe_allow_html=True)
+
+    with fh_right:
+        if st.session_state.get("health_score_cache"):
+            st.markdown("**Full Assessment**")
+            st.markdown(st.session_state.health_score_cache)
+        else:
+            st.info(
+                "Click **Compute Health Score** to run a 5-component financial health analysis.\n\n"
+                "**Components scored:**\n"
+                "- 💰 Savings Rate (25 pts)\n"
+                "- 📉 Debt-to-Income Ratio (20 pts)\n"
+                "- 🛡 Emergency Fund Coverage (25 pts)\n"
+                "- 🎯 Budget Adherence (20 pts)\n"
+                "- 📊 Spending Stability (10 pts)"
+            )
 
     st.divider()
 

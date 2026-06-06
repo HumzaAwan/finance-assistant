@@ -21,3 +21,9 @@ class AgentState(TypedDict, total=False):
     # prompt context so the /chat/stream endpoint can stream it token-by-token.
     streaming_mode: Optional[bool]
     streaming_context: Optional[dict]
+    # Financial health score payload (populated by financial_health_node).
+    health_score: Optional[dict]
+    # Anomaly detection results (populated by anomalies_node).
+    anomalies: Optional[List[dict]]
+    # Set to True by response_node when FCA compliance guardrail fires.
+    compliance_triggered: Optional[bool]
